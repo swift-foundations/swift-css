@@ -1,0 +1,71 @@
+// swift-tools-version:6.2
+
+import PackageDescription
+
+extension String {
+    static let css: Self = "CSS"
+}
+
+extension Target.Dependency {
+    static var css: Self { .target(name: .css) }
+}
+
+extension Target.Dependency {
+    static var cssStandard: Self {
+        .product(name: "CSS Standard", package: "swift-css-standard")
+    }
+    static var htmlRenderable: Self {
+        .product(name: "HTML Renderable", package: "swift-html-rendering")
+    }
+    static var htmlRenderableTestSupport: Self {
+        .product(name: "HTML Renderable TestSupport", package: "swift-html-rendering")
+    }
+}
+
+let package = Package(
+    name: "swift-css",
+    platforms: [
+        .iOS(.v18),
+        .macOS(.v15),
+        .tvOS(.v18),
+        .watchOS(.v11),
+        .macCatalyst(.v18),
+    ],
+    products: [
+        .library(name: .css, targets: [.css]),
+    ],
+    dependencies: [
+        .package(path: "../swift-html-rendering"),
+        .package(path: "../../swift-standards/swift-css-standard")
+    ],
+    targets: [
+        .target(
+            name: .css,
+            dependencies: [
+                .htmlRenderable,
+                .cssStandard,
+            ]
+        ),
+        .testTarget(
+            name: .css.tests,
+            dependencies: [
+                .css,
+                .htmlRenderableTestSupport
+            ]
+        ),
+    ],
+    swiftLanguageModes: [.v6]
+)
+
+extension String {
+    var tests: Self { self + " Tests" }
+}
+
+for target in package.targets where ![.system, .binary, .plugin].contains(target.type) {
+    let existing = target.swiftSettings ?? []
+    target.swiftSettings = existing + [
+        .enableUpcomingFeature("ExistentialAny"),
+        .enableUpcomingFeature("InternalImportsByDefault"),
+        .enableUpcomingFeature("MemberImportsByDefault")
+    ]
+}

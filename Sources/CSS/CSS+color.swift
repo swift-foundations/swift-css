@@ -1,0 +1,80 @@
+//
+//  CSS+color.swift
+//  swift-css
+//
+//  Basic color method for CSS type using Color.Value.
+//  For dark mode support, import swift-html which extends with DarkModeColor methods.
+//
+
+import CSS_Standard
+import HTML_Renderable
+
+extension CSS {
+    /// Sets the text color using a single Color.Value.
+    ///
+    /// This basic method applies a single color without dark mode variants.
+    /// For dark mode support, import swift-html and use the DarkModeColor overloads.
+    ///
+    /// - Parameters:
+    ///   - value: The color value to apply
+    ///   - media: Optional media query
+    ///   - selector: Optional CSS selector
+    ///   - pseudo: Optional pseudo-class/element
+    /// - Returns: A new CSS with the style applied
+    @inlinable
+    @discardableResult
+    @_disfavoredOverload
+    public func color(
+        _ value: CSS_Standard.Color.Value?,
+        media: W3C_CSS_MediaQueries.Media? = nil,
+        selector: HTML.Selector? = nil,
+        pseudo: HTML.Pseudo? = nil
+    ) -> CSS<HTML.AnyView> {
+        guard let value else {
+            return CSS<HTML.AnyView>(base: HTML.AnyView(base))
+        }
+        return CSS<HTML.AnyView>(
+            base: HTML.AnyView(
+                base.inlineStyle(
+                    CSS_Standard.Color.property,
+                    value.description,
+                    media: media,
+                    selector: selector,
+                    pseudo: pseudo
+                )
+            )
+        )
+    }
+
+    /// Sets the text color using a global CSS value (inherit, initial, unset, revert).
+    ///
+    /// - Parameters:
+    ///   - global: The global CSS value to apply
+    ///   - media: Optional media query
+    ///   - selector: Optional CSS selector
+    ///   - pseudo: Optional pseudo-class/element
+    /// - Returns: A new CSS with the style applied
+    @inlinable
+    @discardableResult
+    public func color(
+        _ global: CSS_Standard.Global?,
+        media: W3C_CSS_MediaQueries.Media? = nil,
+        selector: HTML.Selector? = nil,
+        pseudo: HTML.Pseudo? = nil
+    ) -> CSS<HTML.AnyView> {
+        guard let global else {
+            return CSS<HTML.AnyView>(base: HTML.AnyView(base))
+        }
+        return CSS<HTML.AnyView>(
+            base: HTML.AnyView(
+                base.inlineStyle(
+                    CSS_Standard.Color.property,
+                    global.description,
+                    media: media,
+                    selector: selector,
+                    pseudo: pseudo
+                )
+            )
+        )
+    }
+}
