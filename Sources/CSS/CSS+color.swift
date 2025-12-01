@@ -45,36 +45,4 @@ extension CSS {
             )
         )
     }
-
-    /// Sets the text color using a global CSS value (inherit, initial, unset, revert).
-    ///
-    /// - Parameters:
-    ///   - global: The global CSS value to apply
-    ///   - media: Optional media query
-    ///   - selector: Optional CSS selector
-    ///   - pseudo: Optional pseudo-class/element
-    /// - Returns: A new CSS with the style applied
-    @inlinable
-    @discardableResult
-    public func color(
-        _ global: CSS_Standard.Global?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
-    ) -> CSS<HTML.AnyView> {
-        guard let global else {
-            return CSS<HTML.AnyView>(base: HTML.AnyView(base))
-        }
-        return CSS<HTML.AnyView>(
-            base: HTML.AnyView(
-                base.inlineStyle(
-                    CSS_Standard.Color.property,
-                    global.description,
-                    media: media,
-                    selector: selector,
-                    pseudo: pseudo
-                )
-            )
-        )
-    }
 }
