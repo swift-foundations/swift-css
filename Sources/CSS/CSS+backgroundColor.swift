@@ -29,19 +29,14 @@ extension CSS {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> CSS<HTML.AnyView> {
-        guard let value else {
-            return CSS<HTML.AnyView>(base: HTML.AnyView(base))
-        }
-        return CSS<HTML.AnyView>(
-            base: HTML.AnyView(
-                base.inlineStyle(
-                    CSS_Standard.BackgroundColor.property,
-                    value.description,
-                    media: media,
-                    selector: selector,
-                    pseudo: pseudo
-                )
+    ) -> CSS<some HTML.View> {
+        CSS<HTML.InlineStyle<Base>>(
+            base: base.inlineStyle(
+                CSS_Standard.BackgroundColor.property,
+                value?.description,
+                media: media,
+                selector: selector,
+                pseudo: pseudo
             )
         )
     }

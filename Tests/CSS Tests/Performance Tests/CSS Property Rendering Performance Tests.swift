@@ -63,10 +63,10 @@ extension `Performance Tests` {
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.rgb(255, 0, 0))
-                            .css.width(.px(200))
-                            .css.height(.px(100))
-                            .css.color(.hex(.init(0x333333)))
-                            .css.fontSize(.rem(1.5))
+                            .width(.px(200))
+                            .height(.px(100))
+                            .color(.hex(.init(0x333333)))
+                            .fontSize(.rem(1.5))
                     }
                 )
             }
@@ -79,15 +79,15 @@ extension `Performance Tests` {
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.rgb(255, 255, 255))
-                            .css.width(.px(400))
-                            .css.height(.px(300))
-                            .css.paddingTop(.px(20))
-                            .css.paddingRight(.px(20))
-                            .css.paddingBottom(.px(20))
-                            .css.paddingLeft(.px(20))
-                            .css.marginTop(.px(10))
-                            .css.marginBottom(.px(10))
-                            .css.color(CSS_Standard.Color.named(.black))
+                            .width(.px(400))
+                            .height(.px(300))
+                            .paddingTop(.px(20))
+                            .paddingRight(.px(20))
+                            .paddingBottom(.px(20))
+                            .paddingLeft(.px(20))
+                            .marginTop(.px(10))
+                            .marginBottom(.px(10))
+                            .color(CSS_Standard.Color.named(.black))
                     }
                 )
             }
@@ -119,7 +119,7 @@ extension `Performance Tests` {
                                 tag("div")
                                     .attribute("id", "item-\(i)")
                                     .css.backgroundColor(.rgb(i * 5, 128, 200))
-                                    .css.width(.px(Double(100 + i)))
+                                    .width(.px(Double(100 + i)))
                             }
                         }
                     }
@@ -137,10 +137,10 @@ extension `Performance Tests` {
                                 tag("div")
                                     .attribute("class", "card-\(i)")
                                     .css.backgroundColor(.hex(.init(UInt32(0xF0F0F0))))
-                                    .css.width(.px(300))
-                                    .css.height(.px(200))
-                                    .css.padding(.px(15))
-                                    .css.margin(.px(10))
+                                    .width(.px(300))
+                                    .height(.px(200))
+                                    .padding(.px(15))
+                                    .margin(.px(10))
                             }
                         }
                     }
@@ -157,8 +157,8 @@ extension `Performance Tests` {
                     HTML.Document {
                         tag("div")
                             .css.width(.px(100))
-                            .css.height(.rem(5))
-                            .css.minWidth(.percent(50))
+                            .height(.rem(5))
+                            .minWidth(.percent(50))
                     }
                 )
             }
@@ -171,7 +171,7 @@ extension `Performance Tests` {
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.rgb(200, 100, 50))
-                            .css.color(.hex(.init(0x123456)))
+                            .color(.hex(.init(0x123456)))
                     }
                 )
             }
@@ -188,19 +188,19 @@ extension `Performance Tests` {
                             tag("div")
                                 .attribute("class", "card-header")
                                 .css.backgroundColor(.hex(.init(0x007BFF)))
-                                .css.color(CSS_Standard.Color.named(.white))
-                                .css.padding(.px(16))
+                                .color(CSS_Standard.Color.named(.white))
+                                .padding(.px(16))
 
                             tag("div")
                                 .attribute("class", "card-body")
                                 .css.backgroundColor(.hex(.init(0xFFFFFF)))
-                                .css.padding(.px(20))
-                                .css.minHeight(.px(200))
+                                .padding(.px(20))
+                                .minHeight(.px(200))
 
                             tag("div")
                                 .attribute("class", "card-footer")
                                 .css.backgroundColor(.hex(.init(0xF8F9FA)))
-                                .css.padding(.px(12))
+                                .padding(.px(12))
                         }
                     }
                 )
