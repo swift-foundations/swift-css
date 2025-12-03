@@ -6,5 +6,6 @@
 //
 
 import HTML_Renderable
+import HTML_Renderable_TestSupport
 
-@TaskLocal var div = HTML.Element(tag: "div") { HTML.Empty() }
+@TaskLocal var div = tag("div") { Empty() }
