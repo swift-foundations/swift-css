@@ -16,6 +16,6 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base>>(base: base.inlineStyle(columnGap, media: media, selector: selector, pseudo: pseudo))
+        CSS<HTML.InlineStyle<Base, W3C_CSS_Multicolumn.ColumnGap>>(base: base.inlineStyle(columnGap, media: media, selector: selector, pseudo: pseudo))
     }
 }

@@ -35,7 +35,7 @@ let package = Package(
         .library(name: .css, targets: [.css]),
     ],
     dependencies: [
-        .package(url: "https://github.com/coenttb/swift-html-rendering", from: "0.1.0"),
+        .package(path: "../swift-html-rendering"),
         .package(url: "https://github.com/swift-standards/swift-css-standard", from: "0.1.0"),
     ],
     targets: [

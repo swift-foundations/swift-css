@@ -16,24 +16,6 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base>>(base: base.inlineStyle(transform, media: media, selector: selector, pseudo: pseudo))
-    }
-}
-
-extension CSS {
-    @discardableResult
-    public func transform(
-        _ transform: String,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
-    ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base>>(base: base.inlineStyle(
-            Transform.property,
-            transform,
-            media: media,
-            selector: selector,
-            pseudo: pseudo
-        ))
+        CSS<HTML.InlineStyle<Base, W3C_CSS_Transforms.Transform>>(base: base.inlineStyle(transform, media: media, selector: selector, pseudo: pseudo))
     }
 }

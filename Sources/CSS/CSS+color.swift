@@ -30,10 +30,10 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base>>(
+        let property: W3C_CSS_Color.Color? = value.map { .color($0) }
+        return CSS<HTML.InlineStyle<Base, W3C_CSS_Color.Color>>(
             base: base.inlineStyle(
-                CSS_Standard.Color.property,
-                value?.description,
+                property,
                 media: media,
                 selector: selector,
                 pseudo: pseudo

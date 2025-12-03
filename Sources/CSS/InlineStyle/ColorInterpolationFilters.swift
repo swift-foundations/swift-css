@@ -16,7 +16,7 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base>>(base: base.inlineStyle(
+        CSS<HTML.InlineStyle<Base, W3C_CSS_Color.ColorInterpolationFilters>>(base: base.inlineStyle(
             colorInterpolationFilters,
             media: media,
             selector: selector,

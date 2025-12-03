@@ -16,7 +16,7 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base>>(base: base.inlineStyle(lineHeight, media: media, selector: selector, pseudo: pseudo))
+        CSS<HTML.InlineStyle<Base, W3C_CSS_Text.LineHeight>>(base: base.inlineStyle(lineHeight, media: media, selector: selector, pseudo: pseudo))
     }
 }
 
@@ -28,7 +28,7 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base>>(base: base.inlineStyle(
+        CSS<HTML.InlineStyle<Base, W3C_CSS_Text.LineHeight>>(base: base.inlineStyle(
             lineHeight.map { LineHeight(integerLiteral: Int($0)) },
             media: media,
             selector: selector,
@@ -43,7 +43,7 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base>>(base: base.inlineStyle(
+        CSS<HTML.InlineStyle<Base, W3C_CSS_Text.LineHeight>>(base: base.inlineStyle(
             lineHeight.map { LineHeight(floatLiteral: Double($0)) },
             media: media,
             selector: selector,

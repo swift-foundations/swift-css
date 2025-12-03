@@ -8,38 +8,27 @@
 import CSS_Standard
 import HTML_Renderable
 
-extension HTML.View {
-    @discardableResult
-    public func inlineStyle<PropertyElement: W3C_CSS_Shared.Property>(
-        _ property: PropertyElement?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
-    ) -> HTMLInlineStyle<Self> {
-        self.inlineStyle(
-            PropertyElement.property,
-            property?.description,
-            media: media.map { HTML.AtRule.Media($0) },
-            selector: selector,
-            pseudo: pseudo
-        )
+/// Extension to convert W3C CSS Media to HTML.AtRule.Media
+extension HTML.AtRule.Media {
+    package init(_ media: W3C_CSS_MediaQueries.Media) {
+        self = .init(rawValue: media.rawValue)
     }
 }
 
+/// Convenience extensions for CSS-typed inline styling.
+/// These wrap the base HTML.View.inlineStyle methods with W3C_CSS_MediaQueries.Media conversion.
 extension HTML.View {
+    /// Applies a typed CSS property using W3C_CSS_MediaQueries.Media.
     @discardableResult
-    @_disfavoredOverload
-    public func inlineStyle(
-        _ property: String,
-        _ value: String?,
+    public func inlineStyle<P: W3C_CSS_Shared.Property>(
+        _ property: P?,
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> HTMLInlineStyle<Self> {
+    ) -> HTML.InlineStyle<Self, P> {
         self.inlineStyle(
             property,
-            value,
-            media: media.map { HTML.AtRule.Media($0) },
+            atRule: media.map { HTML.AtRule.Media($0) },
             selector: selector,
             pseudo: pseudo
         )
@@ -48,6 +37,9 @@ extension HTML.View {
 
 extension HTML.View {
     /// Applies a global CSS value (inherit, initial, unset, etc.) to a specific property.
+    ///
+    /// Note: Global values require a special Property type that wraps the global.
+    /// This is a convenience method that creates a GlobalProperty wrapper.
     @discardableResult
     public func inlineStyle<PropertyType: W3C_CSS_Shared.Property>(
         _: PropertyType.Type,
@@ -55,19 +47,13 @@ extension HTML.View {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> HTMLInlineStyle<Self> {
-        self.inlineStyle(
-            PropertyType.property,
-            global.description,
-            media: media.map { HTML.AtRule.Media($0) },
+    ) -> HTML.InlineStyle<Self, GlobalProperty<PropertyType>> {
+        let wrapper = GlobalProperty<PropertyType>(global)
+        return self.inlineStyle(
+            wrapper,
+            atRule: media.map { HTML.AtRule.Media($0) },
             selector: selector,
             pseudo: pseudo
         )
-    }
-}
-
-extension HTML.AtRule.Media {
-    package init(_ media: W3C_CSS_MediaQueries.Media) {
-        self = .init(rawValue: media.rawValue)
     }
 }
