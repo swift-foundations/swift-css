@@ -16,6 +16,6 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base, W3C_CSS_Backgrounds.BorderImageRepeat>>(base: base.inlineStyle(borderImageRepeat, media: media, selector: selector, pseudo: pseudo))
+        CSS<HTML.Styled<Base>>(base: base.inlineStyle(borderImageRepeat, media: media, selector: selector, pseudo: pseudo))
     }
 }

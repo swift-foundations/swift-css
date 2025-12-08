@@ -16,7 +16,7 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base, W3C_CSS_Containment.ContainIntrinsicInlineSize>>(base: base.inlineStyle(
+        CSS<HTML.Styled<Base>>(base: base.inlineStyle(
             containIntrinsicInlineSize,
             media: media,
             selector: selector,

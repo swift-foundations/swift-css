@@ -16,6 +16,6 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base, W3C_CSS_UI.OutlineStyle>>(base: base.inlineStyle(outlineStyle, media: media, selector: selector, pseudo: pseudo))
+        CSS<HTML.Styled<Base>>(base: base.inlineStyle(outlineStyle, media: media, selector: selector, pseudo: pseudo))
     }
 }

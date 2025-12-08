@@ -16,6 +16,6 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base, W3C_CSS_Fonts.FontStretch>>(base: base.inlineStyle(fontStretch, media: media, selector: selector, pseudo: pseudo))
+        CSS<HTML.Styled<Base>>(base: base.inlineStyle(fontStretch, media: media, selector: selector, pseudo: pseudo))
     }
 }

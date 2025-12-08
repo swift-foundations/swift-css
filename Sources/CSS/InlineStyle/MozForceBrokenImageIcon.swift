@@ -16,6 +16,6 @@ extension CSS {
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
-        CSS<HTML.InlineStyle<Base, W3C_CSS_UI.MozForceBrokenImageIcon>>(base: base.inlineStyle(mozForceBrokenImageIcon, media: media, selector: selector, pseudo: pseudo))
+        CSS<HTML.Styled<Base>>(base: base.inlineStyle(mozForceBrokenImageIcon, media: media, selector: selector, pseudo: pseudo))
     }
 }

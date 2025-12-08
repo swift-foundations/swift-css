@@ -31,7 +31,7 @@ extension CSS {
         pseudo: HTML.Pseudo? = nil
     ) -> CSS<some HTML.View> {
         let property: W3C_CSS_Color.Color? = value.map { .color($0) }
-        return CSS<HTML.InlineStyle<Base, W3C_CSS_Color.Color>>(
+        return CSS<HTML.Styled<Base>>(
             base: base.inlineStyle(
                 property,
                 media: media,
