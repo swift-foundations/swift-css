@@ -1,4 +1,4 @@
-// swift-tools-version:6.2
+// swift-tools-version: 6.2
 
 import PackageDescription
 
@@ -25,18 +25,18 @@ extension Target.Dependency {
 let package = Package(
     name: "swift-css",
     platforms: [
-        .iOS(.v18),
-        .macOS(.v15),
-        .tvOS(.v18),
-        .watchOS(.v11),
-        .macCatalyst(.v18),
+        .macOS(.v26),
+        .iOS(.v26),
+        .tvOS(.v26),
+        .watchOS(.v26),
+        .visionOS(.v26),
     ],
     products: [
         .library(name: .css, targets: [.css]),
     ],
     dependencies: [
         .package(path: "../swift-html-rendering"),
-        .package(url: "https://github.com/swift-standards/swift-css-standard", from: "0.1.0"),
+        .package(path: "../../swift-standards/swift-css-standard"),
     ],
     targets: [
         .target(

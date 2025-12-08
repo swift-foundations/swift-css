@@ -15,7 +15,7 @@ extension CSS {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> CSS<some HTML.View> {
-        CSS<HTML.Styled<Base>>(base: base.inlineStyle(minBlockSize, media: media, selector: selector, pseudo: pseudo))
+    ) -> CSS<HTML.Styled<Base, W3C_CSS_Logical.MinBlockSize>> {
+        styled(minBlockSize, media: media, selector: selector, pseudo: pseudo)
     }
 }

@@ -15,7 +15,7 @@ extension CSS {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> CSS<some HTML.View> {
-        CSS<HTML.Styled<Base>>(base: base.inlineStyle(scrollPaddingInlineStart, media: media, selector: selector, pseudo: pseudo))
+    ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.ScrollPaddingInlineStart>> {
+        styled(scrollPaddingInlineStart, media: media, selector: selector, pseudo: pseudo)
     }
 }

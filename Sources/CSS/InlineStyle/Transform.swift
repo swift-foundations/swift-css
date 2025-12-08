@@ -15,7 +15,7 @@ extension CSS {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> CSS<some HTML.View> {
-        CSS<HTML.Styled<Base>>(base: base.inlineStyle(transform, media: media, selector: selector, pseudo: pseudo))
+    ) -> CSS<HTML.Styled<Base, W3C_CSS_Transforms.Transform>> {
+        styled(transform, media: media, selector: selector, pseudo: pseudo)
     }
 }

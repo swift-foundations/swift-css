@@ -25,7 +25,7 @@ extension HTML.View {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> HTML.Styled<Self> {
+    ) -> HTML.Styled<Self, P> {
         self.inlineStyle(
             property,
             atRule: media.map { HTML.AtRule.Media($0) },
@@ -47,7 +47,7 @@ extension HTML.View {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> HTML.Styled<Self> {
+    ) -> HTML.Styled<Self, GlobalProperty<PropertyType>> {
         let wrapper = GlobalProperty<PropertyType>(global)
         return self.inlineStyle(
             wrapper,

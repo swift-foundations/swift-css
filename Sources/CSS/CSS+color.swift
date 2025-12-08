@@ -29,15 +29,8 @@ extension CSS {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> CSS<HTML.Styled<Base, W3C_CSS_Color.Color>> {
         let property: W3C_CSS_Color.Color? = value.map { .color($0) }
-        return CSS<HTML.Styled<Base>>(
-            base: base.inlineStyle(
-                property,
-                media: media,
-                selector: selector,
-                pseudo: pseudo
-            )
-        )
+        return styled(property, media: media, selector: selector, pseudo: pseudo)
     }
 }

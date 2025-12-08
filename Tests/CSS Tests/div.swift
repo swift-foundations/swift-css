@@ -8,4 +8,4 @@
 import HTML_Renderable
 import HTML_Renderable_TestSupport
 
-@TaskLocal var div = tag("div") { Empty() }
+@TaskLocal var div = HTML_Renderable_TestSupport.tag("div") { Empty() }

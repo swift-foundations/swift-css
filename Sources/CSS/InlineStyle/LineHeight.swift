@@ -15,8 +15,8 @@ extension CSS {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> CSS<some HTML.View> {
-        CSS<HTML.Styled<Base>>(base: base.inlineStyle(lineHeight, media: media, selector: selector, pseudo: pseudo))
+    ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LineHeight>> {
+        styled(lineHeight, media: media, selector: selector, pseudo: pseudo)
     }
 }
 
@@ -27,13 +27,8 @@ extension CSS {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> CSS<some HTML.View> {
-        CSS<HTML.Styled<Base>>(base: base.inlineStyle(
-            lineHeight.map { LineHeight(integerLiteral: Int($0)) },
-            media: media,
-            selector: selector,
-            pseudo: pseudo
-        ))
+    ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LineHeight>> {
+        styled(lineHeight.map { LineHeight(integerLiteral: Int($0)) }, media: media, selector: selector, pseudo: pseudo)
     }
 
     @discardableResult
@@ -42,12 +37,7 @@ extension CSS {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> CSS<some HTML.View> {
-        CSS<HTML.Styled<Base>>(base: base.inlineStyle(
-            lineHeight.map { LineHeight(floatLiteral: Double($0)) },
-            media: media,
-            selector: selector,
-            pseudo: pseudo
-        ))
+    ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LineHeight>> {
+        styled(lineHeight.map { LineHeight(floatLiteral: Double($0)) }, media: media, selector: selector, pseudo: pseudo)
     }
 }

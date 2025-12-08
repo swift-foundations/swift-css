@@ -47,6 +47,19 @@ public struct CSS<Base: HTML.View>: HTML.View {
     public var body: Base {
         base
     }
+
+    // MARK: - Inline Style Helper
+
+    /// Applies an inline style and returns a CSS wrapper with the styled content.
+    @inlinable
+    func styled<P: W3C_CSS_Shared.Property>(
+        _ property: P?,
+        media: W3C_CSS_MediaQueries.Media? = nil,
+        selector: HTML.Selector? = nil,
+        pseudo: HTML.Pseudo? = nil
+    ) -> CSS<HTML.Styled<Base, P>> {
+        CSS<HTML.Styled<Base, P>>(base: base.inlineStyle(property, media: media, selector: selector, pseudo: pseudo))
+    }
 }
 
 // MARK: - HTML.View Extension

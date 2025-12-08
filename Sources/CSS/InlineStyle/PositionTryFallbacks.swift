@@ -15,7 +15,7 @@ extension CSS {
         media: W3C_CSS_MediaQueries.Media? = nil,
         selector: HTML.Selector? = nil,
         pseudo: HTML.Pseudo? = nil
-    ) -> CSS<some HTML.View> {
-        CSS<HTML.Styled<Base>>(base: base.inlineStyle(positionTryFallbacks, media: media, selector: selector, pseudo: pseudo))
+    ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.PositionTryFallbacks>> {
+        styled(positionTryFallbacks, media: media, selector: selector, pseudo: pseudo)
     }
 }
