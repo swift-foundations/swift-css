@@ -60,6 +60,37 @@ public struct CSS<Base: HTML.View>: HTML.View {
     ) -> CSS<HTML.Styled<Base, P>> {
         CSS<HTML.Styled<Base, P>>(base: base.inlineStyle(property, media: media, selector: selector, pseudo: pseudo))
     }
+
+    // MARK: - String-based Inline Style
+
+    /// Applies an inline style using string property name and value.
+    ///
+    /// Use this for dynamic properties or edge cases where typed properties aren't available.
+    /// Prefer typed properties when possible for better type safety.
+    ///
+    /// ```swift
+    /// div.css
+    ///     .inlineStyle("grid-template-columns", "1fr 1fr 1fr")
+    ///     .inlineStyle("custom-property", "value")
+    /// ```
+    @inlinable
+    @discardableResult
+    public func inlineStyle(
+        _ property: String,
+        _ value: String?,
+        media: W3C_CSS_MediaQueries.Media? = nil,
+        selector: HTML.Selector? = nil,
+        pseudo: HTML.Pseudo? = nil
+    ) -> CSS<HTML.Styled<Base, StringProperty>> {
+        CSS<HTML.Styled<Base, StringProperty>>(
+            base: base.inlineStyle(
+                StringProperty(property, value!),
+                media: media,
+                selector: selector,
+                pseudo: pseudo
+            )
+        )
+    }
 }
 
 // MARK: - HTML.View Extension
