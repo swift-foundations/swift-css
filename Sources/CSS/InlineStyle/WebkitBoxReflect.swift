@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func webkitBoxReflect(
-        _ webkitBoxReflect: W3C_CSS_UI.WebkitBoxReflect?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ webkitBoxReflect: W3C_CSS_UI.WebkitBoxReflect?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.WebkitBoxReflect>> {
-        styled(webkitBoxReflect, media: media, selector: selector, pseudo: pseudo)
+        styled(webkitBoxReflect)
     }
 }

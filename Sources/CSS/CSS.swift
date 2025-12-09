@@ -160,14 +160,17 @@ extension CSS {
     // MARK: - Inline Style Helper
 
     /// Applies an inline style and returns a CSS wrapper with the styled content.
+    ///
+    /// The at-rule, selector, and pseudo values are read from the current
+    /// `HTML.Style.Context` TaskLocal, allowing context-based styling:
+    ///
+    /// ```swift
+    /// div.css.dark { $0.color(.white) }  // Uses .dark context
+    /// button.css.hover { $0.backgroundColor(.blue) }  // Uses :hover context
+    /// ```
     @inlinable
-    func styled<P: W3C_CSS_Shared.Property>(
-        _ property: P?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
-    ) -> CSS<HTML.Styled<Base, P>> {
-        CSS<HTML.Styled<Base, P>>(base: base.inlineStyle(property, media: media, selector: selector, pseudo: pseudo))
+    func styled<P: W3C_CSS_Shared.Property>(_ property: P?) -> CSS<HTML.Styled<Base, P>> {
+        CSS<HTML.Styled<Base, P>>(base: base.inlineStyle(property))
     }
 
     // MARK: - String-based Inline Style
@@ -177,27 +180,25 @@ extension CSS {
     /// Use this for dynamic properties or edge cases where typed properties aren't available.
     /// Prefer typed properties when possible for better type safety.
     ///
+    /// The at-rule, selector, and pseudo values are read from the current
+    /// `HTML.Style.Context` TaskLocal.
+    ///
     /// ```swift
     /// div.css
     ///     .inlineStyle("grid-template-columns", "1fr 1fr 1fr")
     ///     .inlineStyle("custom-property", "value")
+    ///
+    /// // With context:
+    /// div.css.dark { $0.inlineStyle("custom-property", "dark-value") }
     /// ```
     @inlinable
     @discardableResult
     public func inlineStyle(
         _ property: String,
-        _ value: String?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ value: String?
     ) -> CSS<HTML.Styled<Base, StringProperty>> {
         CSS<HTML.Styled<Base, StringProperty>>(
-            base: base.inlineStyle(
-                StringProperty(property, value!),
-                media: media,
-                selector: selector,
-                pseudo: pseudo
-            )
+            base: base.inlineStyle(StringProperty(property, value!))
         )
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func tableLayout(
-        _ tableLayout: W3C_CSS_UI.TableLayout?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ tableLayout: W3C_CSS_UI.TableLayout?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.TableLayout>> {
-        styled(tableLayout, media: media, selector: selector, pseudo: pseudo)
+        styled(tableLayout)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textAutospace(
-        _ textAutospace: W3C_CSS_Text.TextAutospace?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textAutospace: W3C_CSS_Text.TextAutospace?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextAutospace>> {
-        styled(textAutospace, media: media, selector: selector, pseudo: pseudo)
+        styled(textAutospace)
     }
 }

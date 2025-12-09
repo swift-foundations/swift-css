@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func tabSize(
-        _ tabSize: W3C_CSS_Text.TabSize?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ tabSize: W3C_CSS_Text.TabSize?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TabSize>> {
-        styled(tabSize, media: media, selector: selector, pseudo: pseudo)
+        styled(tabSize)
     }
 }

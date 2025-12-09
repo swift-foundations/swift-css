@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fontSynthesisStyle(
-        _ fontSynthesisStyle: W3C_CSS_Fonts.FontSynthesisStyle?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fontSynthesisStyle: W3C_CSS_Fonts.FontSynthesisStyle?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.FontSynthesisStyle>> {
-        styled(fontSynthesisStyle, media: media, selector: selector, pseudo: pseudo)
+        styled(fontSynthesisStyle)
     }
 }

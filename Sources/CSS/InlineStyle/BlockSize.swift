@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func blockSize(
-        _ blockSize: W3C_CSS_Logical.BlockSize?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ blockSize: W3C_CSS_Logical.BlockSize?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Logical.BlockSize>> {
-        styled(blockSize, media: media, selector: selector, pseudo: pseudo)
+        styled(blockSize)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func columnRuleWidth(
-        _ columnRuleWidth: W3C_CSS_Multicolumn.ColumnRuleWidth?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ columnRuleWidth: W3C_CSS_Multicolumn.ColumnRuleWidth?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Multicolumn.ColumnRuleWidth>> {
-        styled(columnRuleWidth, media: media, selector: selector, pseudo: pseudo)
+        styled(columnRuleWidth)
     }
 }

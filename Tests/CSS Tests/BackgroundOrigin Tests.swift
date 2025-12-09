@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "BackgroundOrigin Tests",
-    )
-    struct BackgroundOriginTests {
-        @Test("HTML element renders with background-origin border-box properly")
-        func htmlElementWithBackgroundOriginBorderBoxRendersCorrectly() throws {
+    @Suite
+    struct `BackgroundOrigin Tests` {
+        @Test
+        func `HTML element renders with background-origin border-box properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundOrigin(.borderBox)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-origin padding-box properly")
-        func htmlElementWithBackgroundOriginPaddingBoxRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-origin padding-box properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundOrigin(.paddingBox)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-origin content-box properly")
-        func htmlElementWithBackgroundOriginContentBoxRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-origin content-box properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundOrigin(.contentBox)
@@ -92,8 +90,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-origin with global value renders properly")
-        func htmlBackgroundOriginWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML background-origin with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundOrigin(.inherit)
@@ -117,11 +115,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-origin with media query renders properly")
-        func htmlBackgroundOriginWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML background-origin with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundOrigin(.contentBox, media: .print)
+                    div.css.print { $0.backgroundOrigin(.contentBox) }
                 },
                 as: .html
             ) {
@@ -144,11 +142,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-origin with pseudo-class renders properly")
-        func htmlBackgroundOriginWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML background-origin with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundOrigin(.contentBox, pseudo: .hover)
+                    div.css.hover { $0.backgroundOrigin(.contentBox) }
                 },
                 as: .html
             ) {
@@ -169,11 +167,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-origin with prefix renders properly")
-        func htmlBackgroundOriginWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML background-origin with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundOrigin(.contentBox, selector: "my-component")
+                    div.css.selector("my-component") { $0.backgroundOrigin(.contentBox) }
                 },
                 as: .html
             ) {

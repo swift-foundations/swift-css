@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func imageOrientation(
-        _ imageOrientation: W3C_CSS_Images.ImageOrientation?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ imageOrientation: W3C_CSS_Images.ImageOrientation?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.ImageOrientation>> {
-        styled(imageOrientation, media: media, selector: selector, pseudo: pseudo)
+        styled(imageOrientation)
     }
 }

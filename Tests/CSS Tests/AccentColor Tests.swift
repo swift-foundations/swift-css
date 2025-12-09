@@ -13,12 +13,10 @@ import Testing
 
 extension `Snapshot Tests` {
     
-    @Suite(
-        "AccentColor Tests",
-    )
-    struct AccentColorTests {
-        @Test("HTML element renders with accent-color properly")
-        func htmlElementWithAccentColorRendersCorrectly() throws {
+    @Suite
+    struct `AccentColor Tests` {
+        @Test
+        func `HTML element renders with accent-color properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.accentColor(.red)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with accent-color using hex color properly")
-        func htmlElementWithAccentColorHexRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with accent-color using hex color properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.accentColor(.color(.hex("FF0000")))
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML accent-color with global value renders properly")
-        func htmlAccentColorWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML accent-color with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.accentColor(.inherit)
@@ -92,11 +90,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML accent-color with media query renders properly")
-        func htmlAccentColorWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML accent-color with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.accentColor(.color(.hex("FF0000")), media: .print)
+                    div.css.print { $0.accentColor(.color(.hex("FF0000"))) }
                 },
                 as: .html
             ) {
@@ -118,12 +116,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML accent-color with pseudo-class renders properly")
-        func htmlAccentColorWithPseudoClassRendersCorrectly() throws {
+
+        @Test
+        func `HTML accent-color with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.accentColor(.color(.hex("FF0000")), pseudo: .hover)
+                    div.css.hover { $0.accentColor(.color(.hex("FF0000"))) }
                 },
                 as: .html
             ) {
@@ -143,12 +141,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML accent-color with prefix renders properly")
-        func htmlAccentColorWithPrefixRendersCorrectly() throws {
+
+        @Test
+        func `HTML accent-color with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.accentColor(.color(.hex("FF0000")), selector: "my-component")
+                    div.css.selector("my-component") { $0.accentColor(.color(.hex("FF0000"))) }
                 },
                 as: .html
             ) {

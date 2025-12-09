@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textDecorationStyle(
-        _ textDecorationStyle: W3C_CSS_TextDecoration.TextDecorationStyle?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textDecorationStyle: W3C_CSS_TextDecoration.TextDecorationStyle?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_TextDecoration.TextDecorationStyle>> {
-        styled(textDecorationStyle, media: media, selector: selector, pseudo: pseudo)
+        styled(textDecorationStyle)
     }
 }

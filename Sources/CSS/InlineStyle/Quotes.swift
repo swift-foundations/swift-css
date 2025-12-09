@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func quotes(
-        _ quotes: W3C_CSS_Shared.Quotes?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ quotes: W3C_CSS_Shared.Quotes?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Shared.Quotes>> {
-        styled(quotes, media: media, selector: selector, pseudo: pseudo)
+        styled(quotes)
     }
 }

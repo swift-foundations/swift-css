@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func scrollTimelineName(
-        _ scrollTimelineName: W3C_CSS_Scroll.ScrollTimelineName?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ scrollTimelineName: W3C_CSS_Scroll.ScrollTimelineName?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.ScrollTimelineName>> {
-        styled(scrollTimelineName, media: media, selector: selector, pseudo: pseudo)
+        styled(scrollTimelineName)
     }
 }

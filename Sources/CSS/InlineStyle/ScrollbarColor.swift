@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func scrollbarColor(
-        _ scrollbarColor: W3C_CSS_Scroll.ScrollbarColor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ scrollbarColor: W3C_CSS_Scroll.ScrollbarColor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.ScrollbarColor>> {
-        styled(scrollbarColor, media: media, selector: selector, pseudo: pseudo)
+        styled(scrollbarColor)
     }
 }

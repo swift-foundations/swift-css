@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func strokeDashoffset(
-        _ strokeDashoffset: W3C_CSS_Images.StrokeDashoffset?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ strokeDashoffset: W3C_CSS_Images.StrokeDashoffset?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.StrokeDashoffset>> {
-        styled(strokeDashoffset, media: media, selector: selector, pseudo: pseudo)
+        styled(strokeDashoffset)
     }
 }

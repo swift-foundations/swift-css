@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func boxSizing(
-        _ boxSizing: W3C_CSS_BoxModel.BoxSizing?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ boxSizing: W3C_CSS_BoxModel.BoxSizing?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_BoxModel.BoxSizing>> {
-        styled(boxSizing, media: media, selector: selector, pseudo: pseudo)
+        styled(boxSizing)
     }
 }

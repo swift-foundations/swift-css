@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func mathDepth(
-        _ mathDepth: W3C_CSS_Text.MathDepth?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ mathDepth: W3C_CSS_Text.MathDepth?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.MathDepth>> {
-        styled(mathDepth, media: media, selector: selector, pseudo: pseudo)
+        styled(mathDepth)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func alignmentBaseline(
-        _ alignmentBaseline: W3C_CSS_Alignment.AlignmentBaseline?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ alignmentBaseline: W3C_CSS_Alignment.AlignmentBaseline?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Alignment.AlignmentBaseline>> {
-        styled(alignmentBaseline, media: media, selector: selector, pseudo: pseudo)
+        styled(alignmentBaseline)
     }
 }

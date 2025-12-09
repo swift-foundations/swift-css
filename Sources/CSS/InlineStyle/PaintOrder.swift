@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func paintOrder(
-        _ paintOrder: W3C_CSS_Images.PaintOrder?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ paintOrder: W3C_CSS_Images.PaintOrder?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.PaintOrder>> {
-        styled(paintOrder, media: media, selector: selector, pseudo: pseudo)
+        styled(paintOrder)
     }
 }

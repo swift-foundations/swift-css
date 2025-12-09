@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func transformOrigin(
-        _ transformOrigin: W3C_CSS_Transforms.TransformOrigin?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ transformOrigin: W3C_CSS_Transforms.TransformOrigin?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Transforms.TransformOrigin>> {
-        styled(transformOrigin, media: media, selector: selector, pseudo: pseudo)
+        styled(transformOrigin)
     }
 }

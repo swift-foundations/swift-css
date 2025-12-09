@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func position(
-        _ position: W3C_CSS_Positioning.Position?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ position: W3C_CSS_Positioning.Position?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.Position>> {
-        styled(position, media: media, selector: selector, pseudo: pseudo)
+        styled(position)
     }
 }

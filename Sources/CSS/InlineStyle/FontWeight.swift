@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fontWeight(
-        _ fontWeight: W3C_CSS_Fonts.FontWeight?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fontWeight: W3C_CSS_Fonts.FontWeight?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.FontWeight>> {
-        styled(fontWeight, media: media, selector: selector, pseudo: pseudo)
+        styled(fontWeight)
     }
 }

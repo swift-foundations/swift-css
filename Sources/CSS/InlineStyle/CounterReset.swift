@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func counterReset(
-        _ counterReset: W3C_CSS_Lists.CounterReset?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ counterReset: W3C_CSS_Lists.CounterReset?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Lists.CounterReset>> {
-        styled(counterReset, media: media, selector: selector, pseudo: pseudo)
+        styled(counterReset)
     }
 }

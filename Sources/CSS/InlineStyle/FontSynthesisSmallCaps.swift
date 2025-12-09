@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fontSynthesisSmallCaps(
-        _ fontSynthesisSmallCaps: W3C_CSS_Fonts.FontSynthesisSmallCaps?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fontSynthesisSmallCaps: W3C_CSS_Fonts.FontSynthesisSmallCaps?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.FontSynthesisSmallCaps>> {
-        styled(fontSynthesisSmallCaps, media: media, selector: selector, pseudo: pseudo)
+        styled(fontSynthesisSmallCaps)
     }
 }

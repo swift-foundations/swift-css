@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func alignItems(
-        _ alignItems: W3C_CSS_Alignment.AlignItems?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ alignItems: W3C_CSS_Alignment.AlignItems?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Alignment.AlignItems>> {
-        styled(alignItems, media: media, selector: selector, pseudo: pseudo)
+        styled(alignItems)
     }
 }

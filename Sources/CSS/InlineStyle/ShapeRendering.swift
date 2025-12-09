@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func shapeRendering(
-        _ shapeRendering: W3C_CSS_Images.ShapeRendering?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ shapeRendering: W3C_CSS_Images.ShapeRendering?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.ShapeRendering>> {
-        styled(shapeRendering, media: media, selector: selector, pseudo: pseudo)
+        styled(shapeRendering)
     }
 }

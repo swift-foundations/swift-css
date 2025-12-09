@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func webkitMaskBoxImage(
-        _ webkitMaskBoxImage: W3C_CSS_UI.WebkitMaskBoxImage?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ webkitMaskBoxImage: W3C_CSS_UI.WebkitMaskBoxImage?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.WebkitMaskBoxImage>> {
-        styled(webkitMaskBoxImage, media: media, selector: selector, pseudo: pseudo)
+        styled(webkitMaskBoxImage)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func backgroundColor(
-        _ backgroundColor: W3C_CSS_Backgrounds.BackgroundColor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ backgroundColor: W3C_CSS_Backgrounds.BackgroundColor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BackgroundColor>> {
-        styled(backgroundColor, media: media, selector: selector, pseudo: pseudo)
+        styled(backgroundColor)
     }
 }

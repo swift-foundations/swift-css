@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textJustify(
-        _ textJustify: W3C_CSS_Text.TextJustify?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textJustify: W3C_CSS_Text.TextJustify?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextJustify>> {
-        styled(textJustify, media: media, selector: selector, pseudo: pseudo)
+        styled(textJustify)
     }
 }

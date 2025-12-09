@@ -12,12 +12,9 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func lineHeight(
-        _ lineHeight: W3C_CSS_Text.LineHeight?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ lineHeight: W3C_CSS_Text.LineHeight?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LineHeight>> {
-        styled(lineHeight, media: media, selector: selector, pseudo: pseudo)
+        styled(lineHeight)
     }
 }
 
@@ -25,22 +22,16 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func lineHeight<T: BinaryInteger>(
-        _ lineHeight: T?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ lineHeight: T?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LineHeight>> {
-        styled(lineHeight.map { LineHeight(integerLiteral: Int($0)) }, media: media, selector: selector, pseudo: pseudo)
+        styled(lineHeight.map { LineHeight(integerLiteral: Int($0)) })
     }
 
     @discardableResult
     @_disfavoredOverload
     public func lineHeight<T: BinaryFloatingPoint>(
-        _ lineHeight: T?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ lineHeight: T?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LineHeight>> {
-        styled(lineHeight.map { LineHeight(floatLiteral: Double($0)) }, media: media, selector: selector, pseudo: pseudo)
+        styled(lineHeight.map { LineHeight(floatLiteral: Double($0)) })
     }
 }

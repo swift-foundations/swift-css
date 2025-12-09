@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func letterSpacing(
-        _ letterSpacing: W3C_CSS_Text.LetterSpacing?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ letterSpacing: W3C_CSS_Text.LetterSpacing?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LetterSpacing>> {
-        styled(letterSpacing, media: media, selector: selector, pseudo: pseudo)
+        styled(letterSpacing)
     }
 }

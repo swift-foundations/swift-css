@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func placeItems(
-        _ placeItems: W3C_CSS_Alignment.PlaceItems?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ placeItems: W3C_CSS_Alignment.PlaceItems?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Alignment.PlaceItems>> {
-        styled(placeItems, media: media, selector: selector, pseudo: pseudo)
+        styled(placeItems)
     }
 }

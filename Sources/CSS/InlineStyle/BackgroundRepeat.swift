@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func backgroundRepeat(
-        _ backgroundRepeat: W3C_CSS_Backgrounds.BackgroundRepeat?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ backgroundRepeat: W3C_CSS_Backgrounds.BackgroundRepeat?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BackgroundRepeat>> {
-        styled(backgroundRepeat, media: media, selector: selector, pseudo: pseudo)
+        styled(backgroundRepeat)
     }
 }

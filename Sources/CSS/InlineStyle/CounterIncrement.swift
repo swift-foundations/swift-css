@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func counterIncrement(
-        _ counterIncrement: W3C_CSS_Lists.CounterIncrement?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ counterIncrement: W3C_CSS_Lists.CounterIncrement?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Lists.CounterIncrement>> {
-        styled(counterIncrement, media: media, selector: selector, pseudo: pseudo)
+        styled(counterIncrement)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func scrollTimelineAxis(
-        _ scrollTimelineAxis: W3C_CSS_Scroll.ScrollTimelineAxis?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ scrollTimelineAxis: W3C_CSS_Scroll.ScrollTimelineAxis?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.ScrollTimelineAxis>> {
-        styled(scrollTimelineAxis, media: media, selector: selector, pseudo: pseudo)
+        styled(scrollTimelineAxis)
     }
 }

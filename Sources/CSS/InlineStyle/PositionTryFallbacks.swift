@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func positionTryFallbacks(
-        _ positionTryFallbacks: W3C_CSS_Positioning.PositionTryFallbacks?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ positionTryFallbacks: W3C_CSS_Positioning.PositionTryFallbacks?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.PositionTryFallbacks>> {
-        styled(positionTryFallbacks, media: media, selector: selector, pseudo: pseudo)
+        styled(positionTryFallbacks)
     }
 }

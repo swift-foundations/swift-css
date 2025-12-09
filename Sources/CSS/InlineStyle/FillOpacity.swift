@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fillOpacity(
-        _ fillOpacity: W3C_CSS_Images.FillOpacity?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fillOpacity: W3C_CSS_Images.FillOpacity?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.FillOpacity>> {
-        styled(fillOpacity, media: media, selector: selector, pseudo: pseudo)
+        styled(fillOpacity)
     }
 }

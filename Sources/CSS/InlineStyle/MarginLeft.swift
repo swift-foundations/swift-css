@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func marginLeft(
-        _ marginLeft: W3C_CSS_BoxModel.MarginLeft?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ marginLeft: W3C_CSS_BoxModel.MarginLeft?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_BoxModel.MarginLeft>> {
-        styled(marginLeft, media: media, selector: selector, pseudo: pseudo)
+        styled(marginLeft)
     }
 }

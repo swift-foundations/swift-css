@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func wordSpacing(
-        _ wordSpacing: W3C_CSS_Text.WordSpacing?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ wordSpacing: W3C_CSS_Text.WordSpacing?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.WordSpacing>> {
-        styled(wordSpacing, media: media, selector: selector, pseudo: pseudo)
+        styled(wordSpacing)
     }
 }

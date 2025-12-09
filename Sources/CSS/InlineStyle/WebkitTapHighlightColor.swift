@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func webkitTapHighlightColor(
-        _ webkitTapHighlightColor: W3C_CSS_UI.WebkitTapHighlightColor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ webkitTapHighlightColor: W3C_CSS_UI.WebkitTapHighlightColor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.WebkitTapHighlightColor>> {
-        styled(webkitTapHighlightColor, media: media, selector: selector, pseudo: pseudo)
+        styled(webkitTapHighlightColor)
     }
 }

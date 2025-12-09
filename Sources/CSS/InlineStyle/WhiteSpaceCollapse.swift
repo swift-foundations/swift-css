@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func whiteSpaceCollapse(
-        _ whiteSpaceCollapse: W3C_CSS_Text.WhiteSpaceCollapse?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ whiteSpaceCollapse: W3C_CSS_Text.WhiteSpaceCollapse?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.WhiteSpaceCollapse>> {
-        styled(whiteSpaceCollapse, media: media, selector: selector, pseudo: pseudo)
+        styled(whiteSpaceCollapse)
     }
 }

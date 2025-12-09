@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textWrapMode(
-        _ textWrapMode: W3C_CSS_Text.TextWrapMode?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textWrapMode: W3C_CSS_Text.TextWrapMode?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextWrapMode>> {
-        styled(textWrapMode, media: media, selector: selector, pseudo: pseudo)
+        styled(textWrapMode)
     }
 }

@@ -18,7 +18,7 @@
 //    "AnimationDirection Tests",
 // )
 // struct AnimationDirectionTests {
-//    @Test("HTML element renders with animation-direction normal properly")
+//    @Test
 //    func htmlElementWithAnimationDirectionNormalRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -44,7 +44,7 @@
 //        }
 //    }
 //
-//    @Test("HTML element renders with animation-direction reverse value")
+//    @Test
 //    func htmlElementWithAnimationDirectionReverseRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -70,7 +70,7 @@
 //        }
 //    }
 //
-//    @Test("HTML element renders with animation-direction alternate value")
+//    @Test
 //    func htmlElementWithAnimationDirectionAlternateRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -96,7 +96,7 @@
 //        }
 //    }
 //
-//    @Test("HTML element renders with animation-direction alternate-reverse value")
+//    @Test
 //    func htmlElementWithAnimationDirectionAlternateReverseRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -122,7 +122,7 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-direction with global value renders properly")
+//    @Test
 //    func htmlAnimationDirectionWithGlobalValueRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -148,11 +148,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-direction with media query renders properly")
+//    @Test
 //    func htmlAnimationDirectionWithMediaQueryRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationDirection(.alternate, media: .print)
+//                div.css.print { $0.animationDirection(.alternate) }
 //            },
 //            as: .html
 //        ) {
@@ -176,11 +176,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-direction with pseudo-class renders properly")
+//    @Test
 //    func htmlAnimationDirectionWithPseudoClassRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationDirection(.reverse, pseudo: .hover)
+//                div.css.hover { $0.animationDirection(.reverse) }
 //            },
 //            as: .html
 //        ) {
@@ -202,11 +202,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-direction with prefix renders properly")
+//    @Test
 //    func htmlAnimationDirectionWithPrefixRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationDirection(.normal, selector: "my-component")
+//                div.css.selector("my-component") { $0.animationDirection(.normal) }
 //            },
 //            as: .html
 //        ) {

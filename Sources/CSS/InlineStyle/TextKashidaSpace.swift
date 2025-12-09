@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textKashidaSpace(
-        _ textKashidaSpace: W3C_CSS_Text.TextKashidaSpace?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textKashidaSpace: W3C_CSS_Text.TextKashidaSpace?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextKashidaSpace>> {
-        styled(textKashidaSpace, media: media, selector: selector, pseudo: pseudo)
+        styled(textKashidaSpace)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func captionSide(
-        _ captionSide: W3C_CSS_UI.CaptionSide?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ captionSide: W3C_CSS_UI.CaptionSide?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.CaptionSide>> {
-        styled(captionSide, media: media, selector: selector, pseudo: pseudo)
+        styled(captionSide)
     }
 }

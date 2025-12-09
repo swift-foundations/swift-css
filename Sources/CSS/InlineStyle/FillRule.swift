@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fillRule(
-        _ fillRule: W3C_CSS_Images.FillRule?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fillRule: W3C_CSS_Images.FillRule?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.FillRule>> {
-        styled(fillRule, media: media, selector: selector, pseudo: pseudo)
+        styled(fillRule)
     }
 }

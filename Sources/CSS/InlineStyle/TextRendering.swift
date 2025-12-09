@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textRendering(
-        _ textRendering: W3C_CSS_Text.TextRendering?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textRendering: W3C_CSS_Text.TextRendering?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextRendering>> {
-        styled(textRendering, media: media, selector: selector, pseudo: pseudo)
+        styled(textRendering)
     }
 }

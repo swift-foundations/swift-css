@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textAnchor(
-        _ textAnchor: W3C_CSS_Text.TextAnchor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textAnchor: W3C_CSS_Text.TextAnchor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextAnchor>> {
-        styled(textAnchor, media: media, selector: selector, pseudo: pseudo)
+        styled(textAnchor)
     }
 }

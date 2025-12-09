@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "BackdropFilter Tests",
-    )
-    struct BackdropFilterTests {
-        @Test("HTML element renders with backdrop-filter blur properly")
-        func htmlElementWithBackdropFilterBlurRendersCorrectly() throws {
+    @Suite
+    struct `BackdropFilter Tests` {
+        @Test
+        func `HTML element renders with backdrop-filter blur properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backdropFilter(.blur(.px(5)))
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with backdrop-filter brightness properly")
-        func htmlElementWithBackdropFilterBrightnessRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with backdrop-filter brightness properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backdropFilter(.brightness(1.5))
@@ -67,7 +65,7 @@ extension `Snapshot Tests` {
             }
         }
         
-        //    @Test("HTML element renders with multiple backdrop-filters properly")
+        //    @Test
         //    func htmlElementWithMultipleBackdropFiltersRendersCorrectly() throws {
         //        assertInlineSnapshot(
         //            of: HTML.Document {
@@ -93,8 +91,8 @@ extension `Snapshot Tests` {
         //        }
         //    }
         
-        @Test("HTML backdrop-filter with none value renders properly")
-        func htmlBackdropFilterWithNoneValueRendersCorrectly() throws {
+        @Test
+        func `HTML backdrop-filter with none value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backdropFilter(BackdropFilter.none)
@@ -118,8 +116,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML backdrop-filter with global value renders properly")
-        func htmlBackdropFilterWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML backdrop-filter with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backdropFilter(.inherit)
@@ -143,11 +141,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML backdrop-filter with media query renders properly")
-        func htmlBackdropFilterWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML backdrop-filter with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backdropFilter(.blur(.px(5)), media: .print)
+                    div.css.print { $0.backdropFilter(.blur(.px(5))) }
                 },
                 as: .html
             ) {
@@ -169,12 +167,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML backdrop-filter with pseudo-class renders properly")
-        func htmlBackdropFilterWithPseudoClassRendersCorrectly() throws {
+
+        @Test
+        func `HTML backdrop-filter with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backdropFilter(.blur(.px(5)), pseudo: .hover)
+                    div.css.hover { $0.backdropFilter(.blur(.px(5))) }
                 },
                 as: .html
             ) {
@@ -194,12 +192,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML backdrop-filter with prefix renders properly")
-        func htmlBackdropFilterWithPrefixRendersCorrectly() throws {
+
+        @Test
+        func `HTML backdrop-filter with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backdropFilter(.blur(.px(5)), selector: "my-component")
+                    div.css.selector("my-component") { $0.backdropFilter(.blur(.px(5))) }
                 },
                 as: .html
             ) {

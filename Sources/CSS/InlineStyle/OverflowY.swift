@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func overflowY(
-        _ overflowY: W3C_CSS_BoxModel.OverflowY?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ overflowY: W3C_CSS_BoxModel.OverflowY?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_BoxModel.OverflowY>> {
-        styled(overflowY, media: media, selector: selector, pseudo: pseudo)
+        styled(overflowY)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func translate(
-        _ translate: W3C_CSS_Transforms.Translate?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ translate: W3C_CSS_Transforms.Translate?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Transforms.Translate>> {
-        styled(translate, media: media, selector: selector, pseudo: pseudo)
+        styled(translate)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func offsetPosition(
-        _ offsetPosition: W3C_CSS_Animations.OffsetPosition?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ offsetPosition: W3C_CSS_Animations.OffsetPosition?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Animations.OffsetPosition>> {
-        styled(offsetPosition, media: media, selector: selector, pseudo: pseudo)
+        styled(offsetPosition)
     }
 }

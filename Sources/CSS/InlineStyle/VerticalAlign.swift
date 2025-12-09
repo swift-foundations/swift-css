@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func verticalAlign(
-        _ verticalAlign: W3C_CSS_Alignment.VerticalAlign?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ verticalAlign: W3C_CSS_Alignment.VerticalAlign?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Alignment.VerticalAlign>> {
-        styled(verticalAlign, media: media, selector: selector, pseudo: pseudo)
+        styled(verticalAlign)
     }
 }

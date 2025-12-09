@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textUnderlineOffset(
-        _ textUnderlineOffset: W3C_CSS_Text.TextUnderlineOffset?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textUnderlineOffset: W3C_CSS_Text.TextUnderlineOffset?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextUnderlineOffset>> {
-        styled(textUnderlineOffset, media: media, selector: selector, pseudo: pseudo)
+        styled(textUnderlineOffset)
     }
 }

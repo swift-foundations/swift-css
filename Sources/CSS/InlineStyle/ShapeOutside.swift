@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func shapeOutside(
-        _ shapeOutside: W3C_CSS_Masking.ShapeOutside?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ shapeOutside: W3C_CSS_Masking.ShapeOutside?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Masking.ShapeOutside>> {
-        styled(shapeOutside, media: media, selector: selector, pseudo: pseudo)
+        styled(shapeOutside)
     }
 }

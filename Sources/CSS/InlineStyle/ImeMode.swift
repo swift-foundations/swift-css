@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func imeMode(
-        _ imeMode: W3C_CSS_UI.ImeMode?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ imeMode: W3C_CSS_UI.ImeMode?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.ImeMode>> {
-        styled(imeMode, media: media, selector: selector, pseudo: pseudo)
+        styled(imeMode)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textEmphasis(
-        _ textEmphasis: W3C_CSS_Text.TextEmphasis?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textEmphasis: W3C_CSS_Text.TextEmphasis?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextEmphasis>> {
-        styled(textEmphasis, media: media, selector: selector, pseudo: pseudo)
+        styled(textEmphasis)
     }
 }

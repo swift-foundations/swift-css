@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "Appearance Tests"
-    )
-    struct AppearanceTests {
-        @Test("HTML element renders with appearance properly")
-        func htmlElementWithAppearanceRendersCorrectly() throws {
+    @Suite
+    struct `Appearance Tests` {
+        @Test
+        func `HTML element renders with appearance properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.appearance(Appearance.none)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with different appearance value properly")
-        func htmlElementWithDifferentAppearanceRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with different appearance value properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.appearance(.auto)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML appearance with global value renders properly")
-        func htmlAppearanceWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML appearance with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.appearance(.inherit)
@@ -92,11 +90,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML appearance with media query renders properly")
-        func htmlAppearanceWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML appearance with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.appearance(Appearance.none, media: .print)
+                    div.css.print { $0.appearance(Appearance.none) }
                 },
                 as: .html
             ) {
@@ -118,12 +116,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML appearance with pseudo-class renders properly")
-        func htmlAppearanceWithPseudoClassRendersCorrectly() throws {
+
+        @Test
+        func `HTML appearance with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.appearance(Appearance.none, pseudo: .hover)
+                    div.css.hover { $0.appearance(Appearance.none) }
                 },
                 as: .html
             ) {
@@ -143,12 +141,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML appearance with prefix renders properly")
-        func htmlAppearanceWithPrefixRendersCorrectly() throws {
+
+        @Test
+        func `HTML appearance with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.appearance(Appearance.none, selector: "my-component")
+                    div.css.selector("my-component") { $0.appearance(Appearance.none) }
                 },
                 as: .html
             ) {

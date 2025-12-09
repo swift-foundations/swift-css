@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func perspective(
-        _ perspective: W3C_CSS_Transforms.Perspective?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ perspective: W3C_CSS_Transforms.Perspective?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Transforms.Perspective>> {
-        styled(perspective, media: media, selector: selector, pseudo: pseudo)
+        styled(perspective)
     }
 }

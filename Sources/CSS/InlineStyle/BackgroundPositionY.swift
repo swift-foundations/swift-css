@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func backgroundPositionY(
-        _ backgroundPositionY: W3C_CSS_Backgrounds.BackgroundPositionY?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ backgroundPositionY: W3C_CSS_Backgrounds.BackgroundPositionY?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BackgroundPositionY>> {
-        styled(backgroundPositionY, media: media, selector: selector, pseudo: pseudo)
+        styled(backgroundPositionY)
     }
 }

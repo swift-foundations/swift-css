@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func strokeLinejoin(
-        _ strokeLinejoin: W3C_CSS_Images.StrokeLinejoin?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ strokeLinejoin: W3C_CSS_Images.StrokeLinejoin?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.StrokeLinejoin>> {
-        styled(strokeLinejoin, media: media, selector: selector, pseudo: pseudo)
+        styled(strokeLinejoin)
     }
 }

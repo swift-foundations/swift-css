@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func scrollbarGutter(
-        _ scrollbarGutter: W3C_CSS_Scroll.ScrollbarGutter?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ scrollbarGutter: W3C_CSS_Scroll.ScrollbarGutter?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.ScrollbarGutter>> {
-        styled(scrollbarGutter, media: media, selector: selector, pseudo: pseudo)
+        styled(scrollbarGutter)
     }
 }

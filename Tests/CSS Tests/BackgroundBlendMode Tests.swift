@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "BackgroundBlendMode Tests",
-    )
-    struct BackgroundBlendModeTests {
-        @Test("HTML element renders with background-blend-mode normal properly")
-        func htmlElementWithBackgroundBlendModeNormalRendersCorrectly() throws {
+    @Suite
+    struct `BackgroundBlendMode Tests` {
+        @Test
+        func `HTML element renders with background-blend-mode normal properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundBlendMode(.normal)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-blend-mode multiply properly")
-        func htmlElementWithBackgroundBlendModeMultiplyRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-blend-mode multiply properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundBlendMode(.multiply)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-blend-mode screen properly")
-        func htmlElementWithBackgroundBlendModeScreenRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-blend-mode screen properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundBlendMode(.screen)
@@ -92,8 +90,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-blend-mode overlay properly")
-        func htmlElementWithBackgroundBlendModeOverlayRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-blend-mode overlay properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundBlendMode(.overlay)
@@ -117,8 +115,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-blend-mode with global value renders properly")
-        func htmlBackgroundBlendModeWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML background-blend-mode with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundBlendMode(.inherit)
@@ -142,11 +140,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-blend-mode with media query renders properly")
-        func htmlBackgroundBlendModeWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML background-blend-mode with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundBlendMode(.multiply, media: .print)
+                    div.css.print { $0.backgroundBlendMode(.multiply) }
                 },
                 as: .html
             ) {
@@ -169,11 +167,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-blend-mode with pseudo-class renders properly")
-        func htmlBackgroundBlendModeWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML background-blend-mode with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundBlendMode(.multiply, pseudo: .hover)
+                    div.css.hover { $0.backgroundBlendMode(.multiply) }
                 },
                 as: .html
             ) {
@@ -194,11 +192,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-blend-mode with prefix renders properly")
-        func htmlBackgroundBlendModeWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML background-blend-mode with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundBlendMode(.multiply, selector: "my-component")
+                    div.css.selector("my-component") { $0.backgroundBlendMode(.multiply) }
                 },
                 as: .html
             ) {

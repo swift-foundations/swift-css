@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func maskBorderOutset(
-        _ maskBorderOutset: W3C_CSS_Masking.MaskBorderOutset?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ maskBorderOutset: W3C_CSS_Masking.MaskBorderOutset?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Masking.MaskBorderOutset>> {
-        styled(maskBorderOutset, media: media, selector: selector, pseudo: pseudo)
+        styled(maskBorderOutset)
     }
 }

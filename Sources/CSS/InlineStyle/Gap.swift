@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func gap(
-        _ gap: W3C_CSS_Flexbox.Gap?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ gap: W3C_CSS_Flexbox.Gap?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Flexbox.Gap>> {
-        styled(gap, media: media, selector: selector, pseudo: pseudo)
+        styled(gap)
     }
 }

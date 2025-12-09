@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textAlignLast(
-        _ textAlignLast: W3C_CSS_Text.TextAlignLast?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textAlignLast: W3C_CSS_Text.TextAlignLast?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextAlignLast>> {
-        styled(textAlignLast, media: media, selector: selector, pseudo: pseudo)
+        styled(textAlignLast)
     }
 }

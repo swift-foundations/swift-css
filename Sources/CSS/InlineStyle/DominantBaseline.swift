@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func dominantBaseline(
-        _ dominantBaseline: W3C_CSS_Images.DominantBaseline?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ dominantBaseline: W3C_CSS_Images.DominantBaseline?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.DominantBaseline>> {
-        styled(dominantBaseline, media: media, selector: selector, pseudo: pseudo)
+        styled(dominantBaseline)
     }
 }

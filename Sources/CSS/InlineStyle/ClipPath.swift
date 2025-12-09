@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func clipPath(
-        _ clipPath: W3C_CSS_Masking.ClipPath?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ clipPath: W3C_CSS_Masking.ClipPath?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Masking.ClipPath>> {
-        styled(clipPath, media: media, selector: selector, pseudo: pseudo)
+        styled(clipPath)
     }
 }

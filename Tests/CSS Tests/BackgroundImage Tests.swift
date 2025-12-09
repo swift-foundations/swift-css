@@ -13,15 +13,13 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "BackgroundImage Tests",
-    )
-    struct BackgroundImageTests {
-        @Test("HTML element renders with background-image url properly")
-        func htmlElementWithBackgroundImageUrlRendersCorrectly() throws {
+    @Suite
+    struct `BackgroundImage Tests` {
+        @Test
+        func `HTML element renders with background-image url properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundImage(.url("image.jpg"))
+                    div.css.backgroundImage(.url(.init("https://example.com/image.png")))
                 },
                 as: .html
             ) {
@@ -30,7 +28,7 @@ extension `Snapshot Tests` {
                 <html>
                   <head>
                     <style>
-                      .background-image-0{background-image:url("image.jpg")}
+                      .background-image-0{background-image:url("https://example.com/image.png")}
                     </style>
                   </head>
                   <body>
@@ -42,7 +40,7 @@ extension `Snapshot Tests` {
             }
         }
         
-        //    @Test("HTML element renders with background-image linear-gradient properly")
+        //    @Test
         //    func htmlElementWithBackgroundImageLinearGradientRendersCorrectly() throws {
         //        assertInlineSnapshot(
         //            of: HTML.Document {
@@ -68,7 +66,7 @@ extension `Snapshot Tests` {
         //        }
         //    }
         //
-        //    @Test("HTML element renders with background-image radial-gradient properly")
+        //    @Test
         //    func htmlElementWithBackgroundImageRadialGradientRendersCorrectly() throws {
         //        assertInlineSnapshot(
         //            of: HTML.Document {
@@ -94,11 +92,11 @@ extension `Snapshot Tests` {
         //        }
         //    }
         //
-        //    @Test("HTML element renders with multiple background-images properly")
+        //    @Test
         //    func htmlElementWithMultipleBackgroundImagesRendersCorrectly() throws {
         //        assertInlineSnapshot(
         //            of: HTML.Document {
-        //                div.css.backgroundImage(.composite([.url("image1.jpg"), .url("image2.jpg")]))
+        //                div.css.backgroundImage(.composite([.url, .url]))
         //            },
         //            as: .html
         //        ) {
@@ -107,7 +105,7 @@ extension `Snapshot Tests` {
         //            <html>
         //              <head>
         //                <style>
-        //            .background-image-PsRHs1{background-image:url("image1.jpg"), url("image2.jpg")}
+        //            .background-image-PsRHs1{background-image:url, url}
         //
         //                </style>
         //              </head>
@@ -120,8 +118,8 @@ extension `Snapshot Tests` {
         //        }
         //    }
         
-        @Test("HTML background-image with none value renders properly")
-        func htmlBackgroundImageWithNoneValueRendersCorrectly() throws {
+        @Test
+        func `HTML background-image with none value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundImage(BackgroundImage.none)
@@ -145,8 +143,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-image with global value renders properly")
-        func htmlBackgroundImageWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML background-image with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundImage(.inherit)
@@ -170,11 +168,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-image with media query renders properly")
-        func htmlBackgroundImageWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML background-image with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundImage(.url("image.jpg"), media: .print)
+                    div.css.print { $0.backgroundImage(.url(.init("https://example.com/image.png"))) }
                 },
                 as: .html
             ) {
@@ -184,7 +182,7 @@ extension `Snapshot Tests` {
                   <head>
                     <style>
                       @media print{
-                        .background-image-0{background-image:url("image.jpg")}
+                        .background-image-0{background-image:url("https://example.com/image.png")}
                       }
                     </style>
                   </head>
@@ -196,12 +194,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML background-image with pseudo-class renders properly")
-        func htmlBackgroundImageWithPseudoClassRendersCorrectly() throws {
+
+        @Test
+        func `HTML background-image with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundImage(.url("image.jpg"), pseudo: .hover)
+                    div.css.hover { $0.backgroundImage(.url(.init("https://example.com/image.png"))) }
                 },
                 as: .html
             ) {
@@ -210,7 +208,7 @@ extension `Snapshot Tests` {
                 <html>
                   <head>
                     <style>
-                      .background-image-0:hover{background-image:url("image.jpg")}
+                      .background-image-0:hover{background-image:url("https://example.com/image.png")}
                     </style>
                   </head>
                   <body>
@@ -221,12 +219,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML background-image with prefix renders properly")
-        func htmlBackgroundImageWithPrefixRendersCorrectly() throws {
+
+        @Test
+        func `HTML background-image with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundImage(.url("image.jpg"), selector: "my-component")
+                    div.css.selector("my-component") { $0.backgroundImage(.url(.init("https://example.com/image.png"))) }
                 },
                 as: .html
             ) {
@@ -235,7 +233,7 @@ extension `Snapshot Tests` {
                 <html>
                   <head>
                     <style>
-                      my-component .background-image-0{background-image:url("image.jpg")}
+                      my-component .background-image-0{background-image:url("https://example.com/image.png")}
                     </style>
                   </head>
                   <body>

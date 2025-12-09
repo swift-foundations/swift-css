@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fontVariantEmoji(
-        _ fontVariantEmoji: W3C_CSS_Fonts.FontVariantEmoji?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fontVariantEmoji: W3C_CSS_Fonts.FontVariantEmoji?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.FontVariantEmoji>> {
-        styled(fontVariantEmoji, media: media, selector: selector, pseudo: pseudo)
+        styled(fontVariantEmoji)
     }
 }

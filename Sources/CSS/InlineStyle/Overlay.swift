@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func overlay(
-        _ overlay: W3C_CSS_Positioning.Overlay?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ overlay: W3C_CSS_Positioning.Overlay?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.Overlay>> {
-        styled(overlay, media: media, selector: selector, pseudo: pseudo)
+        styled(overlay)
     }
 }

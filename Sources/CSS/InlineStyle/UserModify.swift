@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func userModify(
-        _ userModify: W3C_CSS_UI.UserModify?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ userModify: W3C_CSS_UI.UserModify?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.UserModify>> {
-        styled(userModify, media: media, selector: selector, pseudo: pseudo)
+        styled(userModify)
     }
 }

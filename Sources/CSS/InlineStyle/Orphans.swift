@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func orphans(
-        _ orphans: W3C_CSS_Paged.Orphans?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ orphans: W3C_CSS_Paged.Orphans?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Paged.Orphans>> {
-        styled(orphans, media: media, selector: selector, pseudo: pseudo)
+        styled(orphans)
     }
 }

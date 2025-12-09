@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func borderCollapse(
-        _ borderCollapse: W3C_CSS_Backgrounds.BorderCollapse?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ borderCollapse: W3C_CSS_Backgrounds.BorderCollapse?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BorderCollapse>> {
-        styled(borderCollapse, media: media, selector: selector, pseudo: pseudo)
+        styled(borderCollapse)
     }
 }

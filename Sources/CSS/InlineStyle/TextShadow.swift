@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textShadow(
-        _ textShadow: W3C_CSS_Text.TextShadow?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textShadow: W3C_CSS_Text.TextShadow?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextShadow>> {
-        styled(textShadow, media: media, selector: selector, pseudo: pseudo)
+        styled(textShadow)
     }
 }

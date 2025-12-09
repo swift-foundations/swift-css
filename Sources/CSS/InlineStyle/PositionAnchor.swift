@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func positionAnchor(
-        _ positionAnchor: W3C_CSS_Positioning.PositionAnchor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ positionAnchor: W3C_CSS_Positioning.PositionAnchor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.PositionAnchor>> {
-        styled(positionAnchor, media: media, selector: selector, pseudo: pseudo)
+        styled(positionAnchor)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func ry(
-        _ ry: W3C_CSS_Images.Ry?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ ry: W3C_CSS_Images.Ry?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.Ry>> {
-        styled(ry, media: media, selector: selector, pseudo: pseudo)
+        styled(ry)
     }
 }

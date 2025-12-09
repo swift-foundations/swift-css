@@ -7,18 +7,15 @@
 
 import CSS
 import CSS_Standard
-import CSS_Standard
 import HTML_Renderable
 import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "Color Tests",
-    )
-    struct ColorTests {
-        @Test("HTML element renders with named color properly")
-        func htmlElementWithNamedColorRendersCorrectly() throws {
+    @Suite
+    struct `Color Tests` {
+        @Test
+        func `HTML element renders with named color properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div
@@ -42,24 +39,21 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML color method with pseudo-class parameter")
-        func htmlColorMethodWithPseudoClassParameter() throws {
-            
+
+        @Test
+        func `HTML color method with pseudo-class parameter`() throws {
             let test = HTML.Document {
                 div
-                    .css.color(.hex("FF0000"), pseudo: .hover)
-                
+                    .css.hover { $0.color(.hex("FF0000")) }
             }
-            
-            let html = String(bytes: test.render(), encoding: .utf8)!
+
+            let html = try String(test)
             #expect(html.contains(":hover"))
             #expect(html.contains("color:#FF0000"))
-            
         }
-        
-        @Test("HTML color with Color renders properly")
-        func htmlColorMethodWithColorWorks() throws {
+
+        @Test
+        func `HTML color with Color renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div
@@ -83,6 +77,38 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
+        @Test
+        func `HTML color with chained dark mode renders properly`() throws {
+            assertInlineSnapshot(
+                of: HTML.Document {
+                    div
+                        .css
+                        .color(.red).dark(.blue)
+                        .backgroundColor(.blue).dark(.red)
+                },
+                as: .html
+            ) {
+                """
+                <!doctype html>
+                <html>
+                  <head>
+                    <style>
+                      .background-color-1{background-color:blue}
+                      .color-3{color:red}
+                      @media (prefers-color-scheme: dark){
+                        .background-color-0{background-color:red}
+                        .color-2{color:blue}
+                      }
+                    </style>
+                  </head>
+                  <body>
+                    <div class="background-color-0 background-color-1 color-2 color-3">
+                    </div>
+                  </body>
+                </html>
+                """
+            }
+        }
     }
 }

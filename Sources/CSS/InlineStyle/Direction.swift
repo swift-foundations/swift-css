@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func direction(
-        _ direction: W3C_CSS_WritingModes.Direction?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ direction: W3C_CSS_WritingModes.Direction?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_WritingModes.Direction>> {
-        styled(direction, media: media, selector: selector, pseudo: pseudo)
+        styled(direction)
     }
 }

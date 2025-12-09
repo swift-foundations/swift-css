@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textCombineUpright(
-        _ textCombineUpright: W3C_CSS_Text.TextCombineUpright?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textCombineUpright: W3C_CSS_Text.TextCombineUpright?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextCombineUpright>> {
-        styled(textCombineUpright, media: media, selector: selector, pseudo: pseudo)
+        styled(textCombineUpright)
     }
 }

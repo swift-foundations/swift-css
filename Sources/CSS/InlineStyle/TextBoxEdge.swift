@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textBoxEdge(
-        _ textBoxEdge: W3C_CSS_Text.TextBoxEdge?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textBoxEdge: W3C_CSS_Text.TextBoxEdge?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextBoxEdge>> {
-        styled(textBoxEdge, media: media, selector: selector, pseudo: pseudo)
+        styled(textBoxEdge)
     }
 }

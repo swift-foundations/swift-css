@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func strokeLinecap(
-        _ strokeLinecap: W3C_CSS_Images.StrokeLinecap?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ strokeLinecap: W3C_CSS_Images.StrokeLinecap?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.StrokeLinecap>> {
-        styled(strokeLinecap, media: media, selector: selector, pseudo: pseudo)
+        styled(strokeLinecap)
     }
 }

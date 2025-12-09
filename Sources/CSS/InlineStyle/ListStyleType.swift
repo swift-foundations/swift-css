@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func listStyleType(
-        _ listStyleType: W3C_CSS_Lists.ListStyleType?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ listStyleType: W3C_CSS_Lists.ListStyleType?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Lists.ListStyleType>> {
-        styled(listStyleType, media: media, selector: selector, pseudo: pseudo)
+        styled(listStyleType)
     }
 }

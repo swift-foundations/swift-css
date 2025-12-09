@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func pointerEvents(
-        _ pointerEvents: W3C_CSS_UI.PointerEvents?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ pointerEvents: W3C_CSS_UI.PointerEvents?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.PointerEvents>> {
-        styled(pointerEvents, media: media, selector: selector, pseudo: pseudo)
+        styled(pointerEvents)
     }
 }

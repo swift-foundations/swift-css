@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func webkitTouchCallout(
-        _ webkitTouchCallout: W3C_CSS_UI.WebkitTouchCallout?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ webkitTouchCallout: W3C_CSS_UI.WebkitTouchCallout?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.WebkitTouchCallout>> {
-        styled(webkitTouchCallout, media: media, selector: selector, pseudo: pseudo)
+        styled(webkitTouchCallout)
     }
 }

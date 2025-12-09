@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func mozForceBrokenImageIcon(
-        _ mozForceBrokenImageIcon: W3C_CSS_UI.MozForceBrokenImageIcon?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ mozForceBrokenImageIcon: W3C_CSS_UI.MozForceBrokenImageIcon?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.MozForceBrokenImageIcon>> {
-        styled(mozForceBrokenImageIcon, media: media, selector: selector, pseudo: pseudo)
+        styled(mozForceBrokenImageIcon)
     }
 }

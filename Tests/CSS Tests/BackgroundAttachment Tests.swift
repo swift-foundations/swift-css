@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "BackgroundAttachment Tests",
-    )
-    struct BackgroundAttachmentTests {
-        @Test("HTML element renders with background-attachment fixed properly")
-        func htmlElementWithBackgroundAttachmentFixedRendersCorrectly() throws {
+    @Suite
+    struct `BackgroundAttachment Tests` {
+        @Test
+        func `HTML element renders with background-attachment fixed properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundAttachment(.fixed)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-attachment scroll properly")
-        func htmlElementWithBackgroundAttachmentScrollRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-attachment scroll properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundAttachment(.scroll)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-attachment local properly")
-        func htmlElementWithBackgroundAttachmentLocalRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-attachment local properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundAttachment(.local)
@@ -92,8 +90,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-attachment with global value renders properly")
-        func htmlBackgroundAttachmentWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML background-attachment with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundAttachment(.inherit)
@@ -117,11 +115,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-attachment with media query renders properly")
-        func htmlBackgroundAttachmentWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML background-attachment with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundAttachment(.fixed, media: .print)
+                    div.css.print { $0.backgroundAttachment(.fixed) }
                 },
                 as: .html
             ) {
@@ -144,11 +142,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-attachment with pseudo-class renders properly")
-        func htmlBackgroundAttachmentWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML background-attachment with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundAttachment(.fixed, pseudo: .hover)
+                    div.css.hover { $0.backgroundAttachment(.fixed) }
                 },
                 as: .html
             ) {
@@ -169,11 +167,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-attachment with prefix renders properly")
-        func htmlBackgroundAttachmentWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML background-attachment with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundAttachment(.fixed, selector: "my-component")
+                    div.css.selector("my-component") { $0.backgroundAttachment(.fixed) }
                 },
                 as: .html
             ) {

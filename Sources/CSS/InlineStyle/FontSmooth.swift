@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fontSmooth(
-        _ fontSmooth: W3C_CSS_Fonts.FontSmooth?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fontSmooth: W3C_CSS_Fonts.FontSmooth?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.FontSmooth>> {
-        styled(fontSmooth, media: media, selector: selector, pseudo: pseudo)
+        styled(fontSmooth)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textAlign(
-        _ textAlign: W3C_CSS_Text.TextAlign?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textAlign: W3C_CSS_Text.TextAlign?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextAlign>> {
-        styled(textAlign, media: media, selector: selector, pseudo: pseudo)
+        styled(textAlign)
     }
 }

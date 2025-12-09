@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func maxBlockSize(
-        _ maxBlockSize: W3C_CSS_Logical.MaxBlockSize?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ maxBlockSize: W3C_CSS_Logical.MaxBlockSize?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Logical.MaxBlockSize>> {
-        styled(maxBlockSize, media: media, selector: selector, pseudo: pseudo)
+        styled(maxBlockSize)
     }
 }

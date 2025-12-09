@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "AlignSelf Tests",
-    )
-    struct AlignSelfTests {
-        @Test("HTML element renders with align-self properly")
-        func htmlElementWithAlignSelfRendersCorrectly() throws {
+    @Suite
+    struct `AlignSelf Tests` {
+        @Test
+        func `HTML element renders with align-self properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignSelf(.center)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with align-self auto value")
-        func htmlElementWithAlignSelfAutoRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with align-self auto value`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignSelf(.auto)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-self with global value renders properly")
-        func htmlAlignSelfWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML align-self with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignSelf(.inherit)
@@ -92,11 +90,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-self with media query renders properly")
-        func htmlAlignSelfWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML align-self with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignSelf(.center, media: .print)
+                    div.css.print { $0.alignSelf(.center) }
                 },
                 as: .html
             ) {
@@ -119,11 +117,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-self with pseudo-class renders properly")
-        func htmlAlignSelfWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML align-self with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignSelf(.baseline, pseudo: .hover)
+                    div.css.hover { $0.alignSelf(.baseline) }
                 },
                 as: .html
             ) {
@@ -144,11 +142,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-self with prefix renders properly")
-        func htmlAlignSelfWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML align-self with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignSelf(.flexEnd, selector: "my-component")
+                    div.css.selector("my-component") { $0.alignSelf(.flexEnd) }
                 },
                 as: .html
             ) {
@@ -169,8 +167,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-self with stretch value renders properly")
-        func htmlAlignSelfWithStretchValueRendersCorrectly() throws {
+        @Test
+        func `HTML align-self with stretch value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignSelf(.stretch)

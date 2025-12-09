@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func flexShrink(
-        _ flexShrink: W3C_CSS_Flexbox.FlexShrink? = 1,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ flexShrink: W3C_CSS_Flexbox.FlexShrink? = 1
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Flexbox.FlexShrink>> {
-        styled(flexShrink, media: media, selector: selector, pseudo: pseudo)
+        styled(flexShrink)
     }
 }

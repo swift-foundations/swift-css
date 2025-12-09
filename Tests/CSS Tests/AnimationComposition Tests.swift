@@ -18,7 +18,7 @@
 //    "AnimationComposition Tests",
 // )
 // struct AnimationCompositionTests {
-//    @Test("HTML element renders with animation-composition replace properly")
+//    @Test
 //    func htmlElementWithAnimationCompositionReplaceRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -44,7 +44,7 @@
 //        }
 //    }
 //
-//    @Test("HTML element renders with animation-composition add value")
+//    @Test
 //    func htmlElementWithAnimationCompositionAddRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -70,7 +70,7 @@
 //        }
 //    }
 //
-//    @Test("HTML element renders with animation-composition accumulate value")
+//    @Test
 //    func htmlElementWithAnimationCompositionAccumulateRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -96,7 +96,7 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-composition with global value renders properly")
+//    @Test
 //    func htmlAnimationCompositionWithGlobalValueRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -122,11 +122,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-composition with media query renders properly")
+//    @Test
 //    func htmlAnimationCompositionWithMediaQueryRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationComposition(.add, media: .print)
+//                div.css.print { $0.animationComposition(.add) }
 //            },
 //            as: .html
 //        ) {
@@ -150,11 +150,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-composition with pseudo-class renders properly")
+//    @Test
 //    func htmlAnimationCompositionWithPseudoClassRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationComposition(.replace, pseudo: .hover)
+//                div.css.hover { $0.animationComposition(.replace) }
 //            },
 //            as: .html
 //        ) {
@@ -176,11 +176,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-composition with prefix renders properly")
+//    @Test
 //    func htmlAnimationCompositionWithPrefixRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationComposition(.accumulate, selector: "my-component")
+//                div.css.selector("my-component") { $0.animationComposition(.accumulate) }
 //            },
 //            as: .html
 //        ) {

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func maxHeight(
-        _ maxHeight: W3C_CSS_BoxModel.MaxHeight?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ maxHeight: W3C_CSS_BoxModel.MaxHeight?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_BoxModel.MaxHeight>> {
-        styled(maxHeight, media: media, selector: selector, pseudo: pseudo)
+        styled(maxHeight)
     }
 }

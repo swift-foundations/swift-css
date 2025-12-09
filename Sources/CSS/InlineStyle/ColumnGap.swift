@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func columnGap(
-        _ columnGap: W3C_CSS_Multicolumn.ColumnGap?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ columnGap: W3C_CSS_Multicolumn.ColumnGap?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Multicolumn.ColumnGap>> {
-        styled(columnGap, media: media, selector: selector, pseudo: pseudo)
+        styled(columnGap)
     }
 }

@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "BackgroundClip Tests",
-    )
-    struct BackgroundClipTests {
-        @Test("HTML element renders with background-clip border-box properly")
-        func htmlElementWithBackgroundClipBorderBoxRendersCorrectly() throws {
+    @Suite
+    struct `BackgroundClip Tests` {
+        @Test
+        func `HTML element renders with background-clip border-box properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundClip(.borderBox)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-clip padding-box properly")
-        func htmlElementWithBackgroundClipPaddingBoxRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-clip padding-box properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundClip(.paddingBox)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-clip content-box properly")
-        func htmlElementWithBackgroundClipContentBoxRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-clip content-box properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundClip(.contentBox)
@@ -92,8 +90,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-clip text properly")
-        func htmlElementWithBackgroundClipTextRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-clip text properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundClip(.text)
@@ -117,8 +115,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-clip with global value renders properly")
-        func htmlBackgroundClipWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML background-clip with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundClip(.inherit)
@@ -142,11 +140,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-clip with media query renders properly")
-        func htmlBackgroundClipWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML background-clip with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundClip(.contentBox, media: .print)
+                    div.css.print { $0.backgroundClip(.contentBox) }
                 },
                 as: .html
             ) {
@@ -169,11 +167,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-clip with pseudo-class renders properly")
-        func htmlBackgroundClipWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML background-clip with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundClip(.contentBox, pseudo: .hover)
+                    div.css.hover { $0.backgroundClip(.contentBox) }
                 },
                 as: .html
             ) {
@@ -194,11 +192,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-clip with prefix renders properly")
-        func htmlBackgroundClipWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML background-clip with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundClip(.contentBox, selector: "my-component")
+                    div.css.selector("my-component") { $0.backgroundClip(.contentBox) }
                 },
                 as: .html
             ) {

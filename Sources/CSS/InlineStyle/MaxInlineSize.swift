@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func maxInlineSize(
-        _ maxInlineSize: W3C_CSS_Logical.MaxInlineSize?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ maxInlineSize: W3C_CSS_Logical.MaxInlineSize?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Logical.MaxInlineSize>> {
-        styled(maxInlineSize, media: media, selector: selector, pseudo: pseudo)
+        styled(maxInlineSize)
     }
 }

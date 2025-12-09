@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func breakAfter(
-        _ breakAfter: W3C_CSS_Multicolumn.BreakAfter?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ breakAfter: W3C_CSS_Multicolumn.BreakAfter?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Multicolumn.BreakAfter>> {
-        styled(breakAfter, media: media, selector: selector, pseudo: pseudo)
+        styled(breakAfter)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func flexFlow(
-        _ flexFlow: W3C_CSS_Flexbox.FlexFlow?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ flexFlow: W3C_CSS_Flexbox.FlexFlow?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Flexbox.FlexFlow>> {
-        styled(flexFlow, media: media, selector: selector, pseudo: pseudo)
+        styled(flexFlow)
     }
 }

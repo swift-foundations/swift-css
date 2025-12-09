@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func contentVisibility(
-        _ contentVisibility: W3C_CSS_Containment.ContentVisibility?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ contentVisibility: W3C_CSS_Containment.ContentVisibility?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Containment.ContentVisibility>> {
-        styled(contentVisibility, media: media, selector: selector, pseudo: pseudo)
+        styled(contentVisibility)
     }
 }

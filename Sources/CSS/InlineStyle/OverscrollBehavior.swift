@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func overscrollBehavior(
-        _ overscrollBehavior: W3C_CSS_Scroll.OverscrollBehavior?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ overscrollBehavior: W3C_CSS_Scroll.OverscrollBehavior?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.OverscrollBehavior>> {
-        styled(overscrollBehavior, media: media, selector: selector, pseudo: pseudo)
+        styled(overscrollBehavior)
     }
 }

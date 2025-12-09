@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func float(
-        _ float: W3C_CSS_Positioning.Float?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ float: W3C_CSS_Positioning.Float?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.Float>> {
-        styled(float, media: media, selector: selector, pseudo: pseudo)
+        styled(float)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func colorInterpolationFilters(
-        _ colorInterpolationFilters: W3C_CSS_Color.ColorInterpolationFilters?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ colorInterpolationFilters: W3C_CSS_Color.ColorInterpolationFilters?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Color.ColorInterpolationFilters>> {
-        styled(colorInterpolationFilters, media: media, selector: selector, pseudo: pseudo)
+        styled(colorInterpolationFilters)
     }
 }

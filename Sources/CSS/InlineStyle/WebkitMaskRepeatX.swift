@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func webkitMaskRepeatX(
-        _ webkitMaskRepeatX: W3C_CSS_UI.WebkitMaskRepeatX?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ webkitMaskRepeatX: W3C_CSS_UI.WebkitMaskRepeatX?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.WebkitMaskRepeatX>> {
-        styled(webkitMaskRepeatX, media: media, selector: selector, pseudo: pseudo)
+        styled(webkitMaskRepeatX)
     }
 }

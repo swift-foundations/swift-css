@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func outline(
-        _ outline: W3C_CSS_UI.Outline?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ outline: W3C_CSS_UI.Outline?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.Outline>> {
-        styled(outline, media: media, selector: selector, pseudo: pseudo)
+        styled(outline)
     }
 }

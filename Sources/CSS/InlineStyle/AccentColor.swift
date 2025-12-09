@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func accentColor(
-        _ accentColor: W3C_CSS_UI.AccentColor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ accentColor: W3C_CSS_UI.AccentColor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.AccentColor>> {
-        styled(accentColor, media: media, selector: selector, pseudo: pseudo)
+        styled(accentColor)
     }
 }

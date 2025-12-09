@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func clear(
-        _ clear: W3C_CSS_Positioning.Clear?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ clear: W3C_CSS_Positioning.Clear?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.Clear>> {
-        styled(clear, media: media, selector: selector, pseudo: pseudo)
+        styled(clear)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textIndent(
-        _ textIndent: W3C_CSS_Text.TextIndent?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textIndent: W3C_CSS_Text.TextIndent?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextIndent>> {
-        styled(textIndent, media: media, selector: selector, pseudo: pseudo)
+        styled(textIndent)
     }
 }

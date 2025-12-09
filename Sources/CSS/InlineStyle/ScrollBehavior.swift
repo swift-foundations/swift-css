@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func scrollBehavior(
-        _ scrollBehavior: W3C_CSS_Scroll.ScrollBehavior?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ scrollBehavior: W3C_CSS_Scroll.ScrollBehavior?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.ScrollBehavior>> {
-        styled(scrollBehavior, media: media, selector: selector, pseudo: pseudo)
+        styled(scrollBehavior)
     }
 }

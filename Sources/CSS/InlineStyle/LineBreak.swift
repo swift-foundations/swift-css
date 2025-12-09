@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func lineBreak(
-        _ lineBreak: W3C_CSS_Text.LineBreak?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ lineBreak: W3C_CSS_Text.LineBreak?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LineBreak>> {
-        styled(lineBreak, media: media, selector: selector, pseudo: pseudo)
+        styled(lineBreak)
     }
 }

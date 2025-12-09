@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func shapeMargin(
-        _ shapeMargin: W3C_CSS_Masking.ShapeMargin?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ shapeMargin: W3C_CSS_Masking.ShapeMargin?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Masking.ShapeMargin>> {
-        styled(shapeMargin, media: media, selector: selector, pseudo: pseudo)
+        styled(shapeMargin)
     }
 }

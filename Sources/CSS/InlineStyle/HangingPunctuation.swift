@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func hangingPunctuation(
-        _ hangingPunctuation: W3C_CSS_Text.HangingPunctuation?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ hangingPunctuation: W3C_CSS_Text.HangingPunctuation?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.HangingPunctuation>> {
-        styled(hangingPunctuation, media: media, selector: selector, pseudo: pseudo)
+        styled(hangingPunctuation)
     }
 }

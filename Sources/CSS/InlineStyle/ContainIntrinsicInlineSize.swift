@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func containIntrinsicInlineSize(
-        _ containIntrinsicInlineSize: W3C_CSS_Containment.ContainIntrinsicInlineSize?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ containIntrinsicInlineSize: W3C_CSS_Containment.ContainIntrinsicInlineSize?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Containment.ContainIntrinsicInlineSize>> {
-        styled(containIntrinsicInlineSize, media: media, selector: selector, pseudo: pseudo)
+        styled(containIntrinsicInlineSize)
     }
 }

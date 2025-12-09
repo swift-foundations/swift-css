@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func gridTemplateColumns(
-        _ gridTemplateColumns: W3C_CSS_Grid.GridTemplateColumns?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ gridTemplateColumns: W3C_CSS_Grid.GridTemplateColumns?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Grid.GridTemplateColumns>> {
-        styled(gridTemplateColumns, media: media, selector: selector, pseudo: pseudo)
+        styled(gridTemplateColumns)
     }
 }

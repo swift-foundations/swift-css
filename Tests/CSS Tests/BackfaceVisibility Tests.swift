@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "BackfaceVisibility Tests",
-    )
-    struct BackfaceVisibilityTests {
-        @Test("HTML element renders with backface-visibility hidden properly")
-        func htmlElementWithBackfaceVisibilityHiddenRendersCorrectly() throws {
+    @Suite
+    struct `BackfaceVisibility Tests` {
+        @Test
+        func `HTML element renders with backface-visibility hidden properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backfaceVisibility(.hidden)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with backface-visibility visible properly")
-        func htmlElementWithBackfaceVisibilityVisibleRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with backface-visibility visible properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backfaceVisibility(.visible)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML backface-visibility with global value renders properly")
-        func htmlBackfaceVisibilityWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML backface-visibility with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backfaceVisibility(.inherit)
@@ -92,11 +90,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML backface-visibility with media query renders properly")
-        func htmlBackfaceVisibilityWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML backface-visibility with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backfaceVisibility(.hidden, media: .print)
+                    div.css.print { $0.backfaceVisibility(.hidden) }
                 },
                 as: .html
             ) {
@@ -119,11 +117,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML backface-visibility with pseudo-class renders properly")
-        func htmlBackfaceVisibilityWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML backface-visibility with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backfaceVisibility(.hidden, pseudo: .hover)
+                    div.css.hover { $0.backfaceVisibility(.hidden) }
                 },
                 as: .html
             ) {
@@ -144,11 +142,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML backface-visibility with prefix renders properly")
-        func htmlBackfaceVisibilityWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML backface-visibility with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backfaceVisibility(.hidden, selector: "my-component")
+                    div.css.selector("my-component") { $0.backfaceVisibility(.hidden) }
                 },
                 as: .html
             ) {

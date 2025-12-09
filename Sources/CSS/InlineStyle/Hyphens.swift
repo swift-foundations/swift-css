@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func hyphens(
-        _ hyphens: W3C_CSS_Text.Hyphens?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ hyphens: W3C_CSS_Text.Hyphens?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.Hyphens>> {
-        styled(hyphens, media: media, selector: selector, pseudo: pseudo)
+        styled(hyphens)
     }
 }

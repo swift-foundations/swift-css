@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fontVariantNumeric(
-        _ fontVariantNumeric: W3C_CSS_Fonts.FontVariantNumeric?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fontVariantNumeric: W3C_CSS_Fonts.FontVariantNumeric?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.FontVariantNumeric>> {
-        styled(fontVariantNumeric, media: media, selector: selector, pseudo: pseudo)
+        styled(fontVariantNumeric)
     }
 }

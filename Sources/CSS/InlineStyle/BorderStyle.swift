@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func borderStyle(
-        _ borderStyle: W3C_CSS_Backgrounds.BorderStyle?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ borderStyle: W3C_CSS_Backgrounds.BorderStyle?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BorderStyle>> {
-        styled(borderStyle, media: media, selector: selector, pseudo: pseudo)
+        styled(borderStyle)
     }
 }

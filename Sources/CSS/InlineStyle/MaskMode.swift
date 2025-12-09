@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func maskMode(
-        _ maskMode: W3C_CSS_Masking.MaskMode?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ maskMode: W3C_CSS_Masking.MaskMode?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Masking.MaskMode>> {
-        styled(maskMode, media: media, selector: selector, pseudo: pseudo)
+        styled(maskMode)
     }
 }

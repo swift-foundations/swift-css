@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func emptyCells(
-        _ emptyCells: W3C_CSS_UI.EmptyCells?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ emptyCells: W3C_CSS_UI.EmptyCells?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.EmptyCells>> {
-        styled(emptyCells, media: media, selector: selector, pseudo: pseudo)
+        styled(emptyCells)
     }
 }

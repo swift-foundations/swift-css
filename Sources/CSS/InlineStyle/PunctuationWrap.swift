@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func punctuationWrap(
-        _ punctuationWrap: W3C_CSS_Text.PunctuationWrap?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ punctuationWrap: W3C_CSS_Text.PunctuationWrap?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.PunctuationWrap>> {
-        styled(punctuationWrap, media: media, selector: selector, pseudo: pseudo)
+        styled(punctuationWrap)
     }
 }

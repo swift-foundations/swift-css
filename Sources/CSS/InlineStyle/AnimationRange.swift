@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func animationRange(
-        _ animationRange: W3C_CSS_Animations.AnimationRange?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ animationRange: W3C_CSS_Animations.AnimationRange?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Animations.AnimationRange>> {
-        styled(animationRange, media: media, selector: selector, pseudo: pseudo)
+        styled(animationRange)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func animationPlayState(
-        _ animationPlayState: W3C_CSS_Animations.AnimationPlayState?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ animationPlayState: W3C_CSS_Animations.AnimationPlayState?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Animations.AnimationPlayState>> {
-        styled(animationPlayState, media: media, selector: selector, pseudo: pseudo)
+        styled(animationPlayState)
     }
 }

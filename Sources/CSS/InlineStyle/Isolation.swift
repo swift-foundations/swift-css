@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func isolation(
-        _ isolation: W3C_CSS_Compositing.Isolation?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ isolation: W3C_CSS_Compositing.Isolation?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Compositing.Isolation>> {
-        styled(isolation, media: media, selector: selector, pseudo: pseudo)
+        styled(isolation)
     }
 }

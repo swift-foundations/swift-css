@@ -20,7 +20,7 @@
 //    "Animation Tests",
 // )
 // struct AnimationTests {
-//    @Test("HTML element renders with animation string value properly")
+//    @Test
 //    func htmlElementWithAnimationStringRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -46,11 +46,11 @@
 //        }
 //    }
 //
-//    @Test("HTML element renders with animation simple value")
+//    @Test
 //    func htmlElementWithAnimationSimpleRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animation(.string("fadeIn 2s"))
+//                div.css.animation(.string)
 //            },
 //            as: .html
 //        ) {
@@ -72,7 +72,7 @@
 //        }
 //    }
 //
-//    @Test("HTML animation with global value renders properly")
+//    @Test
 //    func htmlAnimationWithGlobalValueRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -98,11 +98,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation with media query renders properly")
+//    @Test
 //    func htmlAnimationWithMediaQueryRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animation(.string("bounce 1s"), media: .print)
+//                div.css.animation(.string, media: .print)
 //            },
 //            as: .html
 //        ) {
@@ -126,11 +126,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation with pseudo-class renders properly")
+//    @Test
 //    func htmlAnimationWithPseudoClassRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animation(.string("pulse 3s infinite"), pseudo: .hover)
+//                div.css.animation(.string, pseudo: .hover)
 //            },
 //            as: .html
 //        ) {
@@ -152,11 +152,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation with prefix renders properly")
+//    @Test
 //    func htmlAnimationWithPrefixRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animation(.string("slide 2s ease-out"), selector: "my-component")
+//                div.css.animation(.string, selector: "my-component")
 //            },
 //            as: .html
 //        ) {
@@ -178,7 +178,7 @@
 //        }
 //    }
 //
-//    @Test("HTML animation with none value renders properly")
+//    @Test
 //    func htmlAnimationWithNoneValueRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {

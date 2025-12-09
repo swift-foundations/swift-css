@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func marginTrim(
-        _ marginTrim: W3C_CSS_BoxModel.MarginTrim?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ marginTrim: W3C_CSS_BoxModel.MarginTrim?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_BoxModel.MarginTrim>> {
-        styled(marginTrim, media: media, selector: selector, pseudo: pseudo)
+        styled(marginTrim)
     }
 }

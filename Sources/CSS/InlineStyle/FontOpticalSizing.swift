@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fontOpticalSizing(
-        _ fontOpticalSizing: W3C_CSS_Fonts.FontOpticalSizing?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fontOpticalSizing: W3C_CSS_Fonts.FontOpticalSizing?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.FontOpticalSizing>> {
-        styled(fontOpticalSizing, media: media, selector: selector, pseudo: pseudo)
+        styled(fontOpticalSizing)
     }
 }

@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "AlignmentBaseline Tests",
-    )
-    struct AlignmentBaselineTests {
-        @Test("HTML element renders with alignment-baseline properly")
-        func htmlElementWithAlignmentBaselineRendersCorrectly() throws {
+    @Suite
+    struct `AlignmentBaseline Tests` {
+        @Test
+        func `HTML element renders with alignment-baseline properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignmentBaseline(.baseline)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with alignment-baseline text-bottom value")
-        func htmlElementWithAlignmentBaselineTextBottomRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with alignment-baseline text-bottom value`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignmentBaseline(.textBottom)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML alignment-baseline with global value renders properly")
-        func htmlAlignmentBaselineWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML alignment-baseline with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignmentBaseline(.inherit)
@@ -92,11 +90,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML alignment-baseline with media query renders properly")
-        func htmlAlignmentBaselineWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML alignment-baseline with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignmentBaseline(.middle, media: .print)
+                    div.css.print { $0.alignmentBaseline(.middle) }
                 },
                 as: .html
             ) {
@@ -119,11 +117,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML alignment-baseline with pseudo-class renders properly")
-        func htmlAlignmentBaselineWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML alignment-baseline with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignmentBaseline(.central, pseudo: .hover)
+                    div.css.hover { $0.alignmentBaseline(.central) }
                 },
                 as: .html
             ) {
@@ -144,11 +142,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML alignment-baseline with prefix renders properly")
-        func htmlAlignmentBaselineWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML alignment-baseline with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignmentBaseline(.textTop, selector: "my-component")
+                    div.css.selector("my-component") { $0.alignmentBaseline(.textTop) }
                 },
                 as: .html
             ) {
@@ -169,8 +167,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML alignment-baseline with after-edge value renders properly")
-        func htmlAlignmentBaselineWithAfterEdgeValueRendersCorrectly() throws {
+        @Test
+        func `HTML alignment-baseline with after-edge value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignmentBaseline(.afterEdge)

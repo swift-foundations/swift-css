@@ -18,11 +18,11 @@
 //    "AnimationDelay Tests",
 // )
 // struct AnimationDelayTests {
-//    @Test("HTML element renders with animation-delay time value properly")
+//    @Test
 //    func htmlElementWithAnimationDelayTimeRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationDelay(.time("2s"))
+//                div.css.animationDelay(.time)
 //            },
 //            as: .html
 //        ) {
@@ -44,11 +44,11 @@
 //        }
 //    }
 //
-//    @Test("HTML element renders with animation-delay milliseconds value")
+//    @Test
 //    func htmlElementWithAnimationDelayMillisecondsRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationDelay(.time("500ms"))
+//                div.css.animationDelay(.time)
 //            },
 //            as: .html
 //        ) {
@@ -70,7 +70,7 @@
 //        }
 //    }
 //
-//    @Test("HTML element renders with animation-delay multiple times")
+//    @Test
 //    func htmlElementWithAnimationDelayMultipleTimesRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -96,7 +96,7 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-delay with global value renders properly")
+//    @Test
 //    func htmlAnimationDelayWithGlobalValueRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
@@ -122,11 +122,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-delay with media query renders properly")
+//    @Test
 //    func htmlAnimationDelayWithMediaQueryRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationDelay(.time("1.5s"), media: .print)
+//                div.css.animationDelay(.time, media: .print)
 //            },
 //            as: .html
 //        ) {
@@ -150,11 +150,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-delay with pseudo-class renders properly")
+//    @Test
 //    func htmlAnimationDelayWithPseudoClassRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationDelay(.time("0.3s"), pseudo: .hover)
+//                div.css.animationDelay(.time, pseudo: .hover)
 //            },
 //            as: .html
 //        ) {
@@ -176,11 +176,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-delay with prefix renders properly")
+//    @Test
 //    func htmlAnimationDelayWithPrefixRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationDelay(.time("1s"), selector: "my-component")
+//                div.css.animationDelay(.time, selector: "my-component")
 //            },
 //            as: .html
 //        ) {
@@ -202,11 +202,11 @@
 //        }
 //    }
 //
-//    @Test("HTML animation-delay with negative time value renders properly")
+//    @Test
 //    func htmlAnimationDelayWithNegativeTimeValueRendersCorrectly() throws {
 //        assertInlineSnapshot(
 //            of: HTML.Document {
-//                div.css.animationDelay(.time("-0.5s"))
+//                div.css.animationDelay(.time)
 //            },
 //            as: .html
 //        ) {

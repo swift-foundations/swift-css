@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func pageBreakAfter(
-        _ pageBreakAfter: W3C_CSS_Paged.PageBreakAfter?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ pageBreakAfter: W3C_CSS_Paged.PageBreakAfter?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Paged.PageBreakAfter>> {
-        styled(pageBreakAfter, media: media, selector: selector, pseudo: pseudo)
+        styled(pageBreakAfter)
     }
 }

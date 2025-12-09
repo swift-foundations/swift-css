@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func letterSpacingEastAsian(
-        _ letterSpacingEastAsian: W3C_CSS_Text.LetterSpacingEastAsian?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ letterSpacingEastAsian: W3C_CSS_Text.LetterSpacingEastAsian?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LetterSpacingEastAsian>> {
-        styled(letterSpacingEastAsian, media: media, selector: selector, pseudo: pseudo)
+        styled(letterSpacingEastAsian)
     }
 }

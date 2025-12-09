@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func containerName(
-        _ containerName: W3C_CSS_Containment.ContainerName?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ containerName: W3C_CSS_Containment.ContainerName?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Containment.ContainerName>> {
-        styled(containerName, media: media, selector: selector, pseudo: pseudo)
+        styled(containerName)
     }
 }

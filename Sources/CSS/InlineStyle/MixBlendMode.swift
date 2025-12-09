@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func mixBlendMode(
-        _ mixBlendMode: W3C_CSS_Compositing.MixBlendMode?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ mixBlendMode: W3C_CSS_Compositing.MixBlendMode?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Compositing.MixBlendMode>> {
-        styled(mixBlendMode, media: media, selector: selector, pseudo: pseudo)
+        styled(mixBlendMode)
     }
 }

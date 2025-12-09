@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textTransform(
-        _ textTransform: W3C_CSS_Text.TextTransform?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textTransform: W3C_CSS_Text.TextTransform?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextTransform>> {
-        styled(textTransform, media: media, selector: selector, pseudo: pseudo)
+        styled(textTransform)
     }
 }

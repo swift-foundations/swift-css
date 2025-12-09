@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func insetBlockStart(
-        _ insetBlockStart: W3C_CSS_Positioning.InsetBlockStart?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ insetBlockStart: W3C_CSS_Positioning.InsetBlockStart?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.InsetBlockStart>> {
-        styled(insetBlockStart, media: media, selector: selector, pseudo: pseudo)
+        styled(insetBlockStart)
     }
 }

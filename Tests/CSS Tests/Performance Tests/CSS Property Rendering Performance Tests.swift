@@ -184,7 +184,7 @@ extension `Performance Tests` {
             for _ in 0..<500 {
                 _ = try! String(
                     HTML.Document {
-                        tag("article") {
+                        tag("div") {
                             tag("div")
                                 .attribute("class", "card-header")
                                 .css.backgroundColor(.hex(.init(0x007BFF)))
@@ -215,7 +215,7 @@ extension `Performance Tests` {
                 _ = try! String(
                     HTML.Document {
                         tag("div") {
-                            tag("p") { "Hello World" }
+                            tag("div") { "Hello World" }
                         }
                     }
                 )

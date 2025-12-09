@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func speakAs(
-        _ speakAs: W3C_CSS_UI.SpeakAs?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ speakAs: W3C_CSS_UI.SpeakAs?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.SpeakAs>> {
-        styled(speakAs, media: media, selector: selector, pseudo: pseudo)
+        styled(speakAs)
     }
 }

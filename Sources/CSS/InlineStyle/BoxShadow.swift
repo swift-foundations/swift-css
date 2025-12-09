@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func boxShadow(
-        _ boxShadow: W3C_CSS_Backgrounds.BoxShadow?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ boxShadow: W3C_CSS_Backgrounds.BoxShadow?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BoxShadow>> {
-        styled(boxShadow, media: media, selector: selector, pseudo: pseudo)
+        styled(boxShadow)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func insetInlineStart(
-        _ insetInlineStart: W3C_CSS_Positioning.InsetInlineStart?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ insetInlineStart: W3C_CSS_Positioning.InsetInlineStart?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.InsetInlineStart>> {
-        styled(insetInlineStart, media: media, selector: selector, pseudo: pseudo)
+        styled(insetInlineStart)
     }
 }

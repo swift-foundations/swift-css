@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func animation(
-        _ animation: W3C_CSS_Animations.Animation?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ animation: W3C_CSS_Animations.Animation?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Animations.Animation>> {
-        styled(animation, media: media, selector: selector, pseudo: pseudo)
+        styled(animation)
     }
 }

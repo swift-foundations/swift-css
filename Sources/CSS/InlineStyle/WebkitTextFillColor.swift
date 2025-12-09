@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func webkitTextFillColor(
-        _ webkitTextFillColor: W3C_CSS_UI.WebkitTextFillColor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ webkitTextFillColor: W3C_CSS_UI.WebkitTextFillColor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.WebkitTextFillColor>> {
-        styled(webkitTextFillColor, media: media, selector: selector, pseudo: pseudo)
+        styled(webkitTextFillColor)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fontLanguageOverride(
-        _ fontLanguageOverride: W3C_CSS_Fonts.FontLanguageOverride?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fontLanguageOverride: W3C_CSS_Fonts.FontLanguageOverride?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.FontLanguageOverride>> {
-        styled(fontLanguageOverride, media: media, selector: selector, pseudo: pseudo)
+        styled(fontLanguageOverride)
     }
 }

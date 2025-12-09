@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func minInlineSize(
-        _ minInlineSize: W3C_CSS_Logical.MinInlineSize?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ minInlineSize: W3C_CSS_Logical.MinInlineSize?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Logical.MinInlineSize>> {
-        styled(minInlineSize, media: media, selector: selector, pseudo: pseudo)
+        styled(minInlineSize)
     }
 }

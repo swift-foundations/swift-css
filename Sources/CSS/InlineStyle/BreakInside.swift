@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func breakInside(
-        _ breakInside: W3C_CSS_Multicolumn.BreakInside?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ breakInside: W3C_CSS_Multicolumn.BreakInside?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Multicolumn.BreakInside>> {
-        styled(breakInside, media: media, selector: selector, pseudo: pseudo)
+        styled(breakInside)
     }
 }

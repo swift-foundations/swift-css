@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func willChange(
-        _ willChange: W3C_CSS_Visual.WillChange?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ willChange: W3C_CSS_Visual.WillChange?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Visual.WillChange>> {
-        styled(willChange, media: media, selector: selector, pseudo: pseudo)
+        styled(willChange)
     }
 }

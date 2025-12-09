@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func boxDecorationBreak(
-        _ boxDecorationBreak: W3C_CSS_Shared.BoxDecorationBreak?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ boxDecorationBreak: W3C_CSS_Shared.BoxDecorationBreak?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Shared.BoxDecorationBreak>> {
-        styled(boxDecorationBreak, media: media, selector: selector, pseudo: pseudo)
+        styled(boxDecorationBreak)
     }
 }

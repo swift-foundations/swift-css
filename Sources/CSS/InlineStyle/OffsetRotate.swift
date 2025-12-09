@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func offsetRotate(
-        _ offsetRotate: W3C_CSS_Animations.OffsetRotate?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ offsetRotate: W3C_CSS_Animations.OffsetRotate?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Animations.OffsetRotate>> {
-        styled(offsetRotate, media: media, selector: selector, pseudo: pseudo)
+        styled(offsetRotate)
     }
 }

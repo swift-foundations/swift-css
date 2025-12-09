@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func markerStart(
-        _ markerStart: W3C_CSS_Images.MarkerStart?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ markerStart: W3C_CSS_Images.MarkerStart?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.MarkerStart>> {
-        styled(markerStart, media: media, selector: selector, pseudo: pseudo)
+        styled(markerStart)
     }
 }

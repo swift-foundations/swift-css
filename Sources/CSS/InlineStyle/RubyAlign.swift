@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func rubyAlign(
-        _ rubyAlign: W3C_CSS_Text.RubyAlign?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ rubyAlign: W3C_CSS_Text.RubyAlign?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.RubyAlign>> {
-        styled(rubyAlign, media: media, selector: selector, pseudo: pseudo)
+        styled(rubyAlign)
     }
 }

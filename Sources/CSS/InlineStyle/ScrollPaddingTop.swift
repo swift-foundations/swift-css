@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func scrollPaddingTop(
-        _ scrollPaddingTop: W3C_CSS_Scroll.ScrollPaddingTop?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ scrollPaddingTop: W3C_CSS_Scroll.ScrollPaddingTop?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.ScrollPaddingTop>> {
-        styled(scrollPaddingTop, media: media, selector: selector, pseudo: pseudo)
+        styled(scrollPaddingTop)
     }
 }

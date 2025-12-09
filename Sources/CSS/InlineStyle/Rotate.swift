@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func rotate(
-        _ rotate: W3C_CSS_Transforms.Rotate?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ rotate: W3C_CSS_Transforms.Rotate?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Transforms.Rotate>> {
-        styled(rotate, media: media, selector: selector, pseudo: pseudo)
+        styled(rotate)
     }
 }

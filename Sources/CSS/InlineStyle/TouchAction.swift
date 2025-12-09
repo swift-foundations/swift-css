@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func touchAction(
-        _ touchAction: W3C_CSS_UI.TouchAction?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ touchAction: W3C_CSS_UI.TouchAction?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.TouchAction>> {
-        styled(touchAction, media: media, selector: selector, pseudo: pseudo)
+        styled(touchAction)
     }
 }

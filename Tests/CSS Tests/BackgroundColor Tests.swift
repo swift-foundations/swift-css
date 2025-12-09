@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "BackgroundColor Tests",
-    )
-    struct BackgroundColorTests {
-        @Test("HTML element renders with background-color named color properly")
-        func htmlElementWithBackgroundColorNamedColorRendersCorrectly() throws {
+    @Suite
+    struct `BackgroundColor Tests` {
+        @Test
+        func `HTML element renders with background-color named color properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundColor(.red)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-color hex color properly")
-        func htmlElementWithBackgroundColorHexRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-color hex color properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundColor(.color(.hex("FF0000")))
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-color rgb color properly")
-        func htmlElementWithBackgroundColorRgbRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-color rgb color properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundColor(.color(.rgb(255, 0, 0)))
@@ -92,8 +90,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-color rgba color properly")
-        func htmlElementWithBackgroundColorRgbaRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-color rgba color properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundColor(.color(.rgba(255, 0, 0, 0.5)))
@@ -117,8 +115,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with background-color transparent properly")
-        func htmlElementWithBackgroundColorTransparentRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with background-color transparent properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundColor(.transparent)
@@ -142,8 +140,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-color with global value renders properly")
-        func htmlBackgroundColorWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML background-color with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.backgroundColor(BackgroundColor.inherit)
@@ -167,11 +165,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-color with media query renders properly")
-        func htmlBackgroundColorWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML background-color with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(.red, media: .print)
+                    div.css.print { $0.backgroundColor(.red) }
                 },
                 as: .html
             ) {
@@ -194,11 +192,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-color with pseudo-class renders properly")
-        func htmlBackgroundColorWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML background-color with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(.red, pseudo: .hover)
+                    div.css.hover { $0.backgroundColor(.red) }
                 },
                 as: .html
             ) {
@@ -219,11 +217,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML background-color with prefix renders properly")
-        func htmlBackgroundColorWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML background-color with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(.red, selector: "my-component")
+                    div.css.selector("my-component") { $0.backgroundColor(.red) }
                 },
                 as: .html
             ) {

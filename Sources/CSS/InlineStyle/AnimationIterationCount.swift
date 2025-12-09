@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func animationIterationCount(
-        _ animationIterationCount: W3C_CSS_Animations.AnimationIterationCount?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ animationIterationCount: W3C_CSS_Animations.AnimationIterationCount?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Animations.AnimationIterationCount>> {
-        styled(animationIterationCount, media: media, selector: selector, pseudo: pseudo)
+        styled(animationIterationCount)
     }
 }

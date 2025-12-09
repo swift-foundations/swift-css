@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func mozUserFocus(
-        _ mozUserFocus: W3C_CSS_UI.MozUserFocus?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ mozUserFocus: W3C_CSS_UI.MozUserFocus?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.MozUserFocus>> {
-        styled(mozUserFocus, media: media, selector: selector, pseudo: pseudo)
+        styled(mozUserFocus)
     }
 }

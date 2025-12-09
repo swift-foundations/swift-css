@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textDecorationSkip(
-        _ textDecorationSkip: W3C_CSS_TextDecoration.TextDecorationSkip?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textDecorationSkip: W3C_CSS_TextDecoration.TextDecorationSkip?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_TextDecoration.TextDecorationSkip>> {
-        styled(textDecorationSkip, media: media, selector: selector, pseudo: pseudo)
+        styled(textDecorationSkip)
     }
 }

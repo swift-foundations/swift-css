@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func aspectRatio(
-        _ aspectRatio: W3C_CSS_Visual.AspectRatio?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ aspectRatio: W3C_CSS_Visual.AspectRatio?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Visual.AspectRatio>> {
-        styled(aspectRatio, media: media, selector: selector, pseudo: pseudo)
+        styled(aspectRatio)
     }
 }

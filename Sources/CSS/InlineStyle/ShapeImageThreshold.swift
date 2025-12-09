@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func shapeImageThreshold(
-        _ shapeImageThreshold: W3C_CSS_Masking.ShapeImageThreshold?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ shapeImageThreshold: W3C_CSS_Masking.ShapeImageThreshold?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Masking.ShapeImageThreshold>> {
-        styled(shapeImageThreshold, media: media, selector: selector, pseudo: pseudo)
+        styled(shapeImageThreshold)
     }
 }

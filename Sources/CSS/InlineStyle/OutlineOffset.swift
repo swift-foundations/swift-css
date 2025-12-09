@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func outlineOffset(
-        _ outlineOffset: W3C_CSS_UI.OutlineOffset?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ outlineOffset: W3C_CSS_UI.OutlineOffset?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.OutlineOffset>> {
-        styled(outlineOffset, media: media, selector: selector, pseudo: pseudo)
+        styled(outlineOffset)
     }
 }

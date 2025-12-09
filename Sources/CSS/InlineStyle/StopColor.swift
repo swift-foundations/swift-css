@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func stopColor(
-        _ stopColor: W3C_CSS_Images.StopColor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ stopColor: W3C_CSS_Images.StopColor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Images.StopColor>> {
-        styled(stopColor, media: media, selector: selector, pseudo: pseudo)
+        styled(stopColor)
     }
 }

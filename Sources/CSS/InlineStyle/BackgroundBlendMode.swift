@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func backgroundBlendMode(
-        _ backgroundBlendMode: W3C_CSS_Backgrounds.BackgroundBlendMode?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ backgroundBlendMode: W3C_CSS_Backgrounds.BackgroundBlendMode?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BackgroundBlendMode>> {
-        styled(backgroundBlendMode, media: media, selector: selector, pseudo: pseudo)
+        styled(backgroundBlendMode)
     }
 }

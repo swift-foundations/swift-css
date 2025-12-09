@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func containIntrinsicHeight(
-        _ containIntrinsicHeight: W3C_CSS_Containment.ContainIntrinsicHeight?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ containIntrinsicHeight: W3C_CSS_Containment.ContainIntrinsicHeight?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Containment.ContainIntrinsicHeight>> {
-        styled(containIntrinsicHeight, media: media, selector: selector, pseudo: pseudo)
+        styled(containIntrinsicHeight)
     }
 }

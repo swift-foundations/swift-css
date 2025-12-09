@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func webkitTextStroke(
-        _ webkitTextStroke: W3C_CSS_UI.WebkitTextStroke?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ webkitTextStroke: W3C_CSS_UI.WebkitTextStroke?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.WebkitTextStroke>> {
-        styled(webkitTextStroke, media: media, selector: selector, pseudo: pseudo)
+        styled(webkitTextStroke)
     }
 }

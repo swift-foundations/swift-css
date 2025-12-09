@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func backgroundImage(
-        _ backgroundImage: W3C_CSS_Backgrounds.BackgroundImage?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ backgroundImage: W3C_CSS_Backgrounds.BackgroundImage?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BackgroundImage>> {
-        styled(backgroundImage, media: media, selector: selector, pseudo: pseudo)
+        styled(backgroundImage)
     }
 }

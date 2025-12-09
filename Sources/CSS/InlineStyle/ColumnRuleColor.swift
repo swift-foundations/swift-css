@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func columnRuleColor(
-        _ columnRuleColor: W3C_CSS_Multicolumn.ColumnRuleColor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ columnRuleColor: W3C_CSS_Multicolumn.ColumnRuleColor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Multicolumn.ColumnRuleColor>> {
-        styled(columnRuleColor, media: media, selector: selector, pseudo: pseudo)
+        styled(columnRuleColor)
     }
 }

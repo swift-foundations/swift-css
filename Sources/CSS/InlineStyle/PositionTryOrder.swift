@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func positionTryOrder(
-        _ positionTryOrder: W3C_CSS_Positioning.PositionTryOrder?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ positionTryOrder: W3C_CSS_Positioning.PositionTryOrder?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.PositionTryOrder>> {
-        styled(positionTryOrder, media: media, selector: selector, pseudo: pseudo)
+        styled(positionTryOrder)
     }
 }

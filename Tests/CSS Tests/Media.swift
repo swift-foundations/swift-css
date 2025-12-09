@@ -5,15 +5,13 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "Media Tests",
-    )
-    struct MediaTests {
-        @Test("HTML element rendering with basic media query")
-        func htmlElementRenderingWithBasicMediaQuery() throws {
+    @Suite
+    struct `Media Tests` {
+        @Test
+        func `htmlElementRenderingWithBasicMediaQuery`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(.blue, media: .screen)
+                    div.css.media(.screen) { $0.backgroundColor(.blue) }
                 },
                 as: .html
             ) {
@@ -35,17 +33,16 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML element rendering with complex media query")
-        func htmlElementRenderingWithComplexMediaQuery() throws {
+
+        @Test
+        func `HTML element rendering with complex media query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(
-                        .blue,
-                        media: Media.screen
+                    div.css.media(
+                        Media.screen
                             .and(.maxWidth(.px(500)))
                             .and(.prefersColorScheme(.dark))
-                    )
+                    ) { $0.backgroundColor(.blue) }
                 },
                 as: .html
             ) {
@@ -67,12 +64,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML element rendering with negated media query")
-        func htmlElementRenderingWithNegatedMediaQuery() throws {
+
+        @Test
+        func `HTML element rendering with negated media query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(.blue, media: !Media.print)
+                    div.css.media(!Media.print) { $0.backgroundColor(.blue) }
                 },
                 as: .html
             ) {
@@ -94,12 +91,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML element rendering with media OR query")
-        func htmlElementRenderingWithMediaOrQuery() throws {
+
+        @Test
+        func `HTML element rendering with media OR query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(.blue, media: Media.screen || Media.print)
+                    div.css.media(Media.screen || Media.print) { $0.backgroundColor(.blue) }
                 },
                 as: .html
             ) {
@@ -121,12 +118,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML element rendering with only operator")
-        func htmlElementRenderingWithOnlyOperator() throws {
+
+        @Test
+        func `HTML element rendering with only operator`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(.blue, media: Media.screen.only())
+                    div.css.media(Media.screen.only()) { $0.backgroundColor(.blue) }
                 },
                 as: .html
             ) {
@@ -148,12 +145,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML element rendering with feature-only media query")
-        func htmlElementRenderingWithFeatureOnlyMediaQuery() throws {
+
+        @Test
+        func `HTML element rendering with feature-only media query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(.blue, media: .prefersColorScheme(.dark))
+                    div.css.dark { $0.backgroundColor(.blue) }
                 },
                 as: .html
             ) {
@@ -175,15 +172,17 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML element rendering with multiple properties in media query")
-        func htmlElementRenderingWithMultiplePropertiesInMediaQuery() throws {
+
+        @Test
+        func `HTML element rendering with multiple properties in media query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div
-                        .css.backgroundColor(.blue, media: Media.screen && .maxWidth(.px(768)))
-                        .css.color(.white, media: Media.screen && .maxWidth(.px(768)))
-                        .css.padding(.px(20), media: Media.screen && .maxWidth(.px(768)))
+                        .css.media(Media.screen && .maxWidth(.px(768))) {
+                            $0.backgroundColor(.blue)
+                              .color(.white)
+                              .padding(.px(20))
+                        }
                 },
                 as: .html
             ) {
@@ -208,13 +207,15 @@ extension `Snapshot Tests` {
             }
         }
 
-        @Test("HTML element rendering with media query and pseudo-class")
-        func htmlElementRenderingWithMediaQueryAndPseudoClass() throws {
+        @Test
+        func `HTML element rendering with media query and pseudo-class`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div
-                        .css.backgroundColor(.blue, media: .screen && .minWidth(.px(768)))
-                        .css.backgroundColor(.red, media: Media.screen && .minWidth(.px(768)))
+                        .css.media(.screen && .minWidth(.px(768))) {
+                            $0.backgroundColor(.blue)
+                              .backgroundColor(.red)
+                        }
                 },
                 as: .html
             ) {
@@ -238,13 +239,14 @@ extension `Snapshot Tests` {
             }
         }
 
-        @Test("HTML element rendering with multiple media queries")
-        func htmlElementRenderingWithMultipleMediaQueries() throws {
+        @Test
+        func `HTML element rendering with multiple media queries`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div
-                        .css.backgroundColor(.blue, media: .screen && .minWidth(.px(768)))
-                        .css.color(.white, media: .screen && .prefersColorScheme(.dark))
+                        .css
+                        .media(.screen && .minWidth(.px(768))) { $0.backgroundColor(.blue) }
+                        .media(.screen && .prefersColorScheme(.dark)) { $0.color(.white) }
                 },
                 as: .html
             ) {

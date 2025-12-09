@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func height(
-        _ height: W3C_CSS_BoxModel.Height?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ height: W3C_CSS_BoxModel.Height?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_BoxModel.Height>> {
-        styled(height, media: media, selector: selector, pseudo: pseudo)
+        styled(height)
     }
 }

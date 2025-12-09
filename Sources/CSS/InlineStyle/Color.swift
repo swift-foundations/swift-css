@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func color(
-        _ color: W3C_CSS_Color.Color?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ color: W3C_CSS_Color.Color?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Color.Color>> {
-        styled(color, media: media, selector: selector, pseudo: pseudo)
+        styled(color)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func mathShift(
-        _ mathShift: W3C_CSS_Text.MathShift?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ mathShift: W3C_CSS_Text.MathShift?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.MathShift>> {
-        styled(mathShift, media: media, selector: selector, pseudo: pseudo)
+        styled(mathShift)
     }
 }

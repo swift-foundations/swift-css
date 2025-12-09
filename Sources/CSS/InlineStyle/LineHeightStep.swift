@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func lineHeightStep(
-        _ lineHeightStep: W3C_CSS_Text.LineHeightStep?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ lineHeightStep: W3C_CSS_Text.LineHeightStep?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.LineHeightStep>> {
-        styled(lineHeightStep, media: media, selector: selector, pseudo: pseudo)
+        styled(lineHeightStep)
     }
 }

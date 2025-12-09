@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func borderRadius(
-        _ borderRadius: W3C_CSS_Backgrounds.BorderRadius?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ borderRadius: W3C_CSS_Backgrounds.BorderRadius?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BorderRadius>> {
-        styled(borderRadius, media: media, selector: selector, pseudo: pseudo)
+        styled(borderRadius)
     }
 }

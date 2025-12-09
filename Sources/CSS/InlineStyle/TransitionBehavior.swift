@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func transitionBehavior(
-        _ transitionBehavior: W3C_CSS_Transitions.TransitionBehavior?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ transitionBehavior: W3C_CSS_Transitions.TransitionBehavior?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Transitions.TransitionBehavior>> {
-        styled(transitionBehavior, media: media, selector: selector, pseudo: pseudo)
+        styled(transitionBehavior)
     }
 }

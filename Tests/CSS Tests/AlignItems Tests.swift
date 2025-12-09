@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "AlignItems Tests",
-    )
-    struct AlignItemsTests {
-        @Test("HTML element renders with align-items properly")
-        func htmlElementWithAlignItemsRendersCorrectly() throws {
+    @Suite
+    struct `AlignItems Tests` {
+        @Test
+        func `HTML element renders with align-items properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignItems(.center)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with align-items flex-start value")
-        func htmlElementWithAlignItemsFlexStartRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with align-items flex-start value`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignItems(.flexStart)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-items with global value renders properly")
-        func htmlAlignItemsWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML align-items with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignItems(.inherit)
@@ -92,11 +90,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-items with media query renders properly")
-        func htmlAlignItemsWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML align-items with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignItems(.center, media: .print)
+                    div.css.print { $0.alignItems(.center) }
                 },
                 as: .html
             ) {
@@ -119,11 +117,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-items with pseudo-class renders properly")
-        func htmlAlignItemsWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML align-items with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignItems(.baseline, pseudo: .hover)
+                    div.css.hover { $0.alignItems(.baseline) }
                 },
                 as: .html
             ) {
@@ -144,11 +142,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-items with prefix renders properly")
-        func htmlAlignItemsWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML align-items with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignItems(.flexEnd, selector: "my-component")
+                    div.css.selector("my-component") { $0.alignItems(.flexEnd) }
                 },
                 as: .html
             ) {
@@ -169,8 +167,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-items with stretch value renders properly")
-        func htmlAlignItemsWithStretchValueRendersCorrectly() throws {
+        @Test
+        func `HTML align-items with stretch value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignItems(.stretch)

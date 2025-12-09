@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func backgroundSize(
-        _ backgroundSize: W3C_CSS_Backgrounds.BackgroundSize?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ backgroundSize: W3C_CSS_Backgrounds.BackgroundSize?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BackgroundSize>> {
-        styled(backgroundSize, media: media, selector: selector, pseudo: pseudo)
+        styled(backgroundSize)
     }
 }

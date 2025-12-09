@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func caretColor(
-        _ caretColor: W3C_CSS_UI.CaretColor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ caretColor: W3C_CSS_UI.CaretColor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.CaretColor>> {
-        styled(caretColor, media: media, selector: selector, pseudo: pseudo)
+        styled(caretColor)
     }
 }

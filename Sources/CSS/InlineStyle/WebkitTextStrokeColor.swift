@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func webkitTextStrokeColor(
-        _ webkitTextStrokeColor: W3C_CSS_UI.WebkitTextStrokeColor?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ webkitTextStrokeColor: W3C_CSS_UI.WebkitTextStrokeColor?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.WebkitTextStrokeColor>> {
-        styled(webkitTextStrokeColor, media: media, selector: selector, pseudo: pseudo)
+        styled(webkitTextStrokeColor)
     }
 }

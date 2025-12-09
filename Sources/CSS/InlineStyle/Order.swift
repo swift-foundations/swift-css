@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func order(
-        _ order: W3C_CSS_Flexbox.Order?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ order: W3C_CSS_Flexbox.Order?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Flexbox.Order>> {
-        styled(order, media: media, selector: selector, pseudo: pseudo)
+        styled(order)
     }
 }

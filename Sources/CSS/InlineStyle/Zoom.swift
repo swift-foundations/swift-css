@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func zoom(
-        _ zoom: W3C_CSS_Positioning.Zoom?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ zoom: W3C_CSS_Positioning.Zoom?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Positioning.Zoom>> {
-        styled(zoom, media: media, selector: selector, pseudo: pseudo)
+        styled(zoom)
     }
 }

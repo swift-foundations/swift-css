@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fieldSizing(
-        _ fieldSizing: W3C_CSS_UI.FieldSizing?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fieldSizing: W3C_CSS_UI.FieldSizing?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.FieldSizing>> {
-        styled(fieldSizing, media: media, selector: selector, pseudo: pseudo)
+        styled(fieldSizing)
     }
 }

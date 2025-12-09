@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func mozUserInput(
-        _ mozUserInput: W3C_CSS_UI.MozUserInput?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ mozUserInput: W3C_CSS_UI.MozUserInput?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.MozUserInput>> {
-        styled(mozUserInput, media: media, selector: selector, pseudo: pseudo)
+        styled(mozUserInput)
     }
 }

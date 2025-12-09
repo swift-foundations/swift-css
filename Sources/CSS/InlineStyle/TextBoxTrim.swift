@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textBoxTrim(
-        _ textBoxTrim: W3C_CSS_Text.TextBoxTrim?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textBoxTrim: W3C_CSS_Text.TextBoxTrim?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextBoxTrim>> {
-        styled(textBoxTrim, media: media, selector: selector, pseudo: pseudo)
+        styled(textBoxTrim)
     }
 }

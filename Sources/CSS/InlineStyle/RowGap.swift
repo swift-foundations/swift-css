@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func rowGap(
-        _ rowGap: W3C_CSS_Flexbox.RowGap?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ rowGap: W3C_CSS_Flexbox.RowGap?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Flexbox.RowGap>> {
-        styled(rowGap, media: media, selector: selector, pseudo: pseudo)
+        styled(rowGap)
     }
 }

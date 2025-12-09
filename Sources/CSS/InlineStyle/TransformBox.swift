@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func transformBox(
-        _ transformBox: W3C_CSS_Transforms.TransformBox?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ transformBox: W3C_CSS_Transforms.TransformBox?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Transforms.TransformBox>> {
-        styled(transformBox, media: media, selector: selector, pseudo: pseudo)
+        styled(transformBox)
     }
 }

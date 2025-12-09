@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func widows(
-        _ widows: W3C_CSS_Paged.Widows?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ widows: W3C_CSS_Paged.Widows?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Paged.Widows>> {
-        styled(widows, media: media, selector: selector, pseudo: pseudo)
+        styled(widows)
     }
 }

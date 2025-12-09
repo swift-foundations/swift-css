@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textOverflow(
-        _ textOverflow: W3C_CSS_Text.TextOverflow?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textOverflow: W3C_CSS_Text.TextOverflow?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextOverflow>> {
-        styled(textOverflow, media: media, selector: selector, pseudo: pseudo)
+        styled(textOverflow)
     }
 }

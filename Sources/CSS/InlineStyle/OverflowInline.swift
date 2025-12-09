@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func overflowInline(
-        _ overflowInline: W3C_CSS_BoxModel.OverflowInline?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ overflowInline: W3C_CSS_BoxModel.OverflowInline?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_BoxModel.OverflowInline>> {
-        styled(overflowInline, media: media, selector: selector, pseudo: pseudo)
+        styled(overflowInline)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textOrientation(
-        _ textOrientation: W3C_CSS_Text.TextOrientation?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textOrientation: W3C_CSS_Text.TextOrientation?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextOrientation>> {
-        styled(textOrientation, media: media, selector: selector, pseudo: pseudo)
+        styled(textOrientation)
     }
 }

@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func textSpacingTrim(
-        _ textSpacingTrim: W3C_CSS_Text.TextSpacingTrim?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ textSpacingTrim: W3C_CSS_Text.TextSpacingTrim?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.TextSpacingTrim>> {
-        styled(textSpacingTrim, media: media, selector: selector, pseudo: pseudo)
+        styled(textSpacingTrim)
     }
 }

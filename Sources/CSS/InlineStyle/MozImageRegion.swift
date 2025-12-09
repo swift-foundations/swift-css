@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func mozImageRegion(
-        _ mozImageRegion: W3C_CSS_UI.MozImageRegion?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ mozImageRegion: W3C_CSS_UI.MozImageRegion?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.MozImageRegion>> {
-        styled(mozImageRegion, media: media, selector: selector, pseudo: pseudo)
+        styled(mozImageRegion)
     }
 }

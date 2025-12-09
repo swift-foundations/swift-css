@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func wordBreak(
-        _ wordBreak: W3C_CSS_Text.WordBreak?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ wordBreak: W3C_CSS_Text.WordBreak?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.WordBreak>> {
-        styled(wordBreak, media: media, selector: selector, pseudo: pseudo)
+        styled(wordBreak)
     }
 }

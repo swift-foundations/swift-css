@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func maskPosition(
-        _ maskPosition: W3C_CSS_Masking.MaskPosition?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ maskPosition: W3C_CSS_Masking.MaskPosition?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Masking.MaskPosition>> {
-        styled(maskPosition, media: media, selector: selector, pseudo: pseudo)
+        styled(maskPosition)
     }
 }

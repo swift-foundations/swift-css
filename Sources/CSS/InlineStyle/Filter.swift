@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func filter(
-        _ filter: W3C_CSS_Filters.Filter?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ filter: W3C_CSS_Filters.Filter?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Filters.Filter>> {
-        styled(filter, media: media, selector: selector, pseudo: pseudo)
+        styled(filter)
     }
 }

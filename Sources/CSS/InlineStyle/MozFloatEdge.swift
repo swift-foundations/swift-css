@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func mozFloatEdge(
-        _ mozFloatEdge: W3C_CSS_UI.MozFloatEdge?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ mozFloatEdge: W3C_CSS_UI.MozFloatEdge?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_UI.MozFloatEdge>> {
-        styled(mozFloatEdge, media: media, selector: selector, pseudo: pseudo)
+        styled(mozFloatEdge)
     }
 }

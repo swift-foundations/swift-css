@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func paddingBlock(
-        _ paddingBlock: W3C_CSS_BoxModel.PaddingBlock?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ paddingBlock: W3C_CSS_BoxModel.PaddingBlock?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_BoxModel.PaddingBlock>> {
-        styled(paddingBlock, media: media, selector: selector, pseudo: pseudo)
+        styled(paddingBlock)
     }
 }

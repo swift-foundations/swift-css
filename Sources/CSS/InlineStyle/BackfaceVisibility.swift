@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func backfaceVisibility(
-        _ backfaceVisibility: W3C_CSS_Shared.BackfaceVisibility?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ backfaceVisibility: W3C_CSS_Shared.BackfaceVisibility?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Shared.BackfaceVisibility>> {
-        styled(backfaceVisibility, media: media, selector: selector, pseudo: pseudo)
+        styled(backfaceVisibility)
     }
 }

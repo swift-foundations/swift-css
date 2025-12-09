@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func viewTimeline(
-        _ viewTimeline: W3C_CSS_Animations.ViewTimeline?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ viewTimeline: W3C_CSS_Animations.ViewTimeline?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Animations.ViewTimeline>> {
-        styled(viewTimeline, media: media, selector: selector, pseudo: pseudo)
+        styled(viewTimeline)
     }
 }

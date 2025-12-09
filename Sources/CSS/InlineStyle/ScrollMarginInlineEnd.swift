@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func scrollMarginInlineEnd(
-        _ scrollMarginInlineEnd: W3C_CSS_Scroll.ScrollMarginInlineEnd?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ scrollMarginInlineEnd: W3C_CSS_Scroll.ScrollMarginInlineEnd?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.ScrollMarginInlineEnd>> {
-        styled(scrollMarginInlineEnd, media: media, selector: selector, pseudo: pseudo)
+        styled(scrollMarginInlineEnd)
     }
 }

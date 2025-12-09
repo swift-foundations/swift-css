@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "AlignContent Tests",
-    )
-    struct AlignContentTests {
-        @Test("HTML element renders with align-content properly")
-        func htmlElementWithAlignContentRendersCorrectly() throws {
+    @Suite
+    struct `AlignContent Tests` {
+        @Test
+        func `HTML element renders with align-content properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignContent(.center)
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with align-content flex-start value")
-        func htmlElementWithAlignContentFlexStartRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with align-content flex-start value`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignContent(.flexStart)
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-content with global value renders properly")
-        func htmlAlignContentWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML align-content with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignContent(.inherit)
@@ -92,11 +90,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-content with media query renders properly")
-        func htmlAlignContentWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML align-content with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignContent(.center, media: .print)
+                    div.css.print { $0.alignContent(.center) }
                 },
                 as: .html
             ) {
@@ -119,11 +117,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-content with pseudo-class renders properly")
-        func htmlAlignContentWithPseudoClassRendersCorrectly() throws {
+        @Test
+        func `HTML align-content with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignContent(.spaceAround, pseudo: .hover)
+                    div.css.hover { $0.alignContent(.spaceAround) }
                 },
                 as: .html
             ) {
@@ -144,11 +142,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-content with prefix renders properly")
-        func htmlAlignContentWithPrefixRendersCorrectly() throws {
+        @Test
+        func `HTML align-content with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.alignContent(.spaceBetween, selector: "my-component")
+                    div.css.selector("my-component") { $0.alignContent(.spaceBetween) }
                 },
                 as: .html
             ) {
@@ -169,8 +167,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML align-content with stretch value renders properly")
-        func htmlAlignContentWithStretchValueRendersCorrectly() throws {
+        @Test
+        func `HTML align-content with stretch value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.alignContent(.stretch)

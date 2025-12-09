@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func fontSizeAdjust(
-        _ fontSizeAdjust: W3C_CSS_Fonts.FontSizeAdjust?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ fontSizeAdjust: W3C_CSS_Fonts.FontSizeAdjust?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.FontSizeAdjust>> {
-        styled(fontSizeAdjust, media: media, selector: selector, pseudo: pseudo)
+        styled(fontSizeAdjust)
     }
 }

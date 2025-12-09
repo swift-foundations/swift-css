@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func scrollSnapType(
-        _ scrollSnapType: W3C_CSS_Scroll.ScrollSnapType?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ scrollSnapType: W3C_CSS_Scroll.ScrollSnapType?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Scroll.ScrollSnapType>> {
-        styled(scrollSnapType, media: media, selector: selector, pseudo: pseudo)
+        styled(scrollSnapType)
     }
 }

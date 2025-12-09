@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func backgroundAttachment(
-        _ backgroundAttachment: W3C_CSS_Backgrounds.BackgroundAttachment?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ backgroundAttachment: W3C_CSS_Backgrounds.BackgroundAttachment?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BackgroundAttachment>> {
-        styled(backgroundAttachment, media: media, selector: selector, pseudo: pseudo)
+        styled(backgroundAttachment)
     }
 }

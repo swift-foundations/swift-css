@@ -13,12 +13,10 @@ import HTML_Renderable_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    @Suite(
-        "AspectRatio Tests",
-    )
-    struct AspectRatioTests {
-        @Test("HTML element renders with aspect-ratio properly")
-        func htmlElementWithAspectRatioRendersCorrectly() throws {
+    @Suite
+    struct `AspectRatio Tests` {
+        @Test
+        func `HTML element renders with aspect-ratio properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.aspectRatio(try! .ratio(16, 9))
@@ -42,8 +40,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with different aspect-ratio value properly")
-        func htmlElementWithDifferentAspectRatioRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with different aspect-ratio value properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.aspectRatio(try! .ratio(4, 3))
@@ -67,8 +65,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML element renders with auto aspect-ratio properly")
-        func htmlElementWithAutoAspectRatioRendersCorrectly() throws {
+        @Test
+        func `HTML element renders with auto aspect-ratio properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.aspectRatio(try! .auto)
@@ -92,8 +90,8 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML aspect-ratio with global value renders properly")
-        func htmlAspectRatioWithGlobalValueRendersCorrectly() throws {
+        @Test
+        func `HTML aspect-ratio with global value renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css.aspectRatio(try! .inherit)
@@ -117,11 +115,11 @@ extension `Snapshot Tests` {
             }
         }
         
-        @Test("HTML aspect-ratio with media query renders properly")
-        func htmlAspectRatioWithMediaQueryRendersCorrectly() throws {
+        @Test
+        func `HTML aspect-ratio with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.aspectRatio(try! .ratio(16, 9), media: .print)
+                    div.css.print { $0.aspectRatio(try! .ratio(16, 9)) }
                 },
                 as: .html
             ) {
@@ -143,12 +141,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML aspect-ratio with pseudo-class renders properly")
-        func htmlAspectRatioWithPseudoClassRendersCorrectly() throws {
+
+        @Test
+        func `HTML aspect-ratio with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.aspectRatio(try! .ratio(16, 9), pseudo: .hover)
+                    div.css.hover { $0.aspectRatio(try! .ratio(16, 9)) }
                 },
                 as: .html
             ) {
@@ -168,12 +166,12 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
-        @Test("HTML aspect-ratio with prefix renders properly")
-        func htmlAspectRatioWithPrefixRendersCorrectly() throws {
+
+        @Test
+        func `HTML aspect-ratio with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.aspectRatio(try! .ratio(16, 9), selector: "my-component")
+                    div.css.selector("my-component") { $0.aspectRatio(try! .ratio(16, 9)) }
                 },
                 as: .html
             ) {

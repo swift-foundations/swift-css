@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func font(
-        _ font: W3C_CSS_Fonts.Font?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ font: W3C_CSS_Fonts.Font?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Fonts.Font>> {
-        styled(font, media: media, selector: selector, pseudo: pseudo)
+        styled(font)
     }
 }

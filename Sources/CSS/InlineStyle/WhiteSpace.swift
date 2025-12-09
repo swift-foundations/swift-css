@@ -12,11 +12,8 @@ extension CSS {
     @discardableResult
     @_disfavoredOverload
     public func whiteSpace(
-        _ whiteSpace: W3C_CSS_Text.WhiteSpace?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
+        _ whiteSpace: W3C_CSS_Text.WhiteSpace?
     ) -> CSS<HTML.Styled<Base, W3C_CSS_Text.WhiteSpace>> {
-        styled(whiteSpace, media: media, selector: selector, pseudo: pseudo)
+        styled(whiteSpace)
     }
 }
