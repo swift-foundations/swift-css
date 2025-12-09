@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func letterSpacingEastAsian(
         _ letterSpacingEastAsian: W3C_CSS_Text.LetterSpacingEastAsian?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func alignSelf(
         _ alignSelf: W3C_CSS_Alignment.AlignSelf?,
         media: W3C_CSS_MediaQueries.Media? = nil,

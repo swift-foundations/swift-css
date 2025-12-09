@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func animationTimeline(
         _ animationTimeline: W3C_CSS_Animations.AnimationTimeline?,
         media: W3C_CSS_MediaQueries.Media? = nil,

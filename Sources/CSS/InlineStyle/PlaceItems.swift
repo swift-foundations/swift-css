@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func placeItems(
         _ placeItems: W3C_CSS_Alignment.PlaceItems?,
         media: W3C_CSS_MediaQueries.Media? = nil,

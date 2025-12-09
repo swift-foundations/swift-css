@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func counterIncrement(
         _ counterIncrement: W3C_CSS_Lists.CounterIncrement?,
         media: W3C_CSS_MediaQueries.Media? = nil,

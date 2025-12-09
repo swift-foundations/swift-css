@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func alignmentBaseline(
         _ alignmentBaseline: W3C_CSS_Alignment.AlignmentBaseline?,
         media: W3C_CSS_MediaQueries.Media? = nil,

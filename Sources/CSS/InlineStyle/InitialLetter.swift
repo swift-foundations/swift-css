@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func initialLetter(
         _ initialLetter: W3C_CSS_Text.InitialLetter?,
         media: W3C_CSS_MediaQueries.Media? = nil,

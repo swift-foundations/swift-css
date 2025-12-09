@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textEmphasisPosition(
         _ textEmphasisPosition: W3C_CSS_Text.TextEmphasisPosition?,
         media: W3C_CSS_MediaQueries.Media? = nil,

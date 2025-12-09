@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func fillOpacity(
         _ fillOpacity: W3C_CSS_Images.FillOpacity?,
         media: W3C_CSS_MediaQueries.Media? = nil,

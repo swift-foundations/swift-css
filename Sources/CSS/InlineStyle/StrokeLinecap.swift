@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func strokeLinecap(
         _ strokeLinecap: W3C_CSS_Images.StrokeLinecap?,
         media: W3C_CSS_MediaQueries.Media? = nil,

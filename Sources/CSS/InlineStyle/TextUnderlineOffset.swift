@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textUnderlineOffset(
         _ textUnderlineOffset: W3C_CSS_Text.TextUnderlineOffset?,
         media: W3C_CSS_MediaQueries.Media? = nil,

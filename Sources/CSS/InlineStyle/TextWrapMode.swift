@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textWrapMode(
         _ textWrapMode: W3C_CSS_Text.TextWrapMode?,
         media: W3C_CSS_MediaQueries.Media? = nil,

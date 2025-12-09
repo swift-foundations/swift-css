@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func borderInlineColor(
         _ borderInlineColor: W3C_CSS_Backgrounds.BorderInlineColor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func backgroundBlendMode(
         _ backgroundBlendMode: W3C_CSS_Backgrounds.BackgroundBlendMode?,
         media: W3C_CSS_MediaQueries.Media? = nil,

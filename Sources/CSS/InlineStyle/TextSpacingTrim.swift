@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textSpacingTrim(
         _ textSpacingTrim: W3C_CSS_Text.TextSpacingTrim?,
         media: W3C_CSS_MediaQueries.Media? = nil,

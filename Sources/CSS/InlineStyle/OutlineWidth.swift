@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func outlineWidth(
         _ outlineWidth: W3C_CSS_UI.OutlineWidth?,
         media: W3C_CSS_MediaQueries.Media? = nil,

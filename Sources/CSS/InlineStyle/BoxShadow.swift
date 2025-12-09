@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func boxShadow(
         _ boxShadow: W3C_CSS_Backgrounds.BoxShadow?,
         media: W3C_CSS_MediaQueries.Media? = nil,

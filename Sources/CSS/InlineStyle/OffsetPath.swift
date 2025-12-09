@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func offsetPath(
         _ offsetPath: W3C_CSS_Animations.OffsetPath?,
         media: W3C_CSS_MediaQueries.Media? = nil,

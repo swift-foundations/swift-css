@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func orphans(
         _ orphans: W3C_CSS_Paged.Orphans?,
         media: W3C_CSS_MediaQueries.Media? = nil,

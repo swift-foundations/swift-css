@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func scrollMarginTop(
         _ scrollMarginTop: W3C_CSS_Scroll.ScrollMarginTop?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func maxHeight(
         _ maxHeight: W3C_CSS_BoxModel.MaxHeight?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func scrollSnapAlign(
         _ scrollSnapAlign: W3C_CSS_Scroll.ScrollSnapAlign?,
         media: W3C_CSS_MediaQueries.Media? = nil,

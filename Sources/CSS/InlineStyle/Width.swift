@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func width(
         _ width: W3C_CSS_BoxModel.Width?,
         media: W3C_CSS_MediaQueries.Media? = nil,

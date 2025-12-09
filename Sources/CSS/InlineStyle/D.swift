@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func d(
         _ d: W3C_CSS_Images.D?,
         media: W3C_CSS_MediaQueries.Media? = nil,

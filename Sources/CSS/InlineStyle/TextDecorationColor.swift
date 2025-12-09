@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textDecorationColor(
         _ textDecorationColor: W3C_CSS_TextDecoration.TextDecorationColor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

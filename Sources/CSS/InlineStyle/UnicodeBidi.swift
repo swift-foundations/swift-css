@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func unicodeBidi(
         _ unicodeBidi: W3C_CSS_Shared.UnicodeBidi?,
         media: W3C_CSS_MediaQueries.Media? = nil,

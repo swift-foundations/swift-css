@@ -9,8 +9,8 @@ import CSS_Standard
 import HTML_Renderable
 
 extension CSS {
-    @_disfavoredOverload
     @discardableResult
+    @_disfavoredOverload
     public func color(
         _ color: W3C_CSS_Color.Color?,
         media: W3C_CSS_MediaQueries.Media? = nil,

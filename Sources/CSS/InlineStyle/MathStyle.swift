@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func mathStyle(
         _ mathStyle: W3C_CSS_Text.MathStyle?,
         media: W3C_CSS_MediaQueries.Media? = nil,

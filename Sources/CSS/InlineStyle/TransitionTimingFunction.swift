@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func transitionTimingFunction(
         _ transitionTimingFunction: W3C_CSS_Transitions.TransitionTimingFunction?,
         media: W3C_CSS_MediaQueries.Media? = nil,

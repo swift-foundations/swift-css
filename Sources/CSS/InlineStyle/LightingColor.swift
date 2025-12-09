@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func lightingColor(
         _ lightingColor: W3C_CSS_Color.LightingColor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

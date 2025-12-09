@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func positionVisibility(
         _ positionVisibility: W3C_CSS_Positioning.PositionVisibility?,
         media: W3C_CSS_MediaQueries.Media? = nil,

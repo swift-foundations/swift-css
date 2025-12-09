@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textBoxTrim(
         _ textBoxTrim: W3C_CSS_Text.TextBoxTrim?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func scrollSnapStop(
         _ scrollSnapStop: W3C_CSS_Scroll.ScrollSnapStop?,
         media: W3C_CSS_MediaQueries.Media? = nil,

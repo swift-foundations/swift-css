@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func marginBlockEnd(
         _ marginBlockEnd: W3C_CSS_BoxModel.MarginBlockEnd?,
         media: W3C_CSS_MediaQueries.Media? = nil,

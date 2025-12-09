@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textEmphasisColor(
         _ textEmphasisColor: W3C_CSS_Text.TextEmphasisColor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

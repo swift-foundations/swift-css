@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func right(
         _ right: W3C_CSS_Positioning.Right?,
         media: W3C_CSS_MediaQueries.Media? = nil,

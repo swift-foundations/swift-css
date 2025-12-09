@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func transformOrigin(
         _ transformOrigin: W3C_CSS_Transforms.TransformOrigin?,
         media: W3C_CSS_MediaQueries.Media? = nil,

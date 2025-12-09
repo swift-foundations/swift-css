@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func webkitMaskComposite(
         _ webkitMaskComposite: W3C_CSS_UI.WebkitMaskComposite?,
         media: W3C_CSS_MediaQueries.Media? = nil,

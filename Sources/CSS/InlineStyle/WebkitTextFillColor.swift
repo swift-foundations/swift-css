@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func webkitTextFillColor(
         _ webkitTextFillColor: W3C_CSS_UI.WebkitTextFillColor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

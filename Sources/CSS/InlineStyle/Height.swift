@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func height(
         _ height: W3C_CSS_BoxModel.Height?,
         media: W3C_CSS_MediaQueries.Media? = nil,

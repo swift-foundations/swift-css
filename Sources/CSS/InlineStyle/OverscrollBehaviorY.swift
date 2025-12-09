@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func overscrollBehaviorY(
         _ overscrollBehaviorY: W3C_CSS_Scroll.OverscrollBehaviorY?,
         media: W3C_CSS_MediaQueries.Media? = nil,

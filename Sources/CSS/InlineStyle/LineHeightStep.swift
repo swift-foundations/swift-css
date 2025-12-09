@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func lineHeightStep(
         _ lineHeightStep: W3C_CSS_Text.LineHeightStep?,
         media: W3C_CSS_MediaQueries.Media? = nil,

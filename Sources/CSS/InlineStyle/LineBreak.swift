@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func lineBreak(
         _ lineBreak: W3C_CSS_Text.LineBreak?,
         media: W3C_CSS_MediaQueries.Media? = nil,

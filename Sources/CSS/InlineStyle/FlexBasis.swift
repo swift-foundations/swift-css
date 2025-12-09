@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func flexBasis(
         _ flexBasis: W3C_CSS_Flexbox.FlexBasis?,
         media: W3C_CSS_MediaQueries.Media? = nil,

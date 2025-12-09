@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func breakBefore(
         _ breakBefore: W3C_CSS_Multicolumn.BreakBefore?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func webkitMaskPositionX(
         _ webkitMaskPositionX: W3C_CSS_UI.WebkitMaskPositionX?,
         media: W3C_CSS_MediaQueries.Media? = nil,

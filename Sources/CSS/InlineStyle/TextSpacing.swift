@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textSpacing(
         _ textSpacing: W3C_CSS_Text.TextSpacing?,
         media: W3C_CSS_MediaQueries.Media? = nil,

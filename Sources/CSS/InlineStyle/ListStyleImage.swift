@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func listStyleImage(
         _ listStyleImage: W3C_CSS_Lists.ListStyleImage?,
         media: W3C_CSS_MediaQueries.Media? = nil,

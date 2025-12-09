@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func minInlineSize(
         _ minInlineSize: W3C_CSS_Logical.MinInlineSize?,
         media: W3C_CSS_MediaQueries.Media? = nil,

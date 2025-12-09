@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textTransform(
         _ textTransform: W3C_CSS_Text.TextTransform?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func overflowY(
         _ overflowY: W3C_CSS_BoxModel.OverflowY?,
         media: W3C_CSS_MediaQueries.Media? = nil,

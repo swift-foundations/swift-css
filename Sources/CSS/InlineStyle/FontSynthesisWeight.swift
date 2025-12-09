@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func fontSynthesisWeight(
         _ fontSynthesisWeight: W3C_CSS_Fonts.FontSynthesisWeight?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func markerEnd(
         _ markerEnd: W3C_CSS_Images.MarkerEnd?,
         media: W3C_CSS_MediaQueries.Media? = nil,

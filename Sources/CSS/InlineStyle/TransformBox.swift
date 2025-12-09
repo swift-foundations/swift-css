@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func transformBox(
         _ transformBox: W3C_CSS_Transforms.TransformBox?,
         media: W3C_CSS_MediaQueries.Media? = nil,

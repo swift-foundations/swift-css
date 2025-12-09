@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func shapeOutside(
         _ shapeOutside: W3C_CSS_Masking.ShapeOutside?,
         media: W3C_CSS_MediaQueries.Media? = nil,

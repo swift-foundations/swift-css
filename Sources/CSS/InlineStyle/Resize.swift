@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func resize(
         _ resize: W3C_CSS_UI.Resize?,
         media: W3C_CSS_MediaQueries.Media? = nil,

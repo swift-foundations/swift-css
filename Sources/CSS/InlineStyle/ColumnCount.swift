@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func columnCount(
         _ columnCount: W3C_CSS_Multicolumn.ColumnCount?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func fontSizeAdjust(
         _ fontSizeAdjust: W3C_CSS_Fonts.FontSizeAdjust?,
         media: W3C_CSS_MediaQueries.Media? = nil,

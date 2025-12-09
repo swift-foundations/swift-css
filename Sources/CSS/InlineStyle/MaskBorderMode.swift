@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func maskBorderMode(
         _ maskBorderMode: W3C_CSS_Masking.MaskBorderMode?,
         media: W3C_CSS_MediaQueries.Media? = nil,

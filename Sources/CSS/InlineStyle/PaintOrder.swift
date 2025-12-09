@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func paintOrder(
         _ paintOrder: W3C_CSS_Images.PaintOrder?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func scrollBehavior(
         _ scrollBehavior: W3C_CSS_Scroll.ScrollBehavior?,
         media: W3C_CSS_MediaQueries.Media? = nil,

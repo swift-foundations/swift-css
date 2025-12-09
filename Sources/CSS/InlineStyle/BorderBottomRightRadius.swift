@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func borderBottomRightRadius(
         _ borderBottomRightRadius: W3C_CSS_Backgrounds.BorderBottomRightRadius?,
         media: W3C_CSS_MediaQueries.Media? = nil,

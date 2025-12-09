@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func scrollTimeline(
         _ scrollTimeline: W3C_CSS_Scroll.ScrollTimeline?,
         media: W3C_CSS_MediaQueries.Media? = nil,

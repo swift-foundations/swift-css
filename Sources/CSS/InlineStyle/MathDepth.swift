@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func mathDepth(
         _ mathDepth: W3C_CSS_Text.MathDepth?,
         media: W3C_CSS_MediaQueries.Media? = nil,

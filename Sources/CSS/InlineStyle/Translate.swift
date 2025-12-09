@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func translate(
         _ translate: W3C_CSS_Transforms.Translate?,
         media: W3C_CSS_MediaQueries.Media? = nil,

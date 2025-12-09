@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func animationRangeStart(
         _ animationRangeStart: W3C_CSS_Animations.AnimationRangeStart?,
         media: W3C_CSS_MediaQueries.Media? = nil,

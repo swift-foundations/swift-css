@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textBox(
         _ textBox: W3C_CSS_Text.TextBox?,
         media: W3C_CSS_MediaQueries.Media? = nil,

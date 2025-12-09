@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func floodColor(
         _ floodColor: W3C_CSS_Color.FloodColor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

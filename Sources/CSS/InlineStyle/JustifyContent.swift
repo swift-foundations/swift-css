@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func justifyContent(
         _ justifyContent: W3C_CSS_Alignment.JustifyContent?,
         media: W3C_CSS_MediaQueries.Media? = nil,

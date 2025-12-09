@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func cursor(
         _ cursor: W3C_CSS_UI.Cursor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

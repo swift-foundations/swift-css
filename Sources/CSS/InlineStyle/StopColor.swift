@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func stopColor(
         _ stopColor: W3C_CSS_Images.StopColor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

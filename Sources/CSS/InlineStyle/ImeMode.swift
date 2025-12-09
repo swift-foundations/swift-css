@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func imeMode(
         _ imeMode: W3C_CSS_UI.ImeMode?,
         media: W3C_CSS_MediaQueries.Media? = nil,

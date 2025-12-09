@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func maskBorderSlice(
         _ maskBorderSlice: W3C_CSS_Masking.MaskBorderSlice?,
         media: W3C_CSS_MediaQueries.Media? = nil,

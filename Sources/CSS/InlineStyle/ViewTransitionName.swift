@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func viewTransitionName(
         _ viewTransitionName: W3C_CSS_Animations.ViewTransitionName?,
         media: W3C_CSS_MediaQueries.Media? = nil,

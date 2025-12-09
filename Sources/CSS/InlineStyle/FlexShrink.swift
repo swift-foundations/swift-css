@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func flexShrink(
         _ flexShrink: W3C_CSS_Flexbox.FlexShrink? = 1,
         media: W3C_CSS_MediaQueries.Media? = nil,

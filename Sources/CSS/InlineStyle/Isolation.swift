@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func isolation(
         _ isolation: W3C_CSS_Compositing.Isolation?,
         media: W3C_CSS_MediaQueries.Media? = nil,

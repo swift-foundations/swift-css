@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func shapeRendering(
         _ shapeRendering: W3C_CSS_Images.ShapeRendering?,
         media: W3C_CSS_MediaQueries.Media? = nil,

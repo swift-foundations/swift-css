@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func strokeDashoffset(
         _ strokeDashoffset: W3C_CSS_Images.StrokeDashoffset?,
         media: W3C_CSS_MediaQueries.Media? = nil,

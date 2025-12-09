@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func captionSide(
         _ captionSide: W3C_CSS_UI.CaptionSide?,
         media: W3C_CSS_MediaQueries.Media? = nil,

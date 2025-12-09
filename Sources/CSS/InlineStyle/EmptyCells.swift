@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func emptyCells(
         _ emptyCells: W3C_CSS_UI.EmptyCells?,
         media: W3C_CSS_MediaQueries.Media? = nil,

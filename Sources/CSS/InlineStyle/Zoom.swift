@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func zoom(
         _ zoom: W3C_CSS_Positioning.Zoom?,
         media: W3C_CSS_MediaQueries.Media? = nil,

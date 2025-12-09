@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func userSelect(
         _ userSelect: W3C_CSS_UI.UserSelect?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func marginLeft(
         _ marginLeft: W3C_CSS_BoxModel.MarginLeft?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func paddingInlineStart(
         _ paddingInlineStart: W3C_CSS_BoxModel.PaddingInlineStart?,
         media: W3C_CSS_MediaQueries.Media? = nil,

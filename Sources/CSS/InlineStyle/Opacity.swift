@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func opacity(
         _ opacity: W3C_CSS_Color.Opacity?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func scrollMarginInlineEnd(
         _ scrollMarginInlineEnd: W3C_CSS_Scroll.ScrollMarginInlineEnd?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func insetInlineEnd(
         _ insetInlineEnd: W3C_CSS_Positioning.InsetInlineEnd?,
         media: W3C_CSS_MediaQueries.Media? = nil,

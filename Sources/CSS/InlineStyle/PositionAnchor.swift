@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func positionAnchor(
         _ positionAnchor: W3C_CSS_Positioning.PositionAnchor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

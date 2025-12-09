@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func maskRepeat(
         _ maskRepeat: W3C_CSS_Masking.MaskRepeat?,
         media: W3C_CSS_MediaQueries.Media? = nil,

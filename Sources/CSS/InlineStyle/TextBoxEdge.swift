@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textBoxEdge(
         _ textBoxEdge: W3C_CSS_Text.TextBoxEdge?,
         media: W3C_CSS_MediaQueries.Media? = nil,

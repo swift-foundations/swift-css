@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func offsetRotate(
         _ offsetRotate: W3C_CSS_Animations.OffsetRotate?,
         media: W3C_CSS_MediaQueries.Media? = nil,

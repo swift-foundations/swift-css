@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textDecorationSkipInk(
         _ textDecorationSkipInk: W3C_CSS_TextDecoration.TextDecorationSkipInk?,
         media: W3C_CSS_MediaQueries.Media? = nil,

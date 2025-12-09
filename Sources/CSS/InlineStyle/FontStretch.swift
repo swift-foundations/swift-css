@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func fontStretch(
         _ fontStretch: W3C_CSS_Fonts.FontStretch?,
         media: W3C_CSS_MediaQueries.Media? = nil,

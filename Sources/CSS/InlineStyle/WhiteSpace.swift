@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func whiteSpace(
         _ whiteSpace: W3C_CSS_Text.WhiteSpace?,
         media: W3C_CSS_MediaQueries.Media? = nil,

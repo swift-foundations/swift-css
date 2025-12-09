@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func strokeWidth(
         _ strokeWidth: W3C_CSS_Images.StrokeWidth?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func punctuationWrap(
         _ punctuationWrap: W3C_CSS_Text.PunctuationWrap?,
         media: W3C_CSS_MediaQueries.Media? = nil,

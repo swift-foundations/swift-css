@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textIndent(
         _ textIndent: W3C_CSS_Text.TextIndent?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func fontFeatureSettings(
         _ fontFeatureSettings: W3C_CSS_Fonts.FontFeatureSettings?,
         media: W3C_CSS_MediaQueries.Media? = nil,

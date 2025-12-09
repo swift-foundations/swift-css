@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func pageBreakAfter(
         _ pageBreakAfter: W3C_CSS_Paged.PageBreakAfter?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func gridRowStart(
         _ gridRowStart: W3C_CSS_Grid.GridRowStart?,
         media: W3C_CSS_MediaQueries.Media? = nil,

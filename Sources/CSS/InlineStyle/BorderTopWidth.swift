@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func borderTopWidth(
         _ borderTopWidth: W3C_CSS_Backgrounds.BorderTopWidth?,
         media: W3C_CSS_MediaQueries.Media? = nil,

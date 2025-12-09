@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func scrollPaddingBlockStart(
         _ scrollPaddingBlockStart: W3C_CSS_Scroll.ScrollPaddingBlockStart?,
         media: W3C_CSS_MediaQueries.Media? = nil,

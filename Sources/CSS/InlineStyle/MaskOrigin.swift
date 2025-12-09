@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func maskOrigin(
         _ maskOrigin: W3C_CSS_Masking.MaskOrigin?,
         media: W3C_CSS_MediaQueries.Media? = nil,

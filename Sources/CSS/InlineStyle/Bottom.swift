@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func bottom(
         _ bottom: W3C_CSS_Positioning.Bottom?,
         media: W3C_CSS_MediaQueries.Media? = nil,

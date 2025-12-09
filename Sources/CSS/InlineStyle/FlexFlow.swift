@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func flexFlow(
         _ flexFlow: W3C_CSS_Flexbox.FlexFlow?,
         media: W3C_CSS_MediaQueries.Media? = nil,

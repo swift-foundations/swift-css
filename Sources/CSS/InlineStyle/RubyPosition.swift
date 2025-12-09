@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func rubyPosition(
         _ rubyPosition: W3C_CSS_Text.RubyPosition?,
         media: W3C_CSS_MediaQueries.Media? = nil,

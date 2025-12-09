@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func borderStartEndRadius(
         _ borderStartEndRadius: W3C_CSS_Backgrounds.BorderStartEndRadius?,
         media: W3C_CSS_MediaQueries.Media? = nil,

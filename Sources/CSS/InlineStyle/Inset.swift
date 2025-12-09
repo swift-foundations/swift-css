@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func inset(
         _ inset: W3C_CSS_Positioning.Inset?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func fontVariantPosition(
         _ fontVariantPosition: W3C_CSS_Fonts.FontVariantPosition?,
         media: W3C_CSS_MediaQueries.Media? = nil,

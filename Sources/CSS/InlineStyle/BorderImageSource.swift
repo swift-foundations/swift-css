@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func borderImageSource(
         _ borderImageSource: W3C_CSS_Backgrounds.BorderImageSource?,
         media: W3C_CSS_MediaQueries.Media? = nil,

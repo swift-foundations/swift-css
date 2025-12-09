@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func colorInterpolationFilters(
         _ colorInterpolationFilters: W3C_CSS_Color.ColorInterpolationFilters?,
         media: W3C_CSS_MediaQueries.Media? = nil,

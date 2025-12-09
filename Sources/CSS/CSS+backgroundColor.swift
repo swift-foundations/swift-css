@@ -9,28 +9,28 @@
 import CSS_Standard
 import HTML_Renderable
 
-extension CSS {
-    /// Sets the background color using a single Color.Value.
-    ///
-    /// This basic method applies a single color without dark mode variants.
-    /// For dark mode support, import swift-html and use the DarkModeColor overloads.
-    ///
-    /// - Parameters:
-    ///   - value: The color value to apply
-    ///   - media: Optional media query
-    ///   - selector: Optional CSS selector
-    ///   - pseudo: Optional pseudo-class/element
-    /// - Returns: A new CSS with the style applied
-    @inlinable
-    @discardableResult
-    @_disfavoredOverload
-    public func backgroundColor(
-        _ value: CSS_Standard.Color.Value?,
-        media: W3C_CSS_MediaQueries.Media? = nil,
-        selector: HTML.Selector? = nil,
-        pseudo: HTML.Pseudo? = nil
-    ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BackgroundColor>> {
-        let property: W3C_CSS_Backgrounds.BackgroundColor? = value.map { .color($0) }
-        return styled(property, media: media, selector: selector, pseudo: pseudo)
-    }
-}
+//extension CSS {
+//    /// Sets the background color using a single Color.Value.
+//    ///
+//    /// This basic method applies a single color without dark mode variants.
+//    /// For dark mode support, import swift-html and use the DarkModeColor overloads.
+//    ///
+//    /// - Parameters:
+//    ///   - value: The color value to apply
+//    ///   - media: Optional media query
+//    ///   - selector: Optional CSS selector
+//    ///   - pseudo: Optional pseudo-class/element
+//    /// - Returns: A new CSS with the style applied
+//    @inlinable
+//    @discardableResult
+//    @_disfavoredOverload
+//    public func backgroundColor(
+//        _ value: CSS_Standard.Color.Value?,
+//        media: W3C_CSS_MediaQueries.Media? = nil,
+//        selector: HTML.Selector? = nil,
+//        pseudo: HTML.Pseudo? = nil
+//    ) -> CSS<HTML.Styled<Base, W3C_CSS_Backgrounds.BackgroundColor>> {
+//        let property: W3C_CSS_Backgrounds.BackgroundColor? = value.map { .color($0) }
+//        return styled(property, media: media, selector: selector, pseudo: pseudo)
+//    }
+//}

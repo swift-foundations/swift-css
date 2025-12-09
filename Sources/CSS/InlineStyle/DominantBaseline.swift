@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func dominantBaseline(
         _ dominantBaseline: W3C_CSS_Images.DominantBaseline?,
         media: W3C_CSS_MediaQueries.Media? = nil,

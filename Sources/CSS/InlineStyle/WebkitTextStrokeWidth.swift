@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func webkitTextStrokeWidth(
         _ webkitTextStrokeWidth: W3C_CSS_UI.WebkitTextStrokeWidth?,
         media: W3C_CSS_MediaQueries.Media? = nil,

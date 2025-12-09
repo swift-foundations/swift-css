@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func columnRuleColor(
         _ columnRuleColor: W3C_CSS_Multicolumn.ColumnRuleColor?,
         media: W3C_CSS_MediaQueries.Media? = nil,

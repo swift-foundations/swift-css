@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func containIntrinsicInlineSize(
         _ containIntrinsicInlineSize: W3C_CSS_Containment.ContainIntrinsicInlineSize?,
         media: W3C_CSS_MediaQueries.Media? = nil,

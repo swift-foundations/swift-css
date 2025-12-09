@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func blockSize(
         _ blockSize: W3C_CSS_Logical.BlockSize?,
         media: W3C_CSS_MediaQueries.Media? = nil,

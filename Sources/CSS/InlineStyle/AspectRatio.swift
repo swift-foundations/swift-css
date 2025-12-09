@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func aspectRatio(
         _ aspectRatio: W3C_CSS_Visual.AspectRatio?,
         media: W3C_CSS_MediaQueries.Media? = nil,

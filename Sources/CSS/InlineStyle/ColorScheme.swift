@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func colorScheme(
         _ colorScheme: W3C_CSS_Color.ColorScheme?,
         media: W3C_CSS_MediaQueries.Media? = nil,

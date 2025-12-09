@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func borderImageSlice(
         _ borderImageSlice: W3C_CSS_Backgrounds.BorderImageSlice?,
         media: W3C_CSS_MediaQueries.Media? = nil,

@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func lineHeight(
         _ lineHeight: W3C_CSS_Text.LineHeight?,
         media: W3C_CSS_MediaQueries.Media? = nil,
@@ -22,6 +23,7 @@ extension CSS {
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func lineHeight<T: BinaryInteger>(
         _ lineHeight: T?,
         media: W3C_CSS_MediaQueries.Media? = nil,
@@ -32,6 +34,7 @@ extension CSS {
     }
 
     @discardableResult
+    @_disfavoredOverload
     public func lineHeight<T: BinaryFloatingPoint>(
         _ lineHeight: T?,
         media: W3C_CSS_MediaQueries.Media? = nil,

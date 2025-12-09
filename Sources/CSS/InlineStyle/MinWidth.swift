@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func minWidth(
         _ minWidth: W3C_CSS_BoxModel.MinWidth?,
         media: W3C_CSS_MediaQueries.Media? = nil,

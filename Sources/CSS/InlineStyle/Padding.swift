@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func padding(
         _ padding: W3C_CSS_BoxModel.Padding?,
         media: W3C_CSS_MediaQueries.Media? = nil,

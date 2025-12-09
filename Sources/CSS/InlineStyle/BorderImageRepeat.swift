@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func borderImageRepeat(
         _ borderImageRepeat: W3C_CSS_Backgrounds.BorderImageRepeat?,
         media: W3C_CSS_MediaQueries.Media? = nil,

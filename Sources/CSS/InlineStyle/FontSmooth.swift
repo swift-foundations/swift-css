@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func fontSmooth(
         _ fontSmooth: W3C_CSS_Fonts.FontSmooth?,
         media: W3C_CSS_MediaQueries.Media? = nil,

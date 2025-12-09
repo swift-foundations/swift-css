@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func offsetDistance(
         _ offsetDistance: W3C_CSS_Animations.OffsetDistance?,
         media: W3C_CSS_MediaQueries.Media? = nil,

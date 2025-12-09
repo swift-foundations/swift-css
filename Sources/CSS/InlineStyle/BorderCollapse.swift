@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func borderCollapse(
         _ borderCollapse: W3C_CSS_Backgrounds.BorderCollapse?,
         media: W3C_CSS_MediaQueries.Media? = nil,

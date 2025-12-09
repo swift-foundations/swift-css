@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func hangingPunctuation(
         _ hangingPunctuation: W3C_CSS_Text.HangingPunctuation?,
         media: W3C_CSS_MediaQueries.Media? = nil,

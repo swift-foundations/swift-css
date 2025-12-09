@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func maskSize(
         _ maskSize: W3C_CSS_Masking.MaskSize?,
         media: W3C_CSS_MediaQueries.Media? = nil,

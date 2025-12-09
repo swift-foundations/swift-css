@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func rowGap(
         _ rowGap: W3C_CSS_Flexbox.RowGap?,
         media: W3C_CSS_MediaQueries.Media? = nil,

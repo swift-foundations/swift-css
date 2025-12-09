@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func backgroundOrigin(
         _ backgroundOrigin: W3C_CSS_Backgrounds.BackgroundOrigin?,
         media: W3C_CSS_MediaQueries.Media? = nil,

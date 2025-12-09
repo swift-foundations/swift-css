@@ -10,6 +10,7 @@ import HTML_Renderable
 
 extension CSS {
     @discardableResult
+    @_disfavoredOverload
     public func textOrientation(
         _ textOrientation: W3C_CSS_Text.TextOrientation?,
         media: W3C_CSS_MediaQueries.Media? = nil,
