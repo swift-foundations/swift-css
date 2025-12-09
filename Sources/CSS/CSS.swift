@@ -48,6 +48,115 @@ public struct CSS<Base: HTML.View>: HTML.View {
         base
     }
 
+    // MARK: - CSS.Builder Result Builder
+
+    /// A result builder for constructing CSS-wrapped HTML views.
+    ///
+    /// Use `@CSS.Builder` to annotate functions that return `CSS<some HTML.View>`,
+    /// enabling the same DSL syntax as `@HTML.Builder` while automatically
+    /// wrapping the result in a `CSS` wrapper:
+    ///
+    /// ```swift
+    /// extension CSS {
+    ///     @CSS.Builder
+    ///     func applyColor(_ color: Color?) -> CSS<some HTML.View> {
+    ///         if let color {
+    ///             base.inlineStyle(Color.color(color))
+    ///         } else {
+    ///             base
+    ///         }
+    ///     }
+    /// }
+    /// ```
+    ///
+    /// This builder reuses the same transformation logic as `HTML.Builder` (from Renderable),
+    /// but wraps the final result in `CSS<...>` via `buildFinalResult`.
+    @resultBuilder
+    public enum Builder {
+        // Pass through expressions unchanged (same as HTML.Builder)
+        @inlinable
+        public static func buildExpression<T>(_ expression: T) -> T {
+            expression
+        }
+
+        // Pass through single block unchanged (same as HTML.Builder)
+        @inlinable
+        public static func buildBlock<Content>(_ content: Content) -> Content {
+            content
+        }
+
+        // Handle multiple components as tuple (same as HTML.Builder)
+        @inlinable
+        public static func buildBlock<each Content>(
+            _ content: repeat each Content
+        ) -> _Tuple<repeat each Content> {
+            _Tuple(repeat each content)
+        }
+
+        // Handle if-else: first branch (same as HTML.Builder)
+        @inlinable
+        public static func buildEither<First, Second>(
+            first component: First
+        ) -> _Conditional<First, Second> {
+            .first(component)
+        }
+
+        // Handle if-else: second branch (same as HTML.Builder)
+        @inlinable
+        public static func buildEither<First, Second>(
+            second component: Second
+        ) -> _Conditional<First, Second> {
+            .second(component)
+        }
+
+        // Handle optional (if without else) (same as HTML.Builder)
+        @inlinable
+        public static func buildOptional<T>(_ component: T?) -> T? {
+            component
+        }
+
+        // Handle arrays from for loops (same as HTML.Builder)
+        @inlinable
+        public static func buildArray<Element>(_ components: [Element]) -> _Array<Element> {
+            _Array(components)
+        }
+
+        // The key difference: wrap the final result in CSS
+        @inlinable
+        public static func buildFinalResult<Content: HTML.View>(_ component: Content) -> CSS<Content> {
+            CSS<Content>(base: component)
+        }
+    }
+}
+
+// MARK: - Global CSS Builder Function
+
+/// Creates a CSS wrapper with type inference from the builder result.
+///
+/// Use this function when you need to conditionally construct CSS content
+/// while preserving the concrete type information:
+/// ```swift
+/// func applyColor(_ color: Color?) -> CSS<some HTML.View> {
+///     css {
+///         if let color {
+///             base.inlineStyle(Color.color(color))
+///         } else {
+///             base
+///         }
+///     }
+/// }
+/// ```
+///
+/// This is preferred over the `CSS { }` init inside extensions because
+/// Swift cannot infer a different type parameter than `Base` in that context.
+@inlinable
+public func cssBuilder<Content: HTML.View>(
+    @HTML.Builder _ content: () -> Content
+) -> CSS<Content> {
+    CSS<Content>(base: content())
+}
+
+extension CSS {
     // MARK: - Inline Style Helper
 
     /// Applies an inline style and returns a CSS wrapper with the styled content.
