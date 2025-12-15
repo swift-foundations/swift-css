@@ -144,13 +144,13 @@ extension `Performance Tests` {
             // Simulating what a hypothetical byte-based renderer would do
             for _ in 0..<10_000 {
                 var bytes: [UInt8] = []
-                bytes.append(contentsOf: [114, 103, 98, 40]) // "rgb("
+                bytes.append(contentsOf: [114, 103, 98, 40])  // "rgb("
                 bytes.append(contentsOf: "255".utf8)
-                bytes.append(contentsOf: [44, 32]) // ", "
+                bytes.append(contentsOf: [44, 32])  // ", "
                 bytes.append(contentsOf: "128".utf8)
-                bytes.append(contentsOf: [44, 32]) // ", "
+                bytes.append(contentsOf: [44, 32])  // ", "
                 bytes.append(contentsOf: "64".utf8)
-                bytes.append(41) // ")"
+                bytes.append(41)  // ")"
                 _ = bytes
             }
         }
@@ -231,11 +231,13 @@ extension `Performance Tests` {
         @Test(.timed(threshold: .seconds(2)))
         func `cache - different properties each iteration 5K times`() {
             for i in 0..<5_000 {
-                let prop = BackgroundColor.color(.rgb(
-                    (i * 23) % 256,
-                    (i * 47) % 256,
-                    (i * 71) % 256
-                ))
+                let prop = BackgroundColor.color(
+                    .rgb(
+                        (i * 23) % 256,
+                        (i * 47) % 256,
+                        (i * 71) % 256
+                    )
+                )
                 _ = Array(prop.description.utf8)
             }
         }

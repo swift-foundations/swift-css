@@ -123,7 +123,9 @@ public struct CSS<Base: HTML.View>: HTML.View {
 
         // The key difference: wrap the final result in CSS
         @inlinable
-        public static func buildFinalResult<Content: HTML.View>(_ component: Content) -> CSS<Content> {
+        public static func buildFinalResult<Content: HTML.View>(
+            _ component: Content
+        ) -> CSS<Content> {
             CSS<Content>(base: component)
         }
     }
@@ -205,7 +207,7 @@ extension CSS {
         } else {
             base
         }
-        
+
     }
 }
 
@@ -229,4 +231,3 @@ extension HTML.View {
         CSS(base: self)
     }
 }
-

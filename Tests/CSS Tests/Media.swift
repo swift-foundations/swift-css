@@ -180,8 +180,8 @@ extension `Snapshot Tests` {
                     div
                         .css.media(Media.screen && .maxWidth(.px(768))) {
                             $0.backgroundColor(.blue)
-                              .color(.white)
-                              .padding(.px(20))
+                                .color(.white)
+                                .padding(.px(20))
                         }
                 },
                 as: .html
@@ -214,7 +214,7 @@ extension `Snapshot Tests` {
                     div
                         .css.media(.screen && .minWidth(.px(768))) {
                             $0.backgroundColor(.blue)
-                              .backgroundColor(.red)
+                                .backgroundColor(.red)
                         }
                 },
                 as: .html

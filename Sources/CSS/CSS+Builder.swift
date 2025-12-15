@@ -9,7 +9,7 @@
 
 import HTML_Renderable
 
-//extension HTML.Builder {
+// extension HTML.Builder {
 //    /// Converts a CSS-wrapped view to AnyView when entering a builder context.
 //    ///
 //    /// This enables CSS-styled elements to work in `for` loops and other
@@ -20,4 +20,4 @@ import HTML_Renderable
 //    public static func buildExpression<T: HTML.View>(_ expression: CSS<T>) -> HTML.AnyView {
 //        HTML.AnyView(expression as any HTML.View)
 //    }
-//}
+// }

@@ -7,7 +7,6 @@
 
 import CSS
 import CSS_Standard
-import CSS_Standard
 import HTML_Renderable
 import HTML_Rendering_TestSupport
 import Testing
@@ -39,7 +38,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with background-blend-mode multiply properly`() throws {
             assertInlineSnapshot(
@@ -64,7 +63,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with background-blend-mode screen properly`() throws {
             assertInlineSnapshot(
@@ -89,7 +88,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with background-blend-mode overlay properly`() throws {
             assertInlineSnapshot(
@@ -114,7 +113,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-blend-mode with global value renders properly`() throws {
             assertInlineSnapshot(
@@ -139,7 +138,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-blend-mode with media query renders properly`() throws {
             assertInlineSnapshot(
@@ -166,7 +165,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-blend-mode with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
@@ -191,7 +190,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-blend-mode with prefix renders properly`() throws {
             assertInlineSnapshot(

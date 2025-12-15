@@ -7,7 +7,6 @@
 
 import CSS
 import CSS_Standard
-import CSS_Standard
 import HTML_Renderable
 import HTML_Rendering_TestSupport
 import Testing
@@ -39,7 +38,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         //    @Test
         //    func htmlElementWithBackgroundImageLinearGradientRendersCorrectly() throws {
         //        assertInlineSnapshot(
@@ -117,7 +116,7 @@ extension `Snapshot Tests` {
         //            """
         //        }
         //    }
-        
+
         @Test
         func `HTML background-image with none value renders properly`() throws {
             assertInlineSnapshot(
@@ -142,7 +141,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-image with global value renders properly`() throws {
             assertInlineSnapshot(
@@ -167,12 +166,14 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-image with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.print { $0.backgroundImage(.url(.init("https://example.com/image.png"))) }
+                    div.css.print {
+                        $0.backgroundImage(.url(.init("https://example.com/image.png")))
+                    }
                 },
                 as: .html
             ) {
@@ -199,7 +200,9 @@ extension `Snapshot Tests` {
         func `HTML background-image with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.hover { $0.backgroundImage(.url(.init("https://example.com/image.png"))) }
+                    div.css.hover {
+                        $0.backgroundImage(.url(.init("https://example.com/image.png")))
+                    }
                 },
                 as: .html
             ) {
@@ -224,7 +227,9 @@ extension `Snapshot Tests` {
         func `HTML background-image with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.selector("my-component") { $0.backgroundImage(.url(.init("https://example.com/image.png"))) }
+                    div.css.selector("my-component") {
+                        $0.backgroundImage(.url(.init("https://example.com/image.png")))
+                    }
                 },
                 as: .html
             ) {

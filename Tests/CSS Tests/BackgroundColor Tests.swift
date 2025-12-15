@@ -7,7 +7,6 @@
 
 import CSS
 import CSS_Standard
-import CSS_Standard
 import HTML_Renderable
 import HTML_Rendering_TestSupport
 import Testing
@@ -39,7 +38,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with background-color hex color properly`() throws {
             assertInlineSnapshot(
@@ -64,7 +63,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with background-color rgb color properly`() throws {
             assertInlineSnapshot(
@@ -89,7 +88,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with background-color rgba color properly`() throws {
             assertInlineSnapshot(
@@ -114,7 +113,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with background-color transparent properly`() throws {
             assertInlineSnapshot(
@@ -139,7 +138,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-color with global value renders properly`() throws {
             assertInlineSnapshot(
@@ -164,7 +163,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-color with media query renders properly`() throws {
             assertInlineSnapshot(
@@ -191,7 +190,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-color with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
@@ -216,7 +215,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background-color with prefix renders properly`() throws {
             assertInlineSnapshot(

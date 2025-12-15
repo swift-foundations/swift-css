@@ -7,7 +7,6 @@
 
 import CSS
 import CSS_Standard
-import CSS_Standard
 import HTML_Renderable
 import HTML_Rendering_TestSupport
 import Testing
@@ -39,7 +38,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with background image properly`() throws {
             assertInlineSnapshot(
@@ -64,7 +63,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         //    @Test
         //    func htmlElementWithComplexBackgroundRendersCorrectly() throws {
         //        assertInlineSnapshot(
@@ -90,7 +89,7 @@ extension `Snapshot Tests` {
         //            """
         //        }
         //    }
-        
+
         @Test
         func `HTML background with none value renders properly`() throws {
             assertInlineSnapshot(
@@ -115,7 +114,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background with global value renders properly`() throws {
             assertInlineSnapshot(
@@ -140,7 +139,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background with media query renders properly`() throws {
             assertInlineSnapshot(
@@ -167,7 +166,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
@@ -192,7 +191,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML background with prefix renders properly`() throws {
             assertInlineSnapshot(

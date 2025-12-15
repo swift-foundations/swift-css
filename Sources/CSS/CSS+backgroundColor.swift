@@ -9,7 +9,7 @@
 import CSS_Standard
 import HTML_Renderable
 
-//extension CSS {
+// extension CSS {
 //    /// Sets the background color using a single Color.Value.
 //    ///
 //    /// This basic method applies a single color without dark mode variants.
@@ -33,4 +33,4 @@ import HTML_Renderable
 //        let property: W3C_CSS_Backgrounds.BackgroundColor? = value.map { .color($0) }
 //        return styled(property, media: media, selector: selector, pseudo: pseudo)
 //    }
-//}
+// }

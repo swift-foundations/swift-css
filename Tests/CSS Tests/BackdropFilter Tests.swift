@@ -7,7 +7,6 @@
 
 import CSS
 import CSS_Standard
-import CSS_Standard
 import HTML_Renderable
 import HTML_Rendering_TestSupport
 import Testing
@@ -39,7 +38,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with backdrop-filter brightness properly`() throws {
             assertInlineSnapshot(
@@ -64,7 +63,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         //    @Test
         //    func htmlElementWithMultipleBackdropFiltersRendersCorrectly() throws {
         //        assertInlineSnapshot(
@@ -90,7 +89,7 @@ extension `Snapshot Tests` {
         //            """
         //        }
         //    }
-        
+
         @Test
         func `HTML backdrop-filter with none value renders properly`() throws {
             assertInlineSnapshot(
@@ -115,7 +114,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML backdrop-filter with global value renders properly`() throws {
             assertInlineSnapshot(
@@ -140,7 +139,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML backdrop-filter with media query renders properly`() throws {
             assertInlineSnapshot(

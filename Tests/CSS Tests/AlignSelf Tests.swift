@@ -7,7 +7,6 @@
 
 import CSS
 import CSS_Standard
-import CSS_Standard
 import HTML_Renderable
 import HTML_Rendering_TestSupport
 import Testing
@@ -39,7 +38,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with align-self auto value`() throws {
             assertInlineSnapshot(
@@ -64,7 +63,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML align-self with global value renders properly`() throws {
             assertInlineSnapshot(
@@ -89,7 +88,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML align-self with media query renders properly`() throws {
             assertInlineSnapshot(
@@ -116,7 +115,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML align-self with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
@@ -141,7 +140,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML align-self with prefix renders properly`() throws {
             assertInlineSnapshot(
@@ -166,7 +165,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML align-self with stretch value renders properly`() throws {
             assertInlineSnapshot(

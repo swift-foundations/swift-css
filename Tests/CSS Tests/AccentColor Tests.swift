@@ -12,7 +12,7 @@ import HTML_Rendering_TestSupport
 import Testing
 
 extension `Snapshot Tests` {
-    
+
     @Suite
     struct `AccentColor Tests` {
         @Test
@@ -39,7 +39,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML element renders with accent-color using hex color properly`() throws {
             assertInlineSnapshot(
@@ -64,7 +64,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML accent-color with global value renders properly`() throws {
             assertInlineSnapshot(
@@ -89,7 +89,7 @@ extension `Snapshot Tests` {
                 """
             }
         }
-        
+
         @Test
         func `HTML accent-color with media query renders properly`() throws {
             assertInlineSnapshot(

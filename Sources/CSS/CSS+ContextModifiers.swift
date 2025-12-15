@@ -37,7 +37,9 @@ extension CSS {
     ) -> CSS<Result> {
         let atRule = media.map { HTML.AtRule.Media($0) }
         let newContext = HTML.Style.Context.current.merging(with: .init(atRule: atRule))
-        return CSS<Result>(base: HTML.Style.Context.$current.withValue(newContext) { content(self) })
+        return CSS<Result>(
+            base: HTML.Style.Context.$current.withValue(newContext) { content(self) }
+        )
     }
 
     /// Applies styles for dark mode (prefers-color-scheme: dark).
@@ -132,7 +134,9 @@ extension CSS {
         @HTML.Builder _ content: (CSS<Base>) -> Result
     ) -> CSS<Result> {
         let newContext = HTML.Style.Context.current.merging(with: .init(pseudo: pseudo))
-        return CSS<Result>(base: HTML.Style.Context.$current.withValue(newContext) { content(self) })
+        return CSS<Result>(
+            base: HTML.Style.Context.$current.withValue(newContext) { content(self) }
+        )
     }
 
     /// Applies styles for the :hover pseudo-class.
@@ -292,7 +296,9 @@ extension CSS {
         @HTML.Builder _ content: (CSS<Base>) -> Result
     ) -> CSS<Result> {
         let newContext = HTML.Style.Context.current.merging(with: .init(selector: selector))
-        return CSS<Result>(base: HTML.Style.Context.$current.withValue(newContext) { content(self) })
+        return CSS<Result>(
+            base: HTML.Style.Context.$current.withValue(newContext) { content(self) }
+        )
     }
 }
 
