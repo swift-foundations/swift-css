@@ -193,13 +193,19 @@ extension CSS {
     /// ```
     @inlinable
     @discardableResult
+    @CSS.Builder
     public func inlineStyle(
         _ property: String,
         _ value: String?
-    ) -> CSS<HTML.Styled<Base, StringProperty>> {
-        CSS<HTML.Styled<Base, StringProperty>>(
-            base: base.inlineStyle(StringProperty(property, value!))
-        )
+    ) -> CSS<some HTML.View> {
+        if let value {
+            CSS<HTML.Styled<Base, StringProperty>>(
+                base: base.inlineStyle(StringProperty(property, value))
+            )
+        } else {
+            base
+        }
+        
     }
 }
 

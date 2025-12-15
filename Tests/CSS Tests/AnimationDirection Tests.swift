@@ -12,7 +12,7 @@
 // import CSS_Standard
 // // import DependenciesTestSupport
 // import InlineSnapshotTesting
-// import HTML_Renderable_TestSupport
+// import HTML_Rendering_TestSupport
 //
 // @Suite(
 //    "AnimationDirection Tests",

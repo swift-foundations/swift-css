@@ -18,7 +18,7 @@ extension Target.Dependency {
         .product(name: "HTML Renderable", package: "swift-html-rendering")
     }
     static var htmlRenderableTestSupport: Self {
-        .product(name: "HTML Renderable TestSupport", package: "swift-html-rendering")
+        .product(name: "HTML Rendering TestSupport", package: "swift-html-rendering")
     }
 }
 
@@ -35,8 +35,8 @@ let package = Package(
         .library(name: .css, targets: [.css]),
     ],
     dependencies: [
-        .package(path: "../swift-html-rendering"),
-        .package(path: "../../swift-standards/swift-css-standard"),
+        .package(url: "https://github.com/coenttb/swift-html-rendering", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-css-standard", from: "0.1.0"),
     ],
     targets: [
         .target(

@@ -6,6 +6,6 @@
 //
 
 import HTML_Renderable
-import HTML_Renderable_TestSupport
+import HTML_Rendering_TestSupport
 
-@TaskLocal var div = HTML_Renderable_TestSupport.tag("div")
+@TaskLocal var div = HTML_Rendering_TestSupport.tag("div")

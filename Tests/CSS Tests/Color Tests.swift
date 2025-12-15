@@ -8,7 +8,7 @@
 import CSS
 import CSS_Standard
 import HTML_Renderable
-import HTML_Renderable_TestSupport
+import HTML_Rendering_TestSupport
 import Testing
 
 extension `Snapshot Tests` {

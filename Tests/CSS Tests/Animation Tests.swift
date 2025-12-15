@@ -12,7 +12,7 @@
 // import CSS_Standard
 // // import DependenciesTestSupport
 // import InlineSnapshotTesting
-// import HTML_Renderable_TestSupport
+// import HTML_Rendering_TestSupport
 //
 // "3s ease-in 1s infinite reverse both running slidein"
 //
