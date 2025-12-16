@@ -1,5 +1,5 @@
 //
-//  ColumnSpan.swift
+//  Span.swift
 //  swift-html
 //
 //  Created by Coen ten Thije Boonkkamp on 02/04/2025.
