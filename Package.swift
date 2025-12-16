@@ -4,21 +4,29 @@ import PackageDescription
 
 extension String {
     static let css: Self = "CSS"
+    static let cssTheming: Self = "CSS Theming"
 }
 
 extension Target.Dependency {
     static var css: Self { .target(name: .css) }
+    static var cssTheming: Self { .target(name: .cssTheming) }
 }
 
 extension Target.Dependency {
     static var cssStandard: Self {
         .product(name: "CSS Standard", package: "swift-css-standard")
     }
+    static var cssHTMLRendering: Self {
+        .product(name: "CSS HTML Rendering", package: "swift-css-html-rendering")
+    }
     static var htmlRenderable: Self {
         .product(name: "HTML Renderable", package: "swift-html-rendering")
     }
     static var htmlRenderableTestSupport: Self {
         .product(name: "HTML Rendering TestSupport", package: "swift-html-rendering")
+    }
+    static var dependencies: Self {
+        .product(name: "Dependencies", package: "swift-dependencies")
     }
 }
 
@@ -33,17 +41,27 @@ let package = Package(
     ],
     products: [
         .library(name: .css, targets: [.css]),
+        .library(name: .cssTheming, targets: [.cssTheming]),
     ],
     dependencies: [
+        .package(path: "../swift-css-html-rendering"),
         .package(url: "https://github.com/coenttb/swift-html-rendering", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-css-standard", from: "0.1.0"),
+        .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.9.2"),
     ],
     targets: [
         .target(
             name: .css,
             dependencies: [
-                .htmlRenderable,
+                .cssHTMLRendering,
+            ]
+        ),
+        .target(
+            name: .cssTheming,
+            dependencies: [
+                .css,
                 .cssStandard,
+                .dependencies,
             ]
         ),
         .testTarget(
