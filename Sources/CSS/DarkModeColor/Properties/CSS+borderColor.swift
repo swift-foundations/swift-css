@@ -1,0 +1,30 @@
+//
+//  CSS+borderColor.swift
+//  swift-css
+//
+//  CSS border-color property with dark mode support.
+//
+
+public import CSS_HTML_Rendering
+public import CSS_Standard
+public import HTML_Renderable
+
+extension CSS {
+    /// Sets the border color using a DarkModeColor value.
+    @discardableResult
+    public func borderColor(
+        _ darkModeColor: DarkModeColor
+    ) -> CSS<some HTML.View> {
+        self.borderColor(CSS_Standard.BorderColor.color(darkModeColor.light))
+            .dark { $0.borderColor(CSS_Standard.BorderColor.color(darkModeColor.dark)) }
+    }
+
+    /// Sets the border color using separate light and dark color values.
+    @discardableResult
+    public func borderColor(
+        light: CSS_Standard.Color.Value,
+        dark: CSS_Standard.Color.Value
+    ) -> CSS<some HTML.View> {
+        borderColor(DarkModeColor(light: light, dark: dark))
+    }
+}

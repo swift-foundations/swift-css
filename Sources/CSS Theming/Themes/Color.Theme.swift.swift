@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension HTMLColor.Theme {
+extension DarkModeColor.Theme {
     public static var swift: Self {
         .init(
             gray: .init(light: .hex("6b7280"), dark: .hex("9ca3af")),
@@ -35,7 +35,7 @@ extension HTMLColor.Theme {
     }
 }
 
-extension HTMLColor.Theme.Text {
+extension DarkModeColor.Theme.Text {
     static var swift: Self {
         .init(
             primary: .init(light: .hex("000000"), dark: .hex("ffffff")),
@@ -55,7 +55,7 @@ extension HTMLColor.Theme.Text {
     }
 }
 
-extension HTMLColor.Theme.Background {
+extension DarkModeColor.Theme.Background {
     public static var swift: Self {
         .init(
             primary: .init(light: .hex("ffffff"), dark: .hex("1d1d1f")),
@@ -92,7 +92,7 @@ extension HTMLColor.Theme.Background {
     }
 }
 
-extension HTMLColor.Theme.Border {
+extension DarkModeColor.Theme.Border {
     public static var swift: Self {
         .init(
             primary: .init(light: .hex("ffffff"), dark: .hex("1d1d1f")),
@@ -115,7 +115,7 @@ extension HTMLColor.Theme.Border {
     }
 }
 
-extension HTMLColor.Theme.Branding {
+extension DarkModeColor.Theme.Branding {
     public static var swift: Self {
         .init(
             primary: .init(light: .hex("f05138"), dark: .hex("ff6952")),

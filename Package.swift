@@ -54,6 +54,7 @@ let package = Package(
             name: .css,
             dependencies: [
                 .cssHTMLRendering,
+                .cssStandard,
             ]
         ),
         .target(

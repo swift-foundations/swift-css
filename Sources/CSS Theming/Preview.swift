@@ -8,9 +8,9 @@
 #if canImport(SwiftUI)
     import SwiftUI
 
-    extension HTMLColor.Theme {
+    extension DarkModeColor.Theme {
         struct Preview: SwiftUI.View {
-            let theme: HTMLColor.Theme
+            let theme: DarkModeColor.Theme
             @Environment(\.colorScheme) var colorScheme
 
             var body: some View {
@@ -135,8 +135,8 @@
         }
     }
 
-    extension HTMLColor {
-        /// Converts HTMLColor to SwiftUI.Color
+    extension DarkModeColor {
+        /// Converts DarkModeColor to SwiftUI.Color
         func toSwiftUIColor(for colorScheme: SwiftUI.ColorScheme) -> SwiftUI.Color {
             let cssColor = colorScheme == .light ? self.light : self.dark
 
@@ -200,7 +200,7 @@
     /// A section displaying a group of colors
     struct ColorSection: View {
         let title: String
-        let colors: [(name: String, color: HTMLColor)]
+        let colors: [(name: String, color: DarkModeColor)]
         let colorScheme: SwiftUI.ColorScheme
 
         private let columns = [
@@ -229,7 +229,7 @@
     /// Individual color swatch showing the color and its name
     struct ColorSwatch: View {
         let name: String
-        let htmlColor: HTMLColor
+        let htmlColor: DarkModeColor
         let colorScheme: SwiftUI.ColorScheme
         @State private var isHovering = false
 
@@ -301,10 +301,10 @@
     #Preview("Default Theme") {
         ScrollView {
             HStack(spacing: nil) {
-                HTMLColor.Theme.Preview(theme: .default)
-                HTMLColor.Theme.Preview(theme: .apple)
-                HTMLColor.Theme.Preview(theme: .swift)
-                HTMLColor.Theme.Preview(theme: .github)
+                DarkModeColor.Theme.Preview(theme: .default)
+                DarkModeColor.Theme.Preview(theme: .apple)
+                DarkModeColor.Theme.Preview(theme: .swift)
+                DarkModeColor.Theme.Preview(theme: .github)
             }
         }
         .frame(height: 600)

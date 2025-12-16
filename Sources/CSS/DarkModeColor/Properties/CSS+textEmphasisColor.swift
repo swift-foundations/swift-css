@@ -1,0 +1,30 @@
+//
+//  CSS+textEmphasisColor.swift
+//  swift-css
+//
+//  CSS text-emphasis-color property with dark mode support.
+//
+
+public import CSS_HTML_Rendering
+public import CSS_Standard
+public import HTML_Renderable
+
+extension CSS {
+    /// Sets the text emphasis color using a DarkModeColor value.
+    @discardableResult
+    public func textEmphasisColor(
+        _ darkModeColor: DarkModeColor
+    ) -> CSS<some HTML.View> {
+        self.textEmphasisColor(CSS_Standard.TextEmphasisColor.color(darkModeColor.light))
+            .dark { $0.textEmphasisColor(CSS_Standard.TextEmphasisColor.color(darkModeColor.dark)) }
+    }
+
+    /// Sets the text emphasis color using separate light and dark color values.
+    @discardableResult
+    public func textEmphasisColor(
+        light: CSS_Standard.Color.Value,
+        dark: CSS_Standard.Color.Value
+    ) -> CSS<some HTML.View> {
+        textEmphasisColor(DarkModeColor(light: light, dark: dark))
+    }
+}

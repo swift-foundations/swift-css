@@ -1,0 +1,30 @@
+//
+//  CSS+borderInlineStartColor.swift
+//  swift-css
+//
+//  CSS border-inline-start-color property with dark mode support.
+//
+
+public import CSS_HTML_Rendering
+public import CSS_Standard
+public import HTML_Renderable
+
+extension CSS {
+    /// Sets the border inline start color using a DarkModeColor value.
+    @discardableResult
+    public func borderInlineStartColor(
+        _ darkModeColor: DarkModeColor
+    ) -> CSS<some HTML.View> {
+        self.borderInlineStartColor(CSS_Standard.BorderInlineStartColor.color(darkModeColor.light))
+            .dark { $0.borderInlineStartColor(CSS_Standard.BorderInlineStartColor.color(darkModeColor.dark)) }
+    }
+
+    /// Sets the border inline start color using separate light and dark color values.
+    @discardableResult
+    public func borderInlineStartColor(
+        light: CSS_Standard.Color.Value,
+        dark: CSS_Standard.Color.Value
+    ) -> CSS<some HTML.View> {
+        borderInlineStartColor(DarkModeColor(light: light, dark: dark))
+    }
+}

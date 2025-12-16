@@ -1,0 +1,30 @@
+//
+//  CSS+columnRuleColor.swift
+//  swift-css
+//
+//  CSS column-rule-color property with dark mode support.
+//
+
+public import CSS_HTML_Rendering
+public import CSS_Standard
+public import HTML_Renderable
+
+extension CSS {
+    /// Sets the column rule color using a DarkModeColor value.
+    @discardableResult
+    public func columnRuleColor(
+        _ darkModeColor: DarkModeColor
+    ) -> CSS<some HTML.View> {
+        self.columnRuleColor(CSS_Standard.ColumnRuleColor.color(darkModeColor.light))
+            .dark { $0.columnRuleColor(CSS_Standard.ColumnRuleColor.color(darkModeColor.dark)) }
+    }
+
+    /// Sets the column rule color using separate light and dark color values.
+    @discardableResult
+    public func columnRuleColor(
+        light: CSS_Standard.Color.Value,
+        dark: CSS_Standard.Color.Value
+    ) -> CSS<some HTML.View> {
+        columnRuleColor(DarkModeColor(light: light, dark: dark))
+    }
+}

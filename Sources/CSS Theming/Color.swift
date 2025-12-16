@@ -5,7 +5,7 @@
 //  Created by Coen ten Thije Boonkkamp on 18/09/2024.
 //
 
-extension HTMLColor {
+extension DarkModeColor {
     public func reverse() -> Self {
         .init(
             light: self.dark,
@@ -14,7 +14,7 @@ extension HTMLColor {
     }
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let gray100: Self = .init(light: .gray100, dark: .hex("f7f7f7"))
     public static let gray150: Self = .init(light: .gray150, dark: .hex("f0f0f0"))
     public static let gray200: Self = .init(light: .gray200, dark: .hex("e0e0e0"))
@@ -34,7 +34,7 @@ extension HTMLColor {
     public static let gray900: Self = .init(light: .gray900, dark: .hex("101010"))
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let blue100: Self = .init(light: .blue100, dark: .hex("e6f3ff"))
     public static let blue150: Self = .init(light: .blue150, dark: .hex("ccddee"))
     public static let blue200: Self = .init(light: .blue200, dark: .hex("bbccdd"))
@@ -54,7 +54,7 @@ extension HTMLColor {
     public static let blue900: Self = .init(light: .blue900, dark: .hex("001011"))
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let green100: Self = .init(light: .green100, dark: .hex("e6ffe6"))
     public static let green150: Self = .init(light: .green150, dark: .hex("ccffcc"))
     public static let green200: Self = .init(light: .green200, dark: .hex("bbeebb"))
@@ -74,7 +74,7 @@ extension HTMLColor {
     public static let green900: Self = .init(light: .green900, dark: .hex("002200"))
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let purple100: Self = .init(light: .purple100, dark: .hex("f0e6ff"))
     public static let purple150: Self = .init(light: .purple150, dark: .hex("e6ccf5"))
     public static let purple200: Self = .init(light: .purple200, dark: .hex("d9b3ea"))
@@ -94,7 +94,7 @@ extension HTMLColor {
     public static let purple900: Self = .init(light: .purple900, dark: .hex("110011"))
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let red100: Self = .init(light: .red100, dark: .hex("ffe6e6"))
     public static let red150: Self = .init(light: .red150, dark: .hex("ffcccc"))
     public static let red200: Self = .init(light: .red200, dark: .hex("ffb3b3"))
@@ -114,7 +114,7 @@ extension HTMLColor {
     public static let red900: Self = .init(light: .red900, dark: .hex("550000"))
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let yellow100: Self = .init(light: .yellow100, dark: .hex("fffff2"))
     public static let yellow150: Self = .init(light: .yellow150, dark: .hex("ffffcc"))
     public static let yellow200: Self = .init(light: .yellow200, dark: .hex("ffffb3"))
@@ -134,7 +134,7 @@ extension HTMLColor {
     public static let yellow900: Self = .init(light: .yellow900, dark: .hex("666600"))
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let orange100: Self = .init(light: .orange100, dark: .hex("fff4e6"))
     public static let orange150: Self = .init(light: .orange150, dark: .hex("ffe6cc"))
     public static let orange200: Self = .init(light: .orange200, dark: .hex("ffd9b3"))
@@ -154,7 +154,7 @@ extension HTMLColor {
     public static let orange900: Self = .init(light: .orange900, dark: .hex("553300"))
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let teal100: Self = .init(light: .teal100, dark: .hex("e6ffff"))
     public static let teal150: Self = .init(light: .teal150, dark: .hex("ccffeb"))
     public static let teal200: Self = .init(light: .teal200, dark: .hex("bbffe6"))
@@ -174,7 +174,7 @@ extension HTMLColor {
     public static let teal900: Self = .init(light: .teal900, dark: .hex("006633"))
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let cyan100 = Self.teal100
     public static let cyan150 = Self.teal150
     public static let cyan200 = Self.teal200
@@ -194,7 +194,7 @@ extension HTMLColor {
     public static let cyan900 = Self.teal900
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let pink100: Self = .init(light: .pink100, dark: .hex("ffe6f0"))
     public static let pink150: Self = .init(light: .pink150, dark: .hex("ffe6f2"))
     public static let pink200: Self = .init(light: .pink200, dark: .hex("ffccde"))
@@ -214,7 +214,7 @@ extension HTMLColor {
     public static let pink900: Self = .init(light: .pink900, dark: .hex("550029"))
 }
 
-extension HTMLColor {
+extension DarkModeColor {
     public static let brown100: Self = .init(light: .brown100, dark: .hex("f7e6d9"))
     public static let brown150: Self = .init(light: .brown150, dark: .hex("ffebcc"))
     public static let brown200: Self = .init(light: .brown200, dark: .hex("ffddaa"))

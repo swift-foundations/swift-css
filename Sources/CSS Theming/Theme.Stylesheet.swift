@@ -2,19 +2,19 @@
 //  Theme.Stylesheet.swift
 //  swift-html
 //
-//  Generates CSS stylesheet from HTMLColor.Theme
+//  Generates CSS stylesheet from DarkModeColor.Theme
 //
 
 import Foundation
 
-extension HTMLColor.Theme {
+extension DarkModeColor.Theme {
     /// Generates a CSS stylesheet with all theme colors as CSS custom properties
     public var stylesheet: StyleSheet {
-        HTMLColor.Theme.StyleSheet(theme: self)
+        DarkModeColor.Theme.StyleSheet(theme: self)
     }
 }
 
-extension HTMLColor.Theme.StyleSheet {
+extension DarkModeColor.Theme.StyleSheet {
     public func write(to directory: String, name: String = "theme") throws {
 
         try FileManager.default.createDirectory(
@@ -31,9 +31,9 @@ extension HTMLColor.Theme.StyleSheet {
     }
 }
 
-extension HTMLColor.Theme {
+extension DarkModeColor.Theme {
     public struct StyleSheet: CustomStringConvertible {
-        let theme: HTMLColor.Theme
+        let theme: DarkModeColor.Theme
 
         public var description: String {
             """

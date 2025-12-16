@@ -5,8 +5,7 @@
 //  The canonical color property type with dark mode support.
 //
 
-import CSS
-import CSS_Standard
+public import CSS_Standard
 
 /// The canonical color property type with dark mode support.
 ///
