@@ -5,8 +5,8 @@
 //  Border type definition with side configuration.
 //
 
-public import CSS_Standard
 public import CSS_HTML_Rendering
+public import CSS_Standard
 
 public struct Border: Equatable, Sendable {
     public var sides: Set<Side>?

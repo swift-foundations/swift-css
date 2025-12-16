@@ -19,11 +19,16 @@ extension CSS {
     /// input.css.accentColor(DarkModeColor(light: .blue, dark: .cyan))
     /// ```
     @discardableResult
+    @CSS.Builder
     public func accentColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.accentColor(CSS_Standard.AccentColor.color(darkModeColor.light))
-            .dark { $0.accentColor(CSS_Standard.AccentColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.accentColor(CSS_Standard.AccentColor.color(darkModeColor.light))
+        } else {
+            self.accentColor(CSS_Standard.AccentColor.color(darkModeColor.light))
+                .dark { $0.accentColor(CSS_Standard.AccentColor.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the accent color using separate light and dark color values.

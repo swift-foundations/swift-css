@@ -12,11 +12,16 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the border top color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func borderTopColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.borderTopColor(CSS_Standard.BorderTopColor.color(darkModeColor.light))
-            .dark { $0.borderTopColor(CSS_Standard.BorderTopColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.borderTopColor(CSS_Standard.BorderTopColor.color(darkModeColor.light))
+        } else {
+            self.borderTopColor(CSS_Standard.BorderTopColor.color(darkModeColor.light))
+                .dark { $0.borderTopColor(CSS_Standard.BorderTopColor.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the border top color using separate light and dark color values.

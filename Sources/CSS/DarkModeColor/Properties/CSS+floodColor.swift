@@ -12,11 +12,16 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the SVG flood color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func floodColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.floodColor(CSS_Standard.FloodColor.color(darkModeColor.light))
-            .dark { $0.floodColor(CSS_Standard.FloodColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.floodColor(CSS_Standard.FloodColor.color(darkModeColor.light))
+        } else {
+            self.floodColor(CSS_Standard.FloodColor.color(darkModeColor.light))
+                .dark { $0.floodColor(CSS_Standard.FloodColor.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the SVG flood color using separate light and dark color values.

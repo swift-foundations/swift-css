@@ -115,7 +115,7 @@ extension `Performance Tests` {
                 _ = try! String(
                     HTML.Document {
                         tag("div") {
-                            for i in 0..<50 {
+                            ForEach(0..<50) { i in
                                 tag("div")
                                     .attribute("id", "item-\(i)")
                                     .css.backgroundColor(.rgb(i * 5, 128, 200))
@@ -133,7 +133,7 @@ extension `Performance Tests` {
                 _ = try! String(
                     HTML.Document {
                         tag("div") {
-                            for i in 0..<20 {
+                            ForEach(0..<20) { i in
                                 tag("div")
                                     .attribute("class", "card-\(i)")
                                     .css.backgroundColor(.hex(.init(UInt32(0xF0F0F0))))

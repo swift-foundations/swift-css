@@ -28,7 +28,15 @@ extension CSS {
         right: Right? = nil,
         bottom: Bottom? = nil,
         left: Left? = nil
-    ) -> CSS<HTML.Styled<HTML.Styled<HTML.Styled<HTML.Styled<HTML.Styled<Base, W3C_CSS_Positioning.Position>, Top>, Left>, Right>, Bottom>> {
+    ) -> CSS<
+        HTML.Styled<
+            HTML.Styled<
+                HTML.Styled<
+                    HTML.Styled<HTML.Styled<Base, W3C_CSS_Positioning.Position>, Top>, Left
+                >, Right
+            >, Bottom
+        >
+    > {
         self
             .position(value)
             .top(top)

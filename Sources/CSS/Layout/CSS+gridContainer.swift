@@ -32,7 +32,8 @@ extension CSS {
         justifyItems: JustifyItems? = nil,
         alignItems: AlignItems? = nil
     ) -> CSS<some HTML.View> {
-        var result: any HTML.View = base
+        var result: any HTML.View =
+            base
             .inlineStyle(Display.grid)
 
         if let columns = columns {

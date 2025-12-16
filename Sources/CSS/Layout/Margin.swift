@@ -53,7 +53,12 @@ extension CSS {
             // All four different: margin: top right bottom left
             else {
                 base.inlineStyle(
-                    Margin.sides(.lengthPercentage(top), .lengthPercentage(right), .lengthPercentage(bottom), .lengthPercentage(left))
+                    Margin.sides(
+                        .lengthPercentage(top),
+                        .lengthPercentage(right),
+                        .lengthPercentage(bottom),
+                        .lengthPercentage(left)
+                    )
                 )
             }
         }
@@ -127,7 +132,11 @@ extension CSS {
         // Use shorthand when all three are provided
         if let top, let horizontal, let bottom {
             base.inlineStyle(
-                Margin.topHorizontalBottom(.lengthPercentage(top), horizontal, .lengthPercentage(bottom))
+                Margin.topHorizontalBottom(
+                    .lengthPercentage(top),
+                    horizontal,
+                    .lengthPercentage(bottom)
+                )
             )
         } else {
             // Fall back to individual properties

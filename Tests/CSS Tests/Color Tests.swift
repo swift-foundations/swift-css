@@ -19,7 +19,7 @@ extension `Snapshot Tests` {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div
-                        .css.color(.red)
+                        .css.color(Color.color(.named(.red)))
                 },
                 as: .html
             ) {
@@ -84,8 +84,10 @@ extension `Snapshot Tests` {
                 of: HTML.Document {
                     div
                         .css
-                        .color(.red).dark(.blue)
-                        .backgroundColor(.blue).dark(.red)
+                        .color(Color.color(.named(.red))).dark(Color.color(.named(.blue)))
+                        .backgroundColor(BackgroundColor.color(.named(.blue))).dark(
+                            BackgroundColor.color(.named(.red))
+                        )
                 },
                 as: .html
             ) {

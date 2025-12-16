@@ -22,7 +22,7 @@ public struct HStack<Content: HTML.View>: HTML.View {
     }
 
     public var body: some HTML.View {
-        ContentDivision() { content }
+        ContentDivision { content }
             .css
             .alignItems(AlignItems.stretch)
             .verticalAlign(alignment)

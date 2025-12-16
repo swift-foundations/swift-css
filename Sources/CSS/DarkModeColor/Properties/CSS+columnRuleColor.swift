@@ -12,11 +12,16 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the column rule color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func columnRuleColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.columnRuleColor(CSS_Standard.ColumnRuleColor.color(darkModeColor.light))
-            .dark { $0.columnRuleColor(CSS_Standard.ColumnRuleColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.columnRuleColor(CSS_Standard.ColumnRuleColor.color(darkModeColor.light))
+        } else {
+            self.columnRuleColor(CSS_Standard.ColumnRuleColor.color(darkModeColor.light))
+                .dark { $0.columnRuleColor(CSS_Standard.ColumnRuleColor.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the column rule color using separate light and dark color values.

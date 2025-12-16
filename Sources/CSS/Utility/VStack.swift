@@ -22,7 +22,7 @@ public struct VStack<Content: HTML.View>: HTML.View {
     }
 
     public var body: some HTML.View {
-        ContentDivision() {
+        ContentDivision {
             content
         }
         .css

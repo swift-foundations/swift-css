@@ -5,9 +5,9 @@
 //  Created by Coen ten Thije Boonkkamp on 26/06/2025.
 //
 
+import CSS_Standard
 import Dependencies
 import Foundation
-import CSS_Standard
 
 extension Font {
     public struct Defaults: Sendable {

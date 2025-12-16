@@ -21,7 +21,7 @@ extension `Snapshot Tests` {
         func `dark mode closure syntax`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.dark { $0.color(.white) }
+                    div.css.dark { $0.color(Color.color(.named(.white))) }
                 },
                 as: .html
             ) {
@@ -138,7 +138,7 @@ extension `Snapshot Tests` {
         func `light mode closure syntax`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.light { $0.color(.black) }
+                    div.css.light { $0.color(Color.color(.named(.black))) }
                 },
                 as: .html
             ) {
@@ -195,7 +195,7 @@ extension `Snapshot Tests` {
         func `hover closure syntax`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.hover { $0.backgroundColor(.blue) }
+                    div.css.hover { $0.backgroundColor(BackgroundColor.color(.named(.blue))) }
                 },
                 as: .html
             ) {
@@ -248,7 +248,7 @@ extension `Snapshot Tests` {
         func `focus closure syntax`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.focus { $0.borderColor(.blue) }
+                    div.css.focus { $0.borderColor(BorderColor.color(.named(.blue))) }
                 },
                 as: .html
             ) {
@@ -301,7 +301,7 @@ extension `Snapshot Tests` {
         func `active closure syntax`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.active { $0.backgroundColor(.red) }
+                    div.css.active { $0.backgroundColor(BackgroundColor.color(.named(.red))) }
                 },
                 as: .html
             ) {
@@ -354,7 +354,7 @@ extension `Snapshot Tests` {
         func `print media query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.print { $0.color(.black) }
+                    div.css.print { $0.color(Color.color(.named(.black))) }
                 },
                 as: .html
             ) {
@@ -381,7 +381,7 @@ extension `Snapshot Tests` {
         func `screen media query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.screen { $0.color(.blue) }
+                    div.css.screen { $0.color(Color.color(.named(.blue))) }
                 },
                 as: .html
             ) {
@@ -464,7 +464,7 @@ extension `Snapshot Tests` {
         func `selector modifier`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.selector("my-component") { $0.color(.red) }
+                    div.css.selector("my-component") { $0.color(Color.color(.named(.red))) }
                 },
                 as: .html
             ) {
@@ -491,7 +491,7 @@ extension `Snapshot Tests` {
         func `nested dark and hover`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.dark { $0.hover { $0.color(.white) } }
+                    div.css.dark { $0.hover { $0.color(Color.color(.named(.white))) } }
                 },
                 as: .html
             ) {
@@ -518,7 +518,9 @@ extension `Snapshot Tests` {
         func `nested mobile and dark`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.mobile { $0.dark { $0.backgroundColor(.black) } }
+                    div.css.mobile {
+                        $0.dark { $0.backgroundColor(BackgroundColor.color(.named(.black))) }
+                    }
                 },
                 as: .html
             ) {
@@ -548,9 +550,9 @@ extension `Snapshot Tests` {
             assertInlineSnapshot(
                 of: HTML.Document {
                     div.css
-                        .color(.black)
-                        .dark { $0.color(.white) }
-                        .hover { $0.color(.blue) }
+                        .color(Color.color(.named(.black)))
+                        .dark { $0.color(Color.color(.named(.white))) }
+                        .hover { $0.color(Color.color(.named(.blue))) }
                 },
                 as: .html
             ) {

@@ -12,11 +12,16 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the SVG lighting color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func lightingColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.lightingColor(CSS_Standard.LightingColor.color(darkModeColor.light))
-            .dark { $0.lightingColor(CSS_Standard.LightingColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.lightingColor(CSS_Standard.LightingColor.color(darkModeColor.light))
+        } else {
+            self.lightingColor(CSS_Standard.LightingColor.color(darkModeColor.light))
+                .dark { $0.lightingColor(CSS_Standard.LightingColor.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the SVG lighting color using separate light and dark color values.

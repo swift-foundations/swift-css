@@ -11,7 +11,9 @@ extension `Snapshot Tests` {
         func `htmlElementRenderingWithBasicMediaQuery`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.media(.screen) { $0.backgroundColor(.blue) }
+                    div.css.media(.screen) {
+                        $0.backgroundColor(BackgroundColor.color(.named(.blue)))
+                    }
                 },
                 as: .html
             ) {
@@ -42,7 +44,7 @@ extension `Snapshot Tests` {
                         Media.screen
                             .and(.maxWidth(.px(500)))
                             .and(.prefersColorScheme(.dark))
-                    ) { $0.backgroundColor(.blue) }
+                    ) { $0.backgroundColor(BackgroundColor.color(.named(.blue))) }
                 },
                 as: .html
             ) {
@@ -69,7 +71,9 @@ extension `Snapshot Tests` {
         func `HTML element rendering with negated media query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.media(!Media.print) { $0.backgroundColor(.blue) }
+                    div.css.media(!Media.print) {
+                        $0.backgroundColor(BackgroundColor.color(.named(.blue)))
+                    }
                 },
                 as: .html
             ) {
@@ -96,7 +100,9 @@ extension `Snapshot Tests` {
         func `HTML element rendering with media OR query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.media(Media.screen || Media.print) { $0.backgroundColor(.blue) }
+                    div.css.media(Media.screen || Media.print) {
+                        $0.backgroundColor(BackgroundColor.color(.named(.blue)))
+                    }
                 },
                 as: .html
             ) {
@@ -123,7 +129,9 @@ extension `Snapshot Tests` {
         func `HTML element rendering with only operator`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.media(Media.screen.only()) { $0.backgroundColor(.blue) }
+                    div.css.media(Media.screen.only()) {
+                        $0.backgroundColor(BackgroundColor.color(.named(.blue)))
+                    }
                 },
                 as: .html
             ) {
@@ -150,7 +158,7 @@ extension `Snapshot Tests` {
         func `HTML element rendering with feature-only media query`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.dark { $0.backgroundColor(.blue) }
+                    div.css.dark { $0.backgroundColor(BackgroundColor.color(.named(.blue))) }
                 },
                 as: .html
             ) {
@@ -179,8 +187,8 @@ extension `Snapshot Tests` {
                 of: HTML.Document {
                     div
                         .css.media(Media.screen && .maxWidth(.px(768))) {
-                            $0.backgroundColor(.blue)
-                                .color(.white)
+                            $0.backgroundColor(BackgroundColor.color(.named(.blue)))
+                                .color(Color.color(.named(.white)))
                                 .padding(.px(20))
                         }
                 },
@@ -213,8 +221,8 @@ extension `Snapshot Tests` {
                 of: HTML.Document {
                     div
                         .css.media(.screen && .minWidth(.px(768))) {
-                            $0.backgroundColor(.blue)
-                                .backgroundColor(.red)
+                            $0.backgroundColor(BackgroundColor.color(.named(.blue)))
+                                .backgroundColor(BackgroundColor.color(.named(.red)))
                         }
                 },
                 as: .html
@@ -245,8 +253,12 @@ extension `Snapshot Tests` {
                 of: HTML.Document {
                     div
                         .css
-                        .media(.screen && .minWidth(.px(768))) { $0.backgroundColor(.blue) }
-                        .media(.screen && .prefersColorScheme(.dark)) { $0.color(.white) }
+                        .media(.screen && .minWidth(.px(768))) {
+                            $0.backgroundColor(BackgroundColor.color(.named(.blue)))
+                        }
+                        .media(.screen && .prefersColorScheme(.dark)) {
+                            $0.color(Color.color(.named(.white)))
+                        }
                 },
                 as: .html
             ) {

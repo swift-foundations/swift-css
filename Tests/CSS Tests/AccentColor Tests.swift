@@ -19,7 +19,7 @@ extension `Snapshot Tests` {
         func `HTML element renders with accent-color properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.accentColor(.red)
+                    div.css.accentColor(.color(.named(.red)))
                 },
                 as: .html
             ) {

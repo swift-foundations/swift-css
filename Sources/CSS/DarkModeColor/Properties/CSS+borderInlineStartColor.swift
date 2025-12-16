@@ -12,11 +12,24 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the border inline start color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func borderInlineStartColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.borderInlineStartColor(CSS_Standard.BorderInlineStartColor.color(darkModeColor.light))
-            .dark { $0.borderInlineStartColor(CSS_Standard.BorderInlineStartColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.borderInlineStartColor(
+                CSS_Standard.BorderInlineStartColor.color(darkModeColor.light)
+            )
+        } else {
+            self.borderInlineStartColor(
+                CSS_Standard.BorderInlineStartColor.color(darkModeColor.light)
+            )
+            .dark {
+                $0.borderInlineStartColor(
+                    CSS_Standard.BorderInlineStartColor.color(darkModeColor.dark)
+                )
+            }
+        }
     }
 
     /// Sets the border inline start color using separate light and dark color values.

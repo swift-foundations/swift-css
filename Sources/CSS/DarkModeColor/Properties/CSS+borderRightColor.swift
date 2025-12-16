@@ -12,11 +12,18 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the border right color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func borderRightColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.borderRightColor(CSS_Standard.BorderRightColor.color(darkModeColor.light))
-            .dark { $0.borderRightColor(CSS_Standard.BorderRightColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.borderRightColor(CSS_Standard.BorderRightColor.color(darkModeColor.light))
+        } else {
+            self.borderRightColor(CSS_Standard.BorderRightColor.color(darkModeColor.light))
+                .dark {
+                    $0.borderRightColor(CSS_Standard.BorderRightColor.color(darkModeColor.dark))
+                }
+        }
     }
 
     /// Sets the border right color using separate light and dark color values.

@@ -12,11 +12,24 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the border block start color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func borderBlockStartColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.borderBlockStartColor(CSS_Standard.BorderBlockStartColor.color(darkModeColor.light))
-            .dark { $0.borderBlockStartColor(CSS_Standard.BorderBlockStartColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.borderBlockStartColor(
+                CSS_Standard.BorderBlockStartColor.color(darkModeColor.light)
+            )
+        } else {
+            self.borderBlockStartColor(
+                CSS_Standard.BorderBlockStartColor.color(darkModeColor.light)
+            )
+            .dark {
+                $0.borderBlockStartColor(
+                    CSS_Standard.BorderBlockStartColor.color(darkModeColor.dark)
+                )
+            }
+        }
     }
 
     /// Sets the border block start color using separate light and dark color values.

@@ -14,17 +14,24 @@ extension CSS {
     /// Sets the text color using a DarkModeColor value.
     ///
     /// This method applies the light color by default and adds a dark mode
-    /// media query for the dark color variant.
+    /// media query for the dark color variant when the colors differ.
+    /// When light and dark colors are identical, only a single style is generated.
     ///
     /// ```swift
     /// div.css.color(DarkModeColor(light: .black, dark: .white))
     /// ```
     @discardableResult
+    @CSS.Builder
     public func color(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.color(W3C_CSS_Color.Color.color(darkModeColor.light))
-            .dark { $0.color(W3C_CSS_Color.Color.color(darkModeColor.dark)) }
+
+        if darkModeColor.isSingleColor {
+            self.color(W3C_CSS_Color.Color.color(darkModeColor.light))
+        } else {
+            self.color(W3C_CSS_Color.Color.color(darkModeColor.light))
+                .dark(W3C_CSS_Color.Color.color(darkModeColor.dark))
+        }
     }
 
     /// Sets the text color using separate light and dark color values.
@@ -43,17 +50,27 @@ extension CSS {
     /// Sets the background color using a DarkModeColor value.
     ///
     /// This method applies the light color by default and adds a dark mode
-    /// media query for the dark color variant.
+    /// media query for the dark color variant when the colors differ.
+    /// When light and dark colors are identical, only a single style is generated.
     ///
     /// ```swift
     /// div.css.backgroundColor(DarkModeColor(light: .white, dark: .black))
     /// ```
     @discardableResult
+    @CSS.Builder
     public func backgroundColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.backgroundColor(W3C_CSS_Backgrounds.BackgroundColor.color(darkModeColor.light))
-            .dark { $0.backgroundColor(W3C_CSS_Backgrounds.BackgroundColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.backgroundColor(W3C_CSS_Backgrounds.BackgroundColor.color(darkModeColor.light))
+        } else {
+            self.backgroundColor(W3C_CSS_Backgrounds.BackgroundColor.color(darkModeColor.light))
+                .dark {
+                    $0.backgroundColor(
+                        W3C_CSS_Backgrounds.BackgroundColor.color(darkModeColor.dark)
+                    )
+                }
+        }
     }
 
     /// Sets the background color using separate light and dark color values.
@@ -71,16 +88,27 @@ extension CSS {
 
     /// Sets the border using a DarkModeColor value for the border color.
     ///
+    /// When light and dark colors are identical, only a single style is generated.
+    ///
     /// ```swift
     /// div.css.border(width: .px(1), style: .solid, color: DarkModeColor(light: .gray, dark: .darkGray))
     /// ```
     @discardableResult
+    @CSS.Builder
     public func border(
         width: W3C_CSS_Backgrounds.BorderWidth,
         style: W3C_CSS_Values.LineStyle,
         color: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.border(W3C_CSS_Backgrounds.Border(width: width, style: style, color: color.light))
-            .dark { $0.border(W3C_CSS_Backgrounds.Border(width: width, style: style, color: color.dark)) }
+        if color.isSingleColor {
+            self.border(W3C_CSS_Backgrounds.Border(width: width, style: style, color: color.light))
+        } else {
+            self.border(W3C_CSS_Backgrounds.Border(width: width, style: style, color: color.light))
+                .dark {
+                    $0.border(
+                        W3C_CSS_Backgrounds.Border(width: width, style: style, color: color.dark)
+                    )
+                }
+        }
     }
 }

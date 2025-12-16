@@ -12,11 +12,16 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the SVG stop color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func stopColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.stopColor(CSS_Standard.StopColor.color(darkModeColor.light))
-            .dark { $0.stopColor(CSS_Standard.StopColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.stopColor(CSS_Standard.StopColor.color(darkModeColor.light))
+        } else {
+            self.stopColor(CSS_Standard.StopColor.color(darkModeColor.light))
+                .dark { $0.stopColor(CSS_Standard.StopColor.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the SVG stop color using separate light and dark color values.

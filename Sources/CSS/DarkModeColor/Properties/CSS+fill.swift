@@ -12,11 +12,16 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the SVG fill color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func fill(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.fill(CSS_Standard.Fill.color(darkModeColor.light))
-            .dark { $0.fill(CSS_Standard.Fill.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.fill(CSS_Standard.Fill.color(darkModeColor.light))
+        } else {
+            self.fill(CSS_Standard.Fill.color(darkModeColor.light))
+                .dark { $0.fill(CSS_Standard.Fill.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the SVG fill color using separate light and dark color values.

@@ -69,6 +69,7 @@ let package = Package(
             name: .css.tests,
             dependencies: [
                 .css,
+                .cssTheming,
                 .htmlRenderableTestSupport
             ]
         ),

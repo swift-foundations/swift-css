@@ -12,11 +12,16 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the SVG stroke color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func stroke(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.stroke(CSS_Standard.Stroke.color(darkModeColor.light))
-            .dark { $0.stroke(CSS_Standard.Stroke.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.stroke(CSS_Standard.Stroke.color(darkModeColor.light))
+        } else {
+            self.stroke(CSS_Standard.Stroke.color(darkModeColor.light))
+                .dark { $0.stroke(CSS_Standard.Stroke.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the SVG stroke color using separate light and dark color values.

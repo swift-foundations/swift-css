@@ -30,7 +30,8 @@ extension CSS {
         left: Left? = nil,
         zIndex: ZIndex? = nil
     ) -> CSS<some HTML.View> {
-        var result: any HTML.View = base
+        var result: any HTML.View =
+            base
             .inlineStyle(position)
 
         if let top = top {

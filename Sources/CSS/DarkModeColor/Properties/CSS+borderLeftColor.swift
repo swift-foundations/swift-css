@@ -12,11 +12,16 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the border left color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func borderLeftColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.borderLeftColor(CSS_Standard.BorderLeftColor.color(darkModeColor.light))
-            .dark { $0.borderLeftColor(CSS_Standard.BorderLeftColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.borderLeftColor(CSS_Standard.BorderLeftColor.color(darkModeColor.light))
+        } else {
+            self.borderLeftColor(CSS_Standard.BorderLeftColor.color(darkModeColor.light))
+                .dark { $0.borderLeftColor(CSS_Standard.BorderLeftColor.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the border left color using separate light and dark color values.

@@ -12,11 +12,20 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the text decoration color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func textDecorationColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.textDecorationColor(CSS_Standard.TextDecorationColor.color(darkModeColor.light))
-            .dark { $0.textDecorationColor(CSS_Standard.TextDecorationColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.textDecorationColor(CSS_Standard.TextDecorationColor.color(darkModeColor.light))
+        } else {
+            self.textDecorationColor(CSS_Standard.TextDecorationColor.color(darkModeColor.light))
+                .dark {
+                    $0.textDecorationColor(
+                        CSS_Standard.TextDecorationColor.color(darkModeColor.dark)
+                    )
+                }
+        }
     }
 
     /// Sets the text decoration color using separate light and dark color values.

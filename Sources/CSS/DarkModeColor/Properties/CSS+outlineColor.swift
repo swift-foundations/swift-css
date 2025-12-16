@@ -12,11 +12,16 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the outline color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func outlineColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.outlineColor(CSS_Standard.OutlineColor.color(darkModeColor.light))
-            .dark { $0.outlineColor(CSS_Standard.OutlineColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.outlineColor(CSS_Standard.OutlineColor.color(darkModeColor.light))
+        } else {
+            self.outlineColor(CSS_Standard.OutlineColor.color(darkModeColor.light))
+                .dark { $0.outlineColor(CSS_Standard.OutlineColor.color(darkModeColor.dark)) }
+        }
     }
 
     /// Sets the outline color using separate light and dark color values.

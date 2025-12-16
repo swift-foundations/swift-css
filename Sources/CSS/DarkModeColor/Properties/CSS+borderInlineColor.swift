@@ -12,11 +12,18 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the border inline color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func borderInlineColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.borderInlineColor(CSS_Standard.BorderInlineColor.color(darkModeColor.light))
-            .dark { $0.borderInlineColor(CSS_Standard.BorderInlineColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.borderInlineColor(CSS_Standard.BorderInlineColor.color(darkModeColor.light))
+        } else {
+            self.borderInlineColor(CSS_Standard.BorderInlineColor.color(darkModeColor.light))
+                .dark {
+                    $0.borderInlineColor(CSS_Standard.BorderInlineColor.color(darkModeColor.dark))
+                }
+        }
     }
 
     /// Sets the border inline color using separate light and dark color values.

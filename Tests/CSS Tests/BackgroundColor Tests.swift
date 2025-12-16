@@ -18,7 +18,7 @@ extension `Snapshot Tests` {
         func `HTML element renders with background-color named color properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.backgroundColor(.red)
+                    div.css.backgroundColor(.color(.named(.red)))
                 },
                 as: .html
             ) {
@@ -168,7 +168,7 @@ extension `Snapshot Tests` {
         func `HTML background-color with media query renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.print { $0.backgroundColor(.red) }
+                    div.css.print { $0.backgroundColor(.color(.named(.red))) }
                 },
                 as: .html
             ) {
@@ -195,7 +195,7 @@ extension `Snapshot Tests` {
         func `HTML background-color with pseudo-class renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.hover { $0.backgroundColor(.red) }
+                    div.css.hover { $0.backgroundColor(.color(.named(.red))) }
                 },
                 as: .html
             ) {
@@ -220,7 +220,7 @@ extension `Snapshot Tests` {
         func `HTML background-color with prefix renders properly`() throws {
             assertInlineSnapshot(
                 of: HTML.Document {
-                    div.css.selector("my-component") { $0.backgroundColor(.red) }
+                    div.css.selector("my-component") { $0.backgroundColor(.color(.named(.red))) }
                 },
                 as: .html
             ) {

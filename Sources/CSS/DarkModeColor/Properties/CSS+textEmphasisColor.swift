@@ -12,11 +12,18 @@ public import HTML_Renderable
 extension CSS {
     /// Sets the text emphasis color using a DarkModeColor value.
     @discardableResult
+    @CSS.Builder
     public func textEmphasisColor(
         _ darkModeColor: DarkModeColor
     ) -> CSS<some HTML.View> {
-        self.textEmphasisColor(CSS_Standard.TextEmphasisColor.color(darkModeColor.light))
-            .dark { $0.textEmphasisColor(CSS_Standard.TextEmphasisColor.color(darkModeColor.dark)) }
+        if darkModeColor.isSingleColor {
+            self.textEmphasisColor(CSS_Standard.TextEmphasisColor.color(darkModeColor.light))
+        } else {
+            self.textEmphasisColor(CSS_Standard.TextEmphasisColor.color(darkModeColor.light))
+                .dark {
+                    $0.textEmphasisColor(CSS_Standard.TextEmphasisColor.color(darkModeColor.dark))
+                }
+        }
     }
 
     /// Sets the text emphasis color using separate light and dark color values.

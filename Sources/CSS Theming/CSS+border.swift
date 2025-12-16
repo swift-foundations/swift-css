@@ -18,7 +18,8 @@ extension CSS {
     ) -> CSS<some HTML.View> {
         if let border {
             // Extract common border properties
-            let borderStyle = "\(border.width?.description ?? "") \(border.style?.description ?? "")"
+            let borderStyle =
+                "\(border.width?.description ?? "") \(border.style?.description ?? "")"
             let lightColor = border.color?.light.description ?? ""
             let darkColor = border.color?.dark.description ?? ""
             let isSingleColor = border.color?.isSingleColor ?? true
@@ -28,7 +29,9 @@ extension CSS {
             if isAllSides {
                 // All sides - use shorthand property
                 if isSingleColor {
-                    base.inlineStyle(RawProperty<W3C_CSS_Backgrounds.Border>("\(borderStyle) \(lightColor)"))
+                    base.inlineStyle(
+                        RawProperty<W3C_CSS_Backgrounds.Border>("\(borderStyle) \(lightColor)")
+                    )
                 } else {
                     // Different light/dark: emit both with dark mode media query
                     let ctx = HTML.Style.Context.current
@@ -36,7 +39,9 @@ extension CSS {
                     let darkAtRule: HTML.AtRule = {
                         if let existingAtRule = ctx.atRule {
                             // Combine with existing media query using Media's and() method
-                            let combined = darkMedia.and(W3C_CSS_MediaQueries.Media(rawValue: existingAtRule.rawValue))
+                            let combined = darkMedia.and(
+                                W3C_CSS_MediaQueries.Media(rawValue: existingAtRule.rawValue)
+                            )
                             return HTML.AtRule(rawValue: combined.rawValue)
                         } else {
                             return HTML.AtRule.Media(darkMedia)
@@ -44,7 +49,13 @@ extension CSS {
                     }()
 
                     HTML.Styled(
-                        HTML.Styled(base, RawProperty<W3C_CSS_Backgrounds.Border>("\(borderStyle) \(lightColor)"), atRule: ctx.atRule, selector: ctx.selector, pseudo: ctx.pseudo),
+                        HTML.Styled(
+                            base,
+                            RawProperty<W3C_CSS_Backgrounds.Border>("\(borderStyle) \(lightColor)"),
+                            atRule: ctx.atRule,
+                            selector: ctx.selector,
+                            pseudo: ctx.pseudo
+                        ),
                         RawProperty<W3C_CSS_Backgrounds.Border>("\(borderStyle) \(darkColor)"),
                         atRule: darkAtRule,
                         selector: ctx.selector,
@@ -171,7 +182,9 @@ extension HTML.View {
                 let darkAtRule: HTML.AtRule = {
                     if let existingAtRule = ctx.atRule {
                         // Combine with existing media query using Media's and() method
-                        let combined = darkMedia.and(W3C_CSS_MediaQueries.Media(rawValue: existingAtRule.rawValue))
+                        let combined = darkMedia.and(
+                            W3C_CSS_MediaQueries.Media(rawValue: existingAtRule.rawValue)
+                        )
                         return HTML.AtRule(rawValue: combined.rawValue)
                     } else {
                         return HTML.AtRule.Media(darkMedia)
@@ -179,7 +192,13 @@ extension HTML.View {
                 }()
 
                 HTML.Styled(
-                    HTML.Styled(self, RawProperty<P>("\(borderStyle) \(lightColor)"), atRule: ctx.atRule, selector: ctx.selector, pseudo: ctx.pseudo),
+                    HTML.Styled(
+                        self,
+                        RawProperty<P>("\(borderStyle) \(lightColor)"),
+                        atRule: ctx.atRule,
+                        selector: ctx.selector,
+                        pseudo: ctx.pseudo
+                    ),
                     RawProperty<P>("\(borderStyle) \(darkColor)"),
                     atRule: darkAtRule,
                     selector: ctx.selector,

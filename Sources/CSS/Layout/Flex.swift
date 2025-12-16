@@ -31,7 +31,19 @@ extension CSS {
         itemAlignment: AlignItems? = nil,
         rowGap: RowGap? = nil,
         columnGap: ColumnGap? = nil
-    ) -> CSS<HTML.Styled<HTML.Styled<HTML.Styled<HTML.Styled<HTML.Styled<HTML.Styled<HTML.Styled<Base, Display>, FlexDirection>, FlexWrap>, JustifyContent>, AlignItems>, RowGap>, ColumnGap>> {
+    ) -> CSS<
+        HTML.Styled<
+            HTML.Styled<
+                HTML.Styled<
+                    HTML.Styled<
+                        HTML.Styled<
+                            HTML.Styled<HTML.Styled<Base, Display>, FlexDirection>, FlexWrap
+                        >, JustifyContent
+                    >, AlignItems
+                >, RowGap
+            >, ColumnGap
+        >
+    > {
         self
             .display(.flex)
             .flexDirection(direction)

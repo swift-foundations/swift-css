@@ -110,12 +110,3 @@ extension CSS_Standard.Global: ColorPropertyConvertible {
     @usableFromInline
     static let injection: @Sendable (CSS_Standard.Global) -> ColorProperty = { .global($0) }
 }
-
-// MARK: - HTMLColor Typealias (Backward Compatibility)
-
-/// Backward-compatible typealias for DarkModeColor.
-///
-/// `HTMLColor` was previously defined as `CSS_Standard.Color.WithDarkMode.Color`.
-/// This typealias provides source compatibility during the migration.
-@available(*, deprecated, renamed: "DarkModeColor")
-public typealias HTMLColor = DarkModeColor
