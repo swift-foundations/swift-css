@@ -44,9 +44,9 @@ let package = Package(
         .library(name: .cssTheming, targets: [.cssTheming]),
     ],
     dependencies: [
-        .package(url: "https://github.com/coenttb/swift-css-html-rendering", from: "0.1.0"),
-        .package(url: "https://github.com/coenttb/swift-html-rendering", from: "0.1.0"),
-        .package(url: "https://github.com/swift-standards/swift-css-standard", from: "0.1.0"),
+        .package(url: "https://github.com/coenttb/swift-css-html-rendering", from: "0.1.5"),
+        .package(url: "https://github.com/coenttb/swift-html-rendering", from: "0.1.12"),
+        .package(url: "https://github.com/swift-standards/swift-css-standard", from: "0.1.6"),
         .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.9.2"),
     ],
     targets: [

@@ -9,13 +9,13 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Sets the SVG lighting color using a DarkModeColor value.
     @discardableResult
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func lightingColor(
         _ darkModeColor: DarkModeColor
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         if darkModeColor.isSingleColor {
             self.lightingColor(CSS_Standard.LightingColor.color(darkModeColor.light))
         } else {
@@ -29,7 +29,7 @@ extension CSS {
     public func lightingColor(
         light: CSS_Standard.Color.Value,
         dark: CSS_Standard.Color.Value
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         lightingColor(DarkModeColor(light: light, dark: dark))
     }
 }

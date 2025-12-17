@@ -9,7 +9,7 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Convenience method for common text styling properties.
     ///
     /// ```swift
@@ -21,13 +21,13 @@ extension CSS {
     /// ```
     @inlinable
     @discardableResult
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func text(
         align: TextAlign? = nil,
         decoration: TextDecoration? = nil,
         transform: TextTransform? = nil,
         overflow: TextOverflow? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         base
             .inlineStyle(align)
             .inlineStyle(decoration)

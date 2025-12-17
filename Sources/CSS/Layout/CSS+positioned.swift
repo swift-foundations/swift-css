@@ -9,7 +9,7 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Convenience method for positioning properties.
     ///
     /// ```swift
@@ -29,7 +29,7 @@ extension CSS {
         bottom: Bottom? = nil,
         left: Left? = nil,
         zIndex: ZIndex? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         var result: any HTML.View =
             base
             .inlineStyle(position)
@@ -55,7 +55,7 @@ extension CSS {
                 .inlineStyle(zIndex)
         }
 
-        return CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
     }
 
     /// Convenience for absolutely positioned element that fills its container.
@@ -66,7 +66,7 @@ extension CSS {
     /// ```
     @inlinable
     @discardableResult
-    public func absoluteFill() -> CSS<some HTML.View> {
+    public func absoluteFill() -> HTML.CSS<some HTML.View> {
         self.positioned(
             .absolute,
             top: .px(0),

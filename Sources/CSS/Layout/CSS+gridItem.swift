@@ -9,7 +9,7 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Convenience method for CSS Grid item properties.
     ///
     /// ```swift
@@ -29,7 +29,7 @@ extension CSS {
         rowEnd: GridRowEnd? = nil,
         justifySelf: JustifySelf? = nil,
         alignSelf: AlignSelf? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         var result: any HTML.View = base
 
         if let column = column {
@@ -65,6 +65,6 @@ extension CSS {
                 .inlineStyle(alignSelf)
         }
 
-        return CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
     }
 }

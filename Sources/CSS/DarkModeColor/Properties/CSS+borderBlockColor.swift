@@ -9,13 +9,13 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Sets the border block color using a DarkModeColor value.
     @discardableResult
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func borderBlockColor(
         _ darkModeColor: DarkModeColor
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         if darkModeColor.isSingleColor {
             self.borderBlockColor(CSS_Standard.BorderBlockColor.color(darkModeColor.light))
         } else {
@@ -31,7 +31,7 @@ extension CSS {
     public func borderBlockColor(
         light: CSS_Standard.Color.Value,
         dark: CSS_Standard.Color.Value
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         borderBlockColor(DarkModeColor(light: light, dark: dark))
     }
 }

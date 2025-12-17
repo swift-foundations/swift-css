@@ -14,12 +14,12 @@ public enum ListStyle: Sendable {
     case cssPropertyTypesListStyle(CSS_Standard.ListStyle)
 }
 
-extension CSS {
+extension HTML.CSS {
     @discardableResult
     @inlinable
     public func listStyle(
         _ listStyle: ListStyle
-    ) -> CSS<HTML.Styled<HTML.Styled<Base, CSS_Standard.ListStyle>, PaddingLeft>> {
+    ) -> HTML.CSS<HTML.Styled<HTML.Styled<Base, CSS_Standard.ListStyle>, PaddingLeft>> {
         switch listStyle {
         case .reset:
             self

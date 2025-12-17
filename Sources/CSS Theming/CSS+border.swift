@@ -9,13 +9,13 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     @inlinable
     @discardableResult
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func border(
         _ border: Border?
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         if let border {
             // Extract common border properties
             let borderStyle =
@@ -34,7 +34,7 @@ extension CSS {
                     )
                 } else {
                     // Different light/dark: emit both with dark mode media query
-                    let ctx = HTML.Style.Context.current
+                    let ctx = HTML.Element.Style.Context.current
                     let darkMedia = W3C_CSS_MediaQueries.Media.prefersColorScheme(.dark)
                     let darkAtRule: HTML.AtRule = {
                         if let existingAtRule = ctx.atRule {
@@ -84,7 +84,7 @@ extension CSS {
         width: BorderWidth? = nil,
         style: CSS_Standard.LineStyle? = .solid,
         color: DarkModeColor? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         self.border(Border(sides: .init(sides), width: width, style: style, color: color))
     }
 
@@ -96,27 +96,27 @@ extension CSS {
         width: BorderWidth? = nil,
         style: CSS_Standard.LineStyle? = .solid,
         color: DarkModeColor? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         self.border(Border(sides: .init(sides), width: width, style: style, color: color))
     }
 }
 
 // MARK: - Border Sides with Nested _Conditional
 
-extension CSS {
+extension HTML.CSS {
     /// Applies border styles to individual sides using nested _Conditional types.
     ///
     /// Each side check produces a _Conditional wrapping the styled or unstyled view.
     /// The sides are applied in sequence: top -> right -> bottom -> left.
     @usableFromInline
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     func borderSidesView(
         sides: Set<Border.Side>,
         borderStyle: String,
         lightColor: String,
         darkColor: String,
         isSingleColor: Bool
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         base
             .applyBorderSide(
                 shouldApply: sides.contains(.top),
@@ -177,7 +177,7 @@ extension HTML.View {
                 self.inlineStyle(RawProperty<P>("\(borderStyle) \(lightColor)"))
             } else {
                 // Different light/dark: emit both with dark mode media query
-                let ctx = HTML.Style.Context.current
+                let ctx = HTML.Element.Style.Context.current
                 let darkMedia = W3C_CSS_MediaQueries.Media.prefersColorScheme(.dark)
                 let darkAtRule: HTML.AtRule = {
                     if let existingAtRule = ctx.atRule {
@@ -213,14 +213,14 @@ extension HTML.View {
 
 // MARK: - Individual Border Side Functions
 
-extension CSS {
+extension HTML.CSS {
     @inlinable
     @discardableResult
     public func borderTop(
         width: BorderWidth? = nil,
         style: CSS_Standard.LineStyle? = .solid,
         color: DarkModeColor? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         self.border([.top], width: width, style: style, color: color)
     }
 
@@ -230,7 +230,7 @@ extension CSS {
         width: BorderWidth? = nil,
         style: CSS_Standard.LineStyle? = .solid,
         color: DarkModeColor? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         self.border([.bottom], width: width, style: style, color: color)
     }
 
@@ -240,7 +240,7 @@ extension CSS {
         width: BorderWidth? = nil,
         style: CSS_Standard.LineStyle? = .solid,
         color: DarkModeColor? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         self.border([.left], width: width, style: style, color: color)
     }
 
@@ -250,7 +250,7 @@ extension CSS {
         width: BorderWidth? = nil,
         style: CSS_Standard.LineStyle? = .solid,
         color: DarkModeColor? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         self.border([.right], width: width, style: style, color: color)
     }
 }

@@ -9,7 +9,7 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Convenience method for flexbox container properties.
     ///
     /// Sets `display: flex` and configures flex container properties.
@@ -31,7 +31,7 @@ extension CSS {
         itemAlignment: AlignItems? = nil,
         rowGap: RowGap? = nil,
         columnGap: ColumnGap? = nil
-    ) -> CSS<
+    ) -> HTML.CSS<
         HTML.Styled<
             HTML.Styled<
                 HTML.Styled<
@@ -69,7 +69,7 @@ extension CSS {
         grow: FlexGrow? = nil,
         shrink: FlexShrink? = nil,
         basis: FlexBasis? = nil
-    ) -> CSS<HTML.Styled<HTML.Styled<HTML.Styled<Base, FlexGrow>, FlexShrink>, FlexBasis>> {
+    ) -> HTML.CSS<HTML.Styled<HTML.Styled<HTML.Styled<Base, FlexGrow>, FlexShrink>, FlexBasis>> {
         self
             .flexGrow(grow)
             .flexShrink(shrink)

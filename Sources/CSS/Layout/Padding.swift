@@ -15,7 +15,7 @@ extension Padding {
 
 // MARK: - CSS Extension for padding with named parameters
 
-extension CSS {
+extension HTML.CSS {
     /// Applies padding to specified sides using named parameters (TRBL order).
     ///
     /// This method allows setting padding on individual sides while maintaining CSS chaining.
@@ -29,13 +29,13 @@ extension CSS {
     /// ```
     @discardableResult
     @inlinable
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func padding(
         top: LengthPercentage? = nil,
         right: LengthPercentage? = nil,
         bottom: LengthPercentage? = nil,
         left: LengthPercentage? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         // Optimize to shorthand when all four values are provided
         if let top, let right, let bottom, let left {
             // All four equal: padding: value
@@ -79,11 +79,11 @@ extension CSS {
     /// ```
     @discardableResult
     @inlinable
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func padding(
         vertical: LengthPercentage? = nil,
         horizontal: LengthPercentage? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         // Use shorthand when both values are provided
         if let vertical, let horizontal {
             base.inlineStyle(
@@ -112,12 +112,12 @@ extension CSS {
     /// ```
     @discardableResult
     @inlinable
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func padding(
         top: LengthPercentage? = nil,
         horizontal: LengthPercentage? = nil,
         bottom: LengthPercentage? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         // Use shorthand when all three are provided
         if let top, let horizontal, let bottom {
             base.inlineStyle(

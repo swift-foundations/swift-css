@@ -9,7 +9,7 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Convenience method for positioning with offset values.
     ///
     /// ```swift
@@ -28,7 +28,7 @@ extension CSS {
         right: Right? = nil,
         bottom: Bottom? = nil,
         left: Left? = nil
-    ) -> CSS<
+    ) -> HTML.CSS<
         HTML.Styled<
             HTML.Styled<
                 HTML.Styled<

@@ -9,7 +9,7 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Convenience method for spacing properties (padding and margin together).
     ///
     /// ```swift
@@ -23,7 +23,7 @@ extension CSS {
     public func spacing(
         padding: Padding? = nil,
         margin: Margin? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         var result: any HTML.View = base
 
         if let padding = padding {
@@ -35,6 +35,6 @@ extension CSS {
                 .inlineStyle(margin)
         }
 
-        return CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
     }
 }

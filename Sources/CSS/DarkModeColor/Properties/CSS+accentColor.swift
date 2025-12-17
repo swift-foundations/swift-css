@@ -9,7 +9,7 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Sets the accent color using a DarkModeColor value.
     ///
     /// This method applies the light color by default and adds a dark mode
@@ -19,10 +19,10 @@ extension CSS {
     /// input.css.accentColor(DarkModeColor(light: .blue, dark: .cyan))
     /// ```
     @discardableResult
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func accentColor(
         _ darkModeColor: DarkModeColor
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         if darkModeColor.isSingleColor {
             self.accentColor(CSS_Standard.AccentColor.color(darkModeColor.light))
         } else {
@@ -40,7 +40,7 @@ extension CSS {
     public func accentColor(
         light: CSS_Standard.Color.Value,
         dark: CSS_Standard.Color.Value
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         accentColor(DarkModeColor(light: light, dark: dark))
     }
 }

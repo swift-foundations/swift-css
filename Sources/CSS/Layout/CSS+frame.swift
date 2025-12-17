@@ -9,7 +9,7 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Convenience method for sizing properties (width, height, min/max).
     ///
     /// ```swift
@@ -28,7 +28,7 @@ extension CSS {
         minHeight: MinHeight? = nil,
         maxWidth: MaxWidth? = nil,
         maxHeight: MaxHeight? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         var result: any HTML.View = base
 
         if let width = width {
@@ -56,6 +56,6 @@ extension CSS {
                 .inlineStyle(maxHeight)
         }
 
-        return CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
     }
 }

@@ -9,7 +9,7 @@ public import CSS_HTML_Rendering
 public import CSS_Standard
 public import HTML_Renderable
 
-extension CSS {
+extension HTML.CSS {
     /// Convenience method for CSS Grid container properties.
     ///
     /// Sets `display: grid` and configures grid container properties.
@@ -31,7 +31,7 @@ extension CSS {
         columnGap: ColumnGap? = nil,
         justifyItems: JustifyItems? = nil,
         alignItems: AlignItems? = nil
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         var result: any HTML.View =
             base
             .inlineStyle(Display.grid)
@@ -65,6 +65,6 @@ extension CSS {
                 .inlineStyle(alignItems)
         }
 
-        return CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
     }
 }

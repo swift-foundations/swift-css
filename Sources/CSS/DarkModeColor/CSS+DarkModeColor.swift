@@ -10,7 +10,7 @@ public import CSS_Standard
 public import HTML_Renderable
 public import W3C_CSS_Values
 
-extension CSS {
+extension HTML.CSS {
     /// Sets the text color using a DarkModeColor value.
     ///
     /// This method applies the light color by default and adds a dark mode
@@ -21,10 +21,10 @@ extension CSS {
     /// div.css.color(DarkModeColor(light: .black, dark: .white))
     /// ```
     @discardableResult
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func color(
         _ darkModeColor: DarkModeColor
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
 
         if darkModeColor.isSingleColor {
             self.color(W3C_CSS_Color.Color.color(darkModeColor.light))
@@ -43,7 +43,7 @@ extension CSS {
     public func color(
         light: CSS_Standard.Color.Value,
         dark: CSS_Standard.Color.Value
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         color(DarkModeColor(light: light, dark: dark))
     }
 
@@ -57,10 +57,10 @@ extension CSS {
     /// div.css.backgroundColor(DarkModeColor(light: .white, dark: .black))
     /// ```
     @discardableResult
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func backgroundColor(
         _ darkModeColor: DarkModeColor
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         if darkModeColor.isSingleColor {
             self.backgroundColor(W3C_CSS_Backgrounds.BackgroundColor.color(darkModeColor.light))
         } else {
@@ -82,7 +82,7 @@ extension CSS {
     public func backgroundColor(
         light: CSS_Standard.Color.Value,
         dark: CSS_Standard.Color.Value
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         backgroundColor(DarkModeColor(light: light, dark: dark))
     }
 
@@ -94,12 +94,12 @@ extension CSS {
     /// div.css.border(width: .px(1), style: .solid, color: DarkModeColor(light: .gray, dark: .darkGray))
     /// ```
     @discardableResult
-    @CSS.Builder
+    @CSS_HTML_Rendering.CSS.Builder
     public func border(
         width: W3C_CSS_Backgrounds.BorderWidth,
         style: W3C_CSS_Values.LineStyle,
         color: DarkModeColor
-    ) -> CSS<some HTML.View> {
+    ) -> HTML.CSS<some HTML.View> {
         if color.isSingleColor {
             self.border(W3C_CSS_Backgrounds.Border(width: width, style: style, color: color.light))
         } else {
