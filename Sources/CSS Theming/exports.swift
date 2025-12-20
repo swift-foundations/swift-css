@@ -7,4 +7,79 @@
 
 @_exported import CSS
 @_exported import CSS_Standard
-@_exported import Dependencies
+
+// MARK: - Theming Values
+
+/// A container for theming values that can be modified in a scoped context.
+///
+/// This mirrors the `DependencyValues` pattern from swift-dependencies.
+public struct ThemingValues: Sendable {
+    public var theme: DarkModeColor.Theme
+    public var font: Font.Defaults
+
+    public init(
+        theme: DarkModeColor.Theme = .current,
+        font: Font.Defaults = .current
+    ) {
+        self.theme = theme
+        self.font = font
+    }
+}
+
+// MARK: - prepareDependencies API
+
+/// Set global default theming values. Call once at app startup.
+///
+/// Usage:
+/// ```swift
+/// prepareDependencies {
+///     $0.theme = .github
+///     $0.font = customFont
+/// }
+/// ```
+///
+/// These values become the new defaults when no scoped override is active.
+public func prepareDependencies(
+    _ modify: (inout ThemingValues) -> Void
+) {
+    var values = ThemingValues()
+    modify(&values)
+    DarkModeColor.Theme._prepare(values.theme)
+    Font.Defaults._prepare(values.font)
+}
+
+// MARK: - withDependencies API
+
+/// Execute an operation with modified theming values.
+///
+/// Usage:
+/// ```swift
+/// withDependencies {
+///     $0.theme = .github
+///     $0.font = customFont
+/// } operation: {
+///     // Code here sees the modified values
+/// }
+/// ```
+public func withDependencies<R>(
+    _ modify: (inout ThemingValues) -> Void,
+    operation: () throws -> R
+) rethrows -> R {
+    var values = ThemingValues()
+    modify(&values)
+    return try DarkModeColor.Theme.withValue(values.theme) {
+        try Font.Defaults.withValue(values.font, operation: operation)
+    }
+}
+
+/// Execute an async operation with modified theming values.
+public func withDependencies<R>(
+    _ modify: (inout ThemingValues) -> Void,
+    operation: () async throws -> R
+) async rethrows -> R {
+    var values = ThemingValues()
+    modify(&values)
+    return try await DarkModeColor.Theme.withValue(values.theme) {
+        try await Font.Defaults.withValue(values.font, operation: operation)
+    }
+}

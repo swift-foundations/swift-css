@@ -25,9 +25,6 @@ extension Target.Dependency {
     static var htmlRenderableTestSupport: Self {
         .product(name: "HTML Rendering TestSupport", package: "swift-html-rendering")
     }
-    static var dependencies: Self {
-        .product(name: "Dependencies", package: "swift-dependencies")
-    }
 }
 
 let package = Package(
@@ -45,9 +42,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/coenttb/swift-css-html-rendering", from: "0.1.5"),
-        .package(url: "https://github.com/coenttb/swift-html-rendering", from: "0.1.12"),
+        .package(url: "https://github.com/coenttb/swift-html-rendering", from: "0.1.14"),
         .package(url: "https://github.com/swift-standards/swift-css-standard", from: "0.1.6"),
-        .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.9.2"),
     ],
     targets: [
         .target(
@@ -62,7 +58,6 @@ let package = Package(
             dependencies: [
                 .css,
                 .cssStandard,
-                .dependencies,
             ]
         ),
         .testTarget(

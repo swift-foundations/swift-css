@@ -6,11 +6,26 @@
 //
 
 import CSS_Standard
-import Dependencies
 import Foundation
 
 extension DarkModeColor {
     public struct Theme: Sendable {
+        /// Global prepared value (set via `prepareDependencies`)
+        nonisolated(unsafe) private static var _prepared: DarkModeColor.Theme = .default
+
+        /// Scoped override (set via `withDependencies`)
+        @TaskLocal private static var _scoped: DarkModeColor.Theme? = nil
+
+        /// Current theme value. Returns scoped override if set, otherwise prepared value.
+        public static var current: DarkModeColor.Theme {
+            _scoped ?? _prepared
+        }
+
+        /// Set the global prepared value.
+        public static func _prepare(_ value: DarkModeColor.Theme) {
+            _prepared = value
+        }
+
         public var gray: DarkModeColor
         public var blue: DarkModeColor
         public var green: DarkModeColor
@@ -230,122 +245,52 @@ extension DarkModeColor.Theme {
 
 extension DarkModeColor {
     public static var theme: DarkModeColor.Theme {
-        @Dependency(\.theme) var color
-        return color
+        DarkModeColor.Theme.current
     }
 }
 
 extension DarkModeColor {
     public static var text: DarkModeColor.Theme.Text {
-        @Dependency(\.theme.text) var text
-        return text
+        DarkModeColor.Theme.current.text
     }
 }
 
 extension DarkModeColor {
     public static var background: DarkModeColor.Theme.Background {
-        @Dependency(\.theme.background) var background
-        return background
+        DarkModeColor.Theme.current.background
     }
 }
 
 extension DarkModeColor {
     public static var border: DarkModeColor.Theme.Border {
-        @Dependency(\.theme.border) var border
-        return border
+        DarkModeColor.Theme.current.border
     }
 }
 
 extension DarkModeColor {
     public static var branding: DarkModeColor.Theme.Branding {
-        @Dependency(\.theme.branding) var branding
-        return branding
-    }
-}
-
-extension DarkModeColor.Theme: DependencyKey {
-    public static var liveValue: Self { .default }
-    public static var testValue: Self { liveValue }
-    public static var previewValue: Self { liveValue }
-}
-
-extension DependencyValues {
-    public var theme: DarkModeColor.Theme {
-        get { self[DarkModeColor.Theme.self] }
-        set { self[DarkModeColor.Theme.self] = newValue }
+        DarkModeColor.Theme.current.branding
     }
 }
 
 extension DarkModeColor {
-    public static var gray: Self {
-        @Dependency(\.theme.gray) var gray
-        return gray
-    }
-    public static var black: Self {
-        @Dependency(\.theme.black) var black
-        return black
-    }
-    public static var offBlack: Self {
-        @Dependency(\.theme.offBlack) var offBlack
-        return offBlack
-    }
-    public static var white: Self {
-        @Dependency(\.theme.white) var white
-        return white
-    }
-    public static var offWhite: Self {
-        @Dependency(\.theme.offWhite) var offWhite
-        return offWhite
-    }
-    public static var cyan: Self {
-        @Dependency(\.theme.cyan) var cyan
-        return cyan
-    }
-    public static var teal: Self {
-        @Dependency(\.theme.teal) var teal
-        return teal
-    }
-    public static var pink: Self {
-        @Dependency(\.theme.pink) var pink
-        return pink
-    }
-    public static var brown: Self {
-        @Dependency(\.theme.brown) var brown
-        return brown
-    }
-
-    public static var orange: Self {
-        @Dependency(\.theme.orange) var orange
-        return orange
-    }
-    public static var green: Self {
-        @Dependency(\.theme.green) var green
-        return green
-    }
-    public static var purple: Self {
-        @Dependency(\.theme.purple) var purple
-        return purple
-    }
-    public static var blue: Self {
-        @Dependency(\.theme.blue) var blue
-        return blue
-    }
-    public static var red: Self {
-        @Dependency(\.theme.red) var red
-        return red
-    }
-    public static var yellow: Self {
-        @Dependency(\.theme.yellow) var yellow
-        return yellow
-    }
-    public static var neutral: Self {
-        @Dependency(\.theme.neutral) var neutral
-        return neutral
-    }
-    public static var info: Self {
-        @Dependency(\.theme.info) var info
-        return info
-    }
+    public static var gray: Self { DarkModeColor.Theme.current.gray }
+    public static var black: Self { DarkModeColor.Theme.current.black }
+    public static var offBlack: Self { DarkModeColor.Theme.current.offBlack }
+    public static var white: Self { DarkModeColor.Theme.current.white }
+    public static var offWhite: Self { DarkModeColor.Theme.current.offWhite }
+    public static var cyan: Self { DarkModeColor.Theme.current.cyan }
+    public static var teal: Self { DarkModeColor.Theme.current.teal }
+    public static var pink: Self { DarkModeColor.Theme.current.pink }
+    public static var brown: Self { DarkModeColor.Theme.current.brown }
+    public static var orange: Self { DarkModeColor.Theme.current.orange }
+    public static var green: Self { DarkModeColor.Theme.current.green }
+    public static var purple: Self { DarkModeColor.Theme.current.purple }
+    public static var blue: Self { DarkModeColor.Theme.current.blue }
+    public static var red: Self { DarkModeColor.Theme.current.red }
+    public static var yellow: Self { DarkModeColor.Theme.current.yellow }
+    public static var neutral: Self { DarkModeColor.Theme.current.neutral }
+    public static var info: Self { DarkModeColor.Theme.current.info }
 
     public static let transparent: Self = .init(light: .transparent, dark: .transparent)
 }
@@ -359,4 +304,31 @@ extension DarkModeColor {
 
 extension DarkModeColor {
     public static let buttonBackground: Self = .cardBackground
+}
+
+// MARK: - Convenience API for setting theme
+
+extension DarkModeColor.Theme {
+    /// Execute an operation with a custom theme.
+    ///
+    /// Usage:
+    /// ```swift
+    /// DarkModeColor.Theme.withValue(.github) {
+    ///     // Code here sees .github theme
+    /// }
+    /// ```
+    public static func withValue<R>(
+        _ theme: DarkModeColor.Theme,
+        operation: () throws -> R
+    ) rethrows -> R {
+        try $_scoped.withValue(theme, operation: operation)
+    }
+
+    /// Execute an async operation with a custom theme.
+    public static func withValue<R>(
+        _ theme: DarkModeColor.Theme,
+        operation: () async throws -> R
+    ) async rethrows -> R {
+        try await $_scoped.withValue(theme, operation: operation)
+    }
 }

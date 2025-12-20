@@ -6,11 +6,26 @@
 //
 
 import CSS_Standard
-import Dependencies
 import Foundation
 
 extension Font {
     public struct Defaults: Sendable {
+        /// Global prepared value (set via `prepareDependencies`)
+        nonisolated(unsafe) private static var _prepared: Font.Defaults = .default
+
+        /// Scoped override (set via `withDependencies`)
+        @TaskLocal private static var _scoped: Font.Defaults? = nil
+
+        /// Current font defaults. Returns scoped override if set, otherwise prepared value.
+        public static var current: Font.Defaults {
+            _scoped ?? _prepared
+        }
+
+        /// Set the global prepared value.
+        public static func _prepare(_ value: Font.Defaults) {
+            _prepared = value
+        }
+
         public var extraLargeTitle2: Font
         public var extraLargeTitle: Font
         public var largeTitle: Font
@@ -88,15 +103,7 @@ extension Font {
 
 extension Font {
     public static var font: Font.Defaults {
-        @Dependency(\.font) var font
-        return font
-    }
-}
-
-extension DependencyValues {
-    public var font: Font.Defaults {
-        get { self[Font.Defaults.self] }
-        set { self[Font.Defaults.self] = newValue }
+        Font.Defaults.current
     }
 }
 
@@ -224,7 +231,29 @@ extension Font.Defaults {
     }
 }
 
-extension Font.Defaults: DependencyKey {
-    public static var testValue: Font.Defaults { .default }
-    public static var liveValue: Font.Defaults { .default }
+// MARK: - Convenience API for setting font
+
+extension Font.Defaults {
+    /// Execute an operation with custom font defaults.
+    ///
+    /// Usage:
+    /// ```swift
+    /// Font.Defaults.withValue(customFont) {
+    ///     // Code here sees customFont
+    /// }
+    /// ```
+    public static func withValue<R>(
+        _ font: Font.Defaults,
+        operation: () throws -> R
+    ) rethrows -> R {
+        try $_scoped.withValue(font, operation: operation)
+    }
+
+    /// Execute an async operation with custom font defaults.
+    public static func withValue<R>(
+        _ font: Font.Defaults,
+        operation: () async throws -> R
+    ) async rethrows -> R {
+        try await $_scoped.withValue(font, operation: operation)
+    }
 }
