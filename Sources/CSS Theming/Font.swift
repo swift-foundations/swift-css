@@ -1,12 +1,13 @@
 //
 //  Font.swift
-//  swift-html
+//  swift-css
 //
 //  Created by Coen ten Thije Boonkkamp on 26/06/2025.
 //
 
-import CSS
-import CSS_Standard
+public import CSS
+public import CSS_Standard
+public import HTML_Renderable
 
 public struct Font: Hashable, Sendable {
     public let family: CSS_Standard.FontFamily
@@ -36,4 +37,41 @@ public struct Font: Hashable, Sendable {
     }
 }
 
-// CSS extension for Font is in swift-html (uses HTML.Styled types)
+extension HTML.CSS {
+    @discardableResult
+    @inlinable
+    public func font(
+        _ font: Font
+    )
+        -> HTML.CSS<
+            HTML.Styled<
+                HTML.Styled<
+                    HTML.Styled<
+                        HTML.Styled<
+                            HTML.Styled<
+                                HTML.Styled<
+                                    HTML.Styled<Base, FontFamily>,
+                                    CSS_Standard.FontSize
+                                >,
+                                FontStretch
+                            >,
+                            FontStyle
+                        >,
+                        FontVariant
+                    >,
+                    FontWeight
+                >,
+                LineHeight
+            >
+        >
+    {
+        self
+            .fontFamily(font.family)
+            .fontSize(font.size)
+            .fontStretch(font.stretch)
+            .fontStyle(font.style)
+            .fontVariant(font.variant)
+            .fontWeight(font.weight)
+            .lineHeight(font.lineHeight)
+    }
+}
