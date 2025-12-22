@@ -19,9 +19,9 @@ extension `Performance Tests` {
         // MARK: - Simple Color Properties (String → Bytes)
 
         @Test(.timed(threshold: .seconds(2)))
-        func `simple color - rgb rendering 1K times`() {
+        func `simple color - rgb rendering 1K times`() throws {
             for _ in 0..<1_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.rgb(255, 0, 0))
@@ -31,9 +31,9 @@ extension `Performance Tests` {
         }
 
         @Test(.timed(threshold: .seconds(2)))
-        func `simple color - hex rendering 1K times`() {
+        func `simple color - hex rendering 1K times`() throws {
             for _ in 0..<1_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.hex(.init(0xFF0000)))
@@ -43,9 +43,9 @@ extension `Performance Tests` {
         }
 
         @Test(.timed(threshold: .seconds(2)))
-        func `simple color - named rendering 1K times`() {
+        func `simple color - named rendering 1K times`() throws {
             for _ in 0..<1_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.red)
@@ -57,9 +57,9 @@ extension `Performance Tests` {
         // MARK: - Multiple Properties (Accumulated String → Bytes Cost)
 
         @Test(.timed(threshold: .seconds(2)))
-        func `multiple properties - 5 properties 1K times`() {
+        func `multiple properties - 5 properties 1K times`() throws {
             for _ in 0..<1_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.rgb(255, 0, 0))
@@ -73,9 +73,9 @@ extension `Performance Tests` {
         }
 
         @Test(.timed(threshold: .seconds(2)))
-        func `multiple properties - 10 properties 500 times`() {
+        func `multiple properties - 10 properties 500 times`() throws {
             for _ in 0..<500 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.rgb(255, 255, 255))
@@ -96,9 +96,9 @@ extension `Performance Tests` {
         // MARK: - Complex CSS Values
 
         @Test(.timed(threshold: .seconds(2)))
-        func `complex values - rgba with alpha 1K times`() {
+        func `complex values - rgba with alpha 1K times`() throws {
             for _ in 0..<1_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.rgba(128, 128, 128, 0.5))
@@ -110,9 +110,9 @@ extension `Performance Tests` {
         // MARK: - Many Elements (Batch String → Bytes Conversion)
 
         @Test(.timed(threshold: .seconds(2)))
-        func `many elements - 50 styled divs 50 times`() {
+        func `many elements - 50 styled divs 50 times`() throws {
             for _ in 0..<50 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div") {
                             ForEach(0..<50) { i in
@@ -128,9 +128,9 @@ extension `Performance Tests` {
         }
 
         @Test(.timed(threshold: .seconds(2)))
-        func `many elements - heavily styled 100 times`() {
+        func `many elements - heavily styled 100 times`() throws {
             for _ in 0..<100 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div") {
                             ForEach(0..<20) { i in
@@ -151,9 +151,9 @@ extension `Performance Tests` {
         // MARK: - Different Property Types
 
         @Test(.timed(threshold: .seconds(2)))
-        func `property types - length properties 1K times`() {
+        func `property types - length properties 1K times`() throws {
             for _ in 0..<1_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div")
                             .css.width(.px(100))
@@ -165,9 +165,9 @@ extension `Performance Tests` {
         }
 
         @Test(.timed(threshold: .seconds(2)))
-        func `property types - color properties 1K times`() {
+        func `property types - color properties 1K times`() throws {
             for _ in 0..<1_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div")
                             .css.backgroundColor(.rgb(200, 100, 50))
@@ -180,9 +180,9 @@ extension `Performance Tests` {
         // MARK: - Real-World Scenarios
 
         @Test(.timed(threshold: .seconds(2)))
-        func `real-world - card component 500 times`() {
+        func `real-world - card component 500 times`() throws {
             for _ in 0..<500 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div") {
                             tag("div")
@@ -210,9 +210,9 @@ extension `Performance Tests` {
         // MARK: - Baseline (No Styling)
 
         @Test(.timed(threshold: .seconds(2)))
-        func `baseline - unstyled elements 1K times`() {
+        func `baseline - unstyled elements 1K times`() throws {
             for _ in 0..<1_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div") {
                             tag("div") { "Hello World" }
@@ -223,9 +223,9 @@ extension `Performance Tests` {
         }
 
         @Test(.timed(threshold: .seconds(2)))
-        func `baseline - 50 unstyled divs 50 times`() {
+        func `baseline - 50 unstyled divs 50 times`() throws {
             for _ in 0..<50 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div") {
                             for i in 0..<50 {

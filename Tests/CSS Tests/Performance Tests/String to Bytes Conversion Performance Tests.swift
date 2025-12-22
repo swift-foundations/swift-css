@@ -195,10 +195,10 @@ extension `Performance Tests` {
         // MARK: - Escaping Overhead
 
         @Test(.timed(threshold: .seconds(2)))
-        func `escaping - attribute value no escaping 5K times`() {
+        func `escaping - attribute value no escaping 5K times`() throws {
             let value = "simple-value-123"
             for _ in 0..<5_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div").attribute("data-value", value)
                     }
@@ -207,10 +207,10 @@ extension `Performance Tests` {
         }
 
         @Test(.timed(threshold: .seconds(2)))
-        func `escaping - attribute value with quotes 5K times`() {
+        func `escaping - attribute value with quotes 5K times`() throws {
             let value = "He said \"Hello\" and 'goodbye'"
             for _ in 0..<5_000 {
-                _ = try! String(
+                _ = try String(
                     HTML.Document {
                         tag("div").attribute("data-value", value)
                     }
