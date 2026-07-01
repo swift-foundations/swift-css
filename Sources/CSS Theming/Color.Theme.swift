@@ -6,7 +6,6 @@
 //
 
 import CSS_Standard
-import Foundation
 
 extension DarkModeColor {
     public struct Theme: Sendable {
@@ -325,9 +324,10 @@ extension DarkModeColor.Theme {
     }
 
     /// Execute an async operation with a custom theme.
+    nonisolated(nonsending)
     public static func withValue<R>(
         _ theme: DarkModeColor.Theme,
-        operation: () async throws -> R
+        operation: nonisolated(nonsending) () async throws -> R
     ) async rethrows -> R {
         try await $_scoped.withValue(theme, operation: operation)
     }

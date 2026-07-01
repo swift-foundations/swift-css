@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 09/08/2025.
 //
 
-import Foundation
 
 extension DarkModeColor.Theme {
     public static var documentation: Self {

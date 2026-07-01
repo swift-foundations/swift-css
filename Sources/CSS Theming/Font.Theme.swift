@@ -6,7 +6,6 @@
 //
 
 import CSS_Standard
-import Foundation
 
 extension Font {
     public struct Defaults: Sendable {
@@ -250,9 +249,10 @@ extension Font.Defaults {
     }
 
     /// Execute an async operation with custom font defaults.
+    nonisolated(nonsending)
     public static func withValue<R>(
         _ font: Font.Defaults,
-        operation: () async throws -> R
+        operation: nonisolated(nonsending) () async throws -> R
     ) async rethrows -> R {
         try await $_scoped.withValue(font, operation: operation)
     }

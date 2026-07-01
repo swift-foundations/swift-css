@@ -1,10 +1,11 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.3.1
 
 import PackageDescription
 
 extension String {
     static let css: Self = "CSS"
     static let cssTheming: Self = "CSS Theming"
+    var tests: Self { self + " Tests" }
 }
 
 extension Target.Dependency {
@@ -17,13 +18,10 @@ extension Target.Dependency {
         .product(name: "CSS Standard", package: "swift-css-standard")
     }
     static var cssHTMLRendering: Self {
-        .product(name: "CSS HTML Rendering", package: "swift-css-html-rendering")
+        .product(name: "CSS HTML Rendering", package: "swift-css-html-render")
     }
-    static var htmlRenderable: Self {
-        .product(name: "HTML Renderable", package: "swift-html-rendering")
-    }
-    static var htmlRenderableTestSupport: Self {
-        .product(name: "HTML Rendering TestSupport", package: "swift-html-rendering")
+    static var htmlRendering: Self {
+        .product(name: "HTML Rendering", package: "swift-html-render")
     }
 }
 
@@ -39,17 +37,19 @@ let package = Package(
     products: [
         .library(name: .css, targets: [.css]),
         .library(name: .cssTheming, targets: [.cssTheming]),
+        .library(name: "CSS Test Support", targets: ["CSS Test Support"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/coenttb/swift-css-html-rendering", from: "0.2.1"),
-        .package(url: "https://github.com/coenttb/swift-html-rendering", from: "0.1.15"),
-        .package(url: "https://github.com/swift-standards/swift-css-standard", from: "0.1.7"),
+        .package(url: "https://github.com/swift-foundations/swift-css-html-render.git", branch: "main"),
+        .package(url: "https://github.com/swift-foundations/swift-html-render.git", branch: "main"),
+        .package(url: "https://github.com/swift-standards/swift-css-standard.git", branch: "main"),
     ],
     targets: [
         .target(
             name: .css,
             dependencies: [
                 .cssHTMLRendering,
+                .htmlRendering,
                 .cssStandard,
             ]
         ),
@@ -57,30 +57,45 @@ let package = Package(
             name: .cssTheming,
             dependencies: [
                 .css,
+                .htmlRendering,
                 .cssStandard,
             ]
+        ),
+        .target(
+            name: "CSS Test Support",
+            dependencies: [
+                .css,
+                .cssTheming,
+            ],
+            path: "Tests/Support"
         ),
         .testTarget(
             name: .css.tests,
             dependencies: [
                 .css,
                 .cssTheming,
-                .htmlRenderableTestSupport
-            ]
+            ],
+            path: "Tests/CSS Tests"
         ),
     ],
     swiftLanguageModes: [.v6]
 )
 
-extension String {
-    var tests: Self { self + " Tests" }
-}
-
-for target in package.targets where ![.system, .binary, .plugin].contains(target.type) {
-    let existing = target.swiftSettings ?? []
-    target.swiftSettings = existing + [
+for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
+    let ecosystem: [SwiftSetting] = [
+        .strictMemorySafety(),
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
-        .enableUpcomingFeature("MemberImportsByDefault")
+        .enableUpcomingFeature("MemberImportVisibility"),
+        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+        .enableExperimentalFeature("LifetimeDependence"),
+        .enableExperimentalFeature("Lifetimes"),
+        .enableExperimentalFeature("SuppressedAssociatedTypes"),
+        .enableUpcomingFeature("InferIsolatedConformances"),
+        .enableUpcomingFeature("LifetimeDependence"),
     ]
+
+    let package: [SwiftSetting] = []
+
+    target.swiftSettings = (target.swiftSettings ?? []) + ecosystem + package
 }

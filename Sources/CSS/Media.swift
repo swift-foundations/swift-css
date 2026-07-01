@@ -5,7 +5,7 @@
 //  Predefined media query constants for common responsive breakpoints.
 //
 
-public import CSS_HTML_Rendering
+import CSS_HTML_Rendering
 public import HTML_Rendering
 
 extension HTML.AtRule.Media {

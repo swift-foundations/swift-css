@@ -73,9 +73,10 @@ public func withDependencies<R>(
 }
 
 /// Execute an async operation with modified theming values.
+nonisolated(nonsending)
 public func withDependencies<R>(
     _ modify: (inout ThemingValues) -> Void,
-    operation: () async throws -> R
+    operation: nonisolated(nonsending) () async throws -> R
 ) async rethrows -> R {
     var values = ThemingValues()
     modify(&values)

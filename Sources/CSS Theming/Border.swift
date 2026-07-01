@@ -5,23 +5,23 @@
 //  Border type definition with side configuration.
 //
 
-public import CSS_HTML_Rendering
+import CSS_HTML_Rendering
 public import CSS_Standard
 
 public struct Border: Equatable, Sendable {
-    public var sides: Set<Side>?
+    public var sides: Swift.Set<Side>?
     public var width: BorderWidth?
     public var style: CSS_Standard.LineStyle?
     public var color: DarkModeColor?
 
-    public enum Side: String, Sendable, CaseIterable {
+    public enum Side: String, Hashable, Sendable, CaseIterable {
         case top, left, right, bottom
 
         public static let all: [Self] = allCases
     }
 
     public init(
-        sides: Set<Side>? = nil,
+        sides: Swift.Set<Side>? = nil,
         width: BorderWidth? = nil,
         style: CSS_Standard.LineStyle? = .solid,
         color: DarkModeColor? = nil

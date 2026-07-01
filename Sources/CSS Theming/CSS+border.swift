@@ -7,7 +7,7 @@
 
 public import CSS_HTML_Rendering
 public import CSS_Standard
-public import HTML_Renderable
+public import HTML_Rendering
 
 extension HTML.CSS {
     @inlinable
@@ -23,7 +23,7 @@ extension HTML.CSS {
             let lightColor = border.color?.light.description ?? ""
             let darkColor = border.color?.dark.description ?? ""
             let isSingleColor = border.color?.isSingleColor ?? true
-            let sides = border.sides ?? Set(Border.Side.allCases)
+            let sides: Swift.Set<Border.Side> = border.sides ?? .init(Border.Side.allCases)
             let isAllSides = sides.count == Border.Side.allCases.count
 
             if isAllSides {
@@ -111,7 +111,7 @@ extension HTML.CSS {
     @usableFromInline
     @CSS_HTML_Rendering.CSS.Builder
     func borderSidesView(
-        sides: Set<Border.Side>,
+        sides: Swift.Set<Border.Side>,
         borderStyle: String,
         lightColor: String,
         darkColor: String,
@@ -119,7 +119,7 @@ extension HTML.CSS {
     ) -> HTML.CSS<some HTML.View> {
         base
             .applyBorderSide(
-                shouldApply: sides.contains(.top),
+                shouldApply: sides.contains(Border.Side.top),
                 property: BorderTop.self,
                 borderStyle: borderStyle,
                 lightColor: lightColor,
@@ -127,7 +127,7 @@ extension HTML.CSS {
                 isSingleColor: isSingleColor
             )
             .applyBorderSide(
-                shouldApply: sides.contains(.right),
+                shouldApply: sides.contains(Border.Side.right),
                 property: BorderRight.self,
                 borderStyle: borderStyle,
                 lightColor: lightColor,
@@ -135,7 +135,7 @@ extension HTML.CSS {
                 isSingleColor: isSingleColor
             )
             .applyBorderSide(
-                shouldApply: sides.contains(.bottom),
+                shouldApply: sides.contains(Border.Side.bottom),
                 property: BorderBottom.self,
                 borderStyle: borderStyle,
                 lightColor: lightColor,
@@ -143,7 +143,7 @@ extension HTML.CSS {
                 isSingleColor: isSingleColor
             )
             .applyBorderSide(
-                shouldApply: sides.contains(.left),
+                shouldApply: sides.contains(Border.Side.left),
                 property: BorderLeft.self,
                 borderStyle: borderStyle,
                 lightColor: lightColor,
@@ -161,7 +161,6 @@ extension HTML.View {
     /// Returns a `_Conditional` type: when `shouldApply` is true, returns the styled view;
     /// when false, returns `self` unchanged. This preserves type information through
     /// the result builder's `buildEither` mechanism.
-    @usableFromInline
     @inlinable
     @HTML.Builder
     func applyBorderSide<P: W3C_CSS_Shared.Property>(

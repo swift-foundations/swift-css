@@ -6,25 +6,24 @@
 //
 
 import CSS
-import CSS_Standard
 import CSS_Theming
 import Testing
 
-@Suite("DarkModeColor Tests")
-struct DarkModeColorTests {
+@Suite
+struct `DarkModeColor Tests` {
 
-    // MARK: - Initialization Tests
+    // MARK: - Construction
 
-    @Test("Color initializes with standard color using diagonal embedding")
-    func colorInitializesWithStandardColor() {
+    @Test
+    func `Color initializes with standard color using diagonal embedding`() {
         let color = DarkModeColor(.hex("FF0000"))
         #expect(color.light.description == "#FF0000")
         #expect(color.dark.description == "#FF0000")
         #expect(color.isSingleColor == true)
     }
 
-    @Test("Color initializes with explicit light and dark colors")
-    func colorInitializesWithLightAndDarkColors() {
+    @Test
+    func `Color initializes with explicit light and dark colors`() {
         let color = DarkModeColor(
             light: .hex("FF0000"),
             dark: .hex("00FF00")
@@ -34,29 +33,29 @@ struct DarkModeColorTests {
         #expect(color.isSingleColor == false)
     }
 
-    @Test("Color auto-darkens when dark is omitted")
-    func colorAutoDarkensWhenDarkOmitted() {
+    @Test
+    func `Color auto-darkens when dark is omitted`() {
         let color = DarkModeColor(light: .hex("FF0000"))
         #expect(color.dark != color.light)
         #expect(color.isSingleColor == false)
     }
 
-    @Test("isSingleColor is true when light equals dark")
-    func isSingleColorWhenEqual() {
+    @Test
+    func `isSingleColor is true when light equals dark`() {
         let color = DarkModeColor(light: .hex("FF0000"), dark: .hex("FF0000"))
         #expect(color.isSingleColor == true)
     }
 
-    // MARK: - Description Tests
+    // MARK: - Description
 
-    @Test("Single color description shows just the color")
-    func singleColorDescription() {
+    @Test
+    func `Single color description shows just the color`() {
         let color = DarkModeColor(.hex("FF0000"))
         #expect(color.description == "#FF0000")
     }
 
-    @Test("Color description includes media queries for different light/dark")
-    func colorDescriptionIncludesMediaQueries() {
+    @Test
+    func `Color description includes media queries for different light and dark`() {
         let color = DarkModeColor(
             light: .hex("FF0000"),
             dark: .hex("00FF00")
@@ -70,8 +69,8 @@ struct DarkModeColorTests {
 
     // MARK: - Functor Operations
 
-    @Test("map transforms both light and dark colors")
-    func mapTransformsBothColors() {
+    @Test
+    func `map transforms both light and dark colors`() {
         let color = DarkModeColor(
             light: .hex("FF0000"),
             dark: .hex("00FF00")
@@ -81,8 +80,18 @@ struct DarkModeColorTests {
         #expect(transformed.dark.description == "#0000FF")
     }
 
-    @Test("flatMap extracts light from light transform, dark from dark transform")
-    func flatMapTransformsColors() {
+    @Test
+    func `map preserves isSingleColor when both transform to same value`() {
+        let color = DarkModeColor(
+            light: .hex("FF0000"),
+            dark: .hex("00FF00")
+        )
+        let transformed = color.map { _ in .hex("0000FF") }
+        #expect(transformed.isSingleColor == true)
+    }
+
+    @Test
+    func `flatMap extracts light from light transform, dark from dark transform`() {
         let color = DarkModeColor(
             light: .hex("FF0000"),
             dark: .hex("00FF00")
@@ -99,8 +108,8 @@ struct DarkModeColorTests {
 
     // MARK: - Color Manipulation
 
-    @Test("adjustBrightness changes color brightness")
-    func adjustBrightnessChangesColorBrightness() {
+    @Test
+    func `adjustBrightness changes color brightness`() {
         let color = DarkModeColor(
             light: .hex("FF0000"),
             dark: .hex("00FF00")
@@ -110,8 +119,8 @@ struct DarkModeColorTests {
         #expect(brightened.dark != color.dark)
     }
 
-    @Test("darker makes colors darker")
-    func darkerMakesColorsDarker() {
+    @Test
+    func `darker makes colors darker`() {
         let color = DarkModeColor(
             light: .hex("FF0000"),
             dark: .hex("00FF00")
@@ -121,8 +130,8 @@ struct DarkModeColorTests {
         #expect(darkened.dark != color.dark)
     }
 
-    @Test("lighter makes colors lighter")
-    func lighterMakesColorsLighter() {
+    @Test
+    func `lighter makes colors lighter`() {
         let color = DarkModeColor(
             light: .hex("FF0000"),
             dark: .hex("00FF00")
@@ -132,8 +141,8 @@ struct DarkModeColorTests {
         #expect(lightened.dark != color.dark)
     }
 
-    @Test("opacity applies to both colors")
-    func opacityAppliesToBothColors() {
+    @Test
+    func `opacity applies to both colors`() {
         let color = DarkModeColor(
             light: .hex("FF0000"),
             dark: .hex("00FF00")
@@ -145,16 +154,16 @@ struct DarkModeColorTests {
 
     // MARK: - Convenience Methods
 
-    @Test("withDarkColor creates new DarkModeColor with specified dark")
-    func withDarkColorCreatesNewColor() {
+    @Test
+    func `withDarkColor creates new DarkModeColor with specified dark`() {
         let original = DarkModeColor(.hex("FF0000"))
         let modified = original.withDarkColor(.hex("00FF00"))
         #expect(modified.light.description == "#FF0000")
         #expect(modified.dark.description == "#00FF00")
     }
 
-    @Test("Color.Value.withDarkColor creates DarkModeColor")
-    func colorValueWithDarkColor() {
+    @Test
+    func `Color Value withDarkColor creates DarkModeColor`() {
         let darkMode = CSS_Standard.Color.Value.hex("FF0000").withDarkColor(.hex("00FF00"))
         #expect(darkMode.light.description == "#FF0000")
         #expect(darkMode.dark.description == "#00FF00")
