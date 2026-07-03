@@ -74,10 +74,11 @@ public func withDependencies<R>(
 
 /// Execute an async operation with modified theming values.
 nonisolated(nonsending)
-public func withDependencies<R>(
-    _ modify: (inout ThemingValues) -> Void,
-    operation: nonisolated(nonsending) () async throws -> R
-) async rethrows -> R {
+    public func withDependencies<R>(
+        _ modify: (inout ThemingValues) -> Void,
+        operation: nonisolated(nonsending) () async throws -> R
+    ) async rethrows -> R
+{
     var values = ThemingValues()
     modify(&values)
     return try await DarkModeColor.Theme.withValue(values.theme) {

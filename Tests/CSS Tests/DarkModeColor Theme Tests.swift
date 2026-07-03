@@ -78,20 +78,21 @@ struct `DarkModeColor Theme Tests` {
         ]
     )
     func `Named static colors are distinct from transparent`(name: String) {
-        let color: DarkModeColor = switch name {
-        case "gray": .gray
-        case "blue": .blue
-        case "red": .red
-        case "green": .green
-        case "purple": .purple
-        case "yellow": .yellow
-        case "orange": .orange
-        case "teal": .teal
-        case "cyan": .cyan
-        case "pink": .pink
-        case "brown": .brown
-        default: .transparent
-        }
+        let color: DarkModeColor =
+            switch name {
+            case "gray": .gray
+            case "blue": .blue
+            case "red": .red
+            case "green": .green
+            case "purple": .purple
+            case "yellow": .yellow
+            case "orange": .orange
+            case "teal": .teal
+            case "cyan": .cyan
+            case "pink": .pink
+            case "brown": .brown
+            default: .transparent
+            }
         #expect(color != DarkModeColor.transparent)
     }
 }

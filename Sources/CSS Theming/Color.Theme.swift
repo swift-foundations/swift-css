@@ -325,10 +325,11 @@ extension DarkModeColor.Theme {
 
     /// Execute an async operation with a custom theme.
     nonisolated(nonsending)
-    public static func withValue<R>(
-        _ theme: DarkModeColor.Theme,
-        operation: nonisolated(nonsending) () async throws -> R
-    ) async rethrows -> R {
+        public static func withValue<R>(
+            _ theme: DarkModeColor.Theme,
+            operation: nonisolated(nonsending) () async throws -> R
+        ) async rethrows -> R
+    {
         try await $_scoped.withValue(theme, operation: operation)
     }
 }

@@ -250,10 +250,11 @@ extension Font.Defaults {
 
     /// Execute an async operation with custom font defaults.
     nonisolated(nonsending)
-    public static func withValue<R>(
-        _ font: Font.Defaults,
-        operation: nonisolated(nonsending) () async throws -> R
-    ) async rethrows -> R {
+        public static func withValue<R>(
+            _ font: Font.Defaults,
+            operation: nonisolated(nonsending) () async throws -> R
+        ) async rethrows -> R
+    {
         try await $_scoped.withValue(font, operation: operation)
     }
 }
