@@ -32,39 +32,30 @@ extension HTML.CSS {
         justifyItems: JustifyItems? = nil,
         alignItems: AlignItems? = nil
     ) -> HTML.CSS<some HTML.View> {
-        var result: any HTML.View =
-            base
-            .inlineStyle(Display.grid)
+        var result = HTML.AnyView(base.inlineStyle(Display.grid))
 
         if let columns = columns {
-            result = HTML.AnyView(result)
-                .inlineStyle(columns)
+            result = HTML.AnyView(result.inlineStyle(columns))
         }
         if let rows = rows {
-            result = HTML.AnyView(result)
-                .inlineStyle(rows)
+            result = HTML.AnyView(result.inlineStyle(rows))
         }
         if let gap = gap {
-            result = HTML.AnyView(result)
-                .inlineStyle(gap)
+            result = HTML.AnyView(result.inlineStyle(gap))
         }
         if let rowGap = rowGap {
-            result = HTML.AnyView(result)
-                .inlineStyle(rowGap)
+            result = HTML.AnyView(result.inlineStyle(rowGap))
         }
         if let columnGap = columnGap {
-            result = HTML.AnyView(result)
-                .inlineStyle(columnGap)
+            result = HTML.AnyView(result.inlineStyle(columnGap))
         }
         if let justifyItems = justifyItems {
-            result = HTML.AnyView(result)
-                .inlineStyle(justifyItems)
+            result = HTML.AnyView(result.inlineStyle(justifyItems))
         }
         if let alignItems = alignItems {
-            result = HTML.AnyView(result)
-                .inlineStyle(alignItems)
+            result = HTML.AnyView(result.inlineStyle(alignItems))
         }
 
-        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: result)
     }
 }

@@ -30,32 +30,25 @@ extension HTML.CSS {
         left: Left? = nil,
         zIndex: ZIndex? = nil
     ) -> HTML.CSS<some HTML.View> {
-        var result: any HTML.View =
-            base
-            .inlineStyle(position)
+        var result = HTML.AnyView(base.inlineStyle(position))
 
         if let top = top {
-            result = HTML.AnyView(result)
-                .inlineStyle(top)
+            result = HTML.AnyView(result.inlineStyle(top))
         }
         if let right = right {
-            result = HTML.AnyView(result)
-                .inlineStyle(right)
+            result = HTML.AnyView(result.inlineStyle(right))
         }
         if let bottom = bottom {
-            result = HTML.AnyView(result)
-                .inlineStyle(bottom)
+            result = HTML.AnyView(result.inlineStyle(bottom))
         }
         if let left = left {
-            result = HTML.AnyView(result)
-                .inlineStyle(left)
+            result = HTML.AnyView(result.inlineStyle(left))
         }
         if let zIndex = zIndex {
-            result = HTML.AnyView(result)
-                .inlineStyle(zIndex)
+            result = HTML.AnyView(result.inlineStyle(zIndex))
         }
 
-        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: result)
     }
 
     /// Convenience for absolutely positioned element that fills its container.

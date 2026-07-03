@@ -29,33 +29,27 @@ extension HTML.CSS {
         maxWidth: MaxWidth? = nil,
         maxHeight: MaxHeight? = nil
     ) -> HTML.CSS<some HTML.View> {
-        var result: any HTML.View = base
+        var result = HTML.AnyView(base)
 
         if let width = width {
-            result = HTML.AnyView(result)
-                .inlineStyle(width)
+            result = HTML.AnyView(result.inlineStyle(width))
         }
         if let height = height {
-            result = HTML.AnyView(result)
-                .inlineStyle(height)
+            result = HTML.AnyView(result.inlineStyle(height))
         }
         if let minWidth = minWidth {
-            result = HTML.AnyView(result)
-                .inlineStyle(minWidth)
+            result = HTML.AnyView(result.inlineStyle(minWidth))
         }
         if let minHeight = minHeight {
-            result = HTML.AnyView(result)
-                .inlineStyle(minHeight)
+            result = HTML.AnyView(result.inlineStyle(minHeight))
         }
         if let maxWidth = maxWidth {
-            result = HTML.AnyView(result)
-                .inlineStyle(maxWidth)
+            result = HTML.AnyView(result.inlineStyle(maxWidth))
         }
         if let maxHeight = maxHeight {
-            result = HTML.AnyView(result)
-                .inlineStyle(maxHeight)
+            result = HTML.AnyView(result.inlineStyle(maxHeight))
         }
 
-        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: result)
     }
 }

@@ -30,41 +30,33 @@ extension HTML.CSS {
         justifySelf: JustifySelf? = nil,
         alignSelf: AlignSelf? = nil
     ) -> HTML.CSS<some HTML.View> {
-        var result: any HTML.View = base
+        var result = HTML.AnyView(base)
 
         if let column = column {
-            result = HTML.AnyView(result)
-                .inlineStyle(column)
+            result = HTML.AnyView(result.inlineStyle(column))
         }
         if let row = row {
-            result = HTML.AnyView(result)
-                .inlineStyle(row)
+            result = HTML.AnyView(result.inlineStyle(row))
         }
         if let columnStart = columnStart {
-            result = HTML.AnyView(result)
-                .inlineStyle(columnStart)
+            result = HTML.AnyView(result.inlineStyle(columnStart))
         }
         if let columnEnd = columnEnd {
-            result = HTML.AnyView(result)
-                .inlineStyle(columnEnd)
+            result = HTML.AnyView(result.inlineStyle(columnEnd))
         }
         if let rowStart = rowStart {
-            result = HTML.AnyView(result)
-                .inlineStyle(rowStart)
+            result = HTML.AnyView(result.inlineStyle(rowStart))
         }
         if let rowEnd = rowEnd {
-            result = HTML.AnyView(result)
-                .inlineStyle(rowEnd)
+            result = HTML.AnyView(result.inlineStyle(rowEnd))
         }
         if let justifySelf = justifySelf {
-            result = HTML.AnyView(result)
-                .inlineStyle(justifySelf)
+            result = HTML.AnyView(result.inlineStyle(justifySelf))
         }
         if let alignSelf = alignSelf {
-            result = HTML.AnyView(result)
-                .inlineStyle(alignSelf)
+            result = HTML.AnyView(result.inlineStyle(alignSelf))
         }
 
-        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: result)
     }
 }

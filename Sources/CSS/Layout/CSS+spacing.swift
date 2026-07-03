@@ -24,17 +24,15 @@ extension HTML.CSS {
         padding: Padding? = nil,
         margin: Margin? = nil
     ) -> HTML.CSS<some HTML.View> {
-        var result: any HTML.View = base
+        var result = HTML.AnyView(base)
 
         if let padding = padding {
-            result = HTML.AnyView(result)
-                .inlineStyle(padding)
+            result = HTML.AnyView(result.inlineStyle(padding))
         }
         if let margin = margin {
-            result = HTML.AnyView(result)
-                .inlineStyle(margin)
+            result = HTML.AnyView(result.inlineStyle(margin))
         }
 
-        return HTML.CSS<HTML.AnyView>(base: HTML.AnyView(result))
+        return HTML.CSS<HTML.AnyView>(base: result)
     }
 }
