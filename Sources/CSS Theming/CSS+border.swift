@@ -163,7 +163,7 @@ extension HTML.View {
     /// the result builder's `buildEither` mechanism.
     @inlinable
     @HTML.Builder
-    func applyBorderSide<P: W3C_CSS_Shared.Property>(
+    package func applyBorderSide<P: W3C_CSS_Shared.Property>(
         shouldApply: Bool,
         property: P.Type,
         borderStyle: String,

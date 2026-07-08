@@ -9,22 +9,6 @@ import CSS_Standard
 
 extension DarkModeColor {
     public struct Theme: Sendable {
-        /// Global prepared value (set via `prepareDependencies`)
-        nonisolated(unsafe) private static var _prepared: DarkModeColor.Theme = .default
-
-        /// Scoped override (set via `withDependencies`)
-        @TaskLocal private static var _scoped: DarkModeColor.Theme? = nil
-
-        /// Current theme value. Returns scoped override if set, otherwise prepared value.
-        public static var current: DarkModeColor.Theme {
-            _scoped ?? _prepared
-        }
-
-        /// Set the global prepared value.
-        public static func _prepare(_ value: DarkModeColor.Theme) {
-            _prepared = value
-        }
-
         public var gray: DarkModeColor
         public var blue: DarkModeColor
         public var green: DarkModeColor
@@ -46,6 +30,24 @@ extension DarkModeColor {
         public var background: DarkModeColor.Theme.Background
         public var border: DarkModeColor.Theme.Border
         public var branding: DarkModeColor.Theme.Branding
+    }
+}
+
+extension DarkModeColor.Theme {
+    /// Global prepared value (set via `prepareDependencies`)
+    nonisolated(unsafe) private static var _prepared: DarkModeColor.Theme = .default
+
+    /// Scoped override (set via `withDependencies`)
+    @TaskLocal private static var _scoped: DarkModeColor.Theme? = nil
+
+    /// Current theme value. Returns scoped override if set, otherwise prepared value.
+    public static var current: DarkModeColor.Theme {
+        _scoped ?? _prepared
+    }
+
+    /// Set the global prepared value.
+    public static func _prepare(_ value: DarkModeColor.Theme) {
+        _prepared = value
     }
 }
 
