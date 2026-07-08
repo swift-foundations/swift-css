@@ -9,22 +9,6 @@ import CSS_Standard
 
 extension Font {
     public struct Defaults: Sendable {
-        /// Global prepared value (set via `prepareDependencies`)
-        nonisolated(unsafe) private static var _prepared: Font.Defaults = .default
-
-        /// Scoped override (set via `withDependencies`)
-        @TaskLocal private static var _scoped: Font.Defaults? = nil
-
-        /// Current font defaults. Returns scoped override if set, otherwise prepared value.
-        public static var current: Font.Defaults {
-            _scoped ?? _prepared
-        }
-
-        /// Set the global prepared value.
-        public static func _prepare(_ value: Font.Defaults) {
-            _prepared = value
-        }
-
         public var extraLargeTitle2: Font
         public var extraLargeTitle: Font
         public var largeTitle: Font
@@ -68,6 +52,24 @@ extension Font {
             self.caption2 = caption2
             self.footnote = footnote
         }
+    }
+}
+
+extension Font.Defaults {
+    /// Global prepared value (set via `prepareDependencies`)
+    nonisolated(unsafe) private static var _prepared: Font.Defaults = .default
+
+    /// Scoped override (set via `withDependencies`)
+    @TaskLocal private static var _scoped: Font.Defaults? = nil
+
+    /// Current font defaults. Returns scoped override if set, otherwise prepared value.
+    public static var current: Font.Defaults {
+        _scoped ?? _prepared
+    }
+
+    /// Set the global prepared value.
+    public static func _prepare(_ value: Font.Defaults) {
+        _prepared = value
     }
 }
 

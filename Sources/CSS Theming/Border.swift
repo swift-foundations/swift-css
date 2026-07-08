@@ -14,12 +14,6 @@ public struct Border: Equatable, Sendable {
     public var style: CSS_Standard.LineStyle?
     public var color: DarkModeColor?
 
-    public enum Side: String, Hashable, Sendable, CaseIterable {
-        case top, left, right, bottom
-
-        public static let all: [Self] = allCases
-    }
-
     public init(
         sides: Swift.Set<Side>? = nil,
         width: BorderWidth? = nil,
@@ -31,4 +25,14 @@ public struct Border: Equatable, Sendable {
         self.color = color
         self.sides = sides
     }
+}
+
+extension Border {
+    public enum Side: String, Hashable, Sendable, CaseIterable {
+        case top, left, right, bottom
+    }
+}
+
+extension Border.Side {
+    public static let all: [Self] = allCases
 }

@@ -39,11 +39,6 @@ public import CSS_Standard
 /// let auto = DarkModeColor(light: .white)
 /// ```
 public struct DarkModeColor: Sendable, Hashable, ColorConvertible {
-    /// Creates a DarkModeColor from a CSS Color value, using the same color for both modes.
-    public static func color(_ color: W3C_CSS_Values.Color) -> DarkModeColor {
-        .init(light: color, dark: color)
-    }
-
     /// The color value for light mode
     public let light: CSS_Standard.Color.Value
 
@@ -77,7 +72,16 @@ public struct DarkModeColor: Sendable, Hashable, ColorConvertible {
         self.light = color
         self.dark = color
     }
+}
 
+extension DarkModeColor {
+    /// Creates a DarkModeColor from a CSS Color value, using the same color for both modes.
+    public static func color(_ color: W3C_CSS_Values.Color) -> DarkModeColor {
+        .init(light: color, dark: color)
+    }
+}
+
+extension DarkModeColor {
     /// Whether this represents a single color (light equals dark).
     ///
     /// When true, only one CSS rule needs to be emitted (no media query needed).

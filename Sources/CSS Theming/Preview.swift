@@ -12,8 +12,11 @@
         struct Preview: SwiftUI.View {
             let theme: DarkModeColor.Theme
             @Environment(\.colorScheme) var colorScheme
+        }
+    }
 
-            var body: some View {
+    extension DarkModeColor.Theme.Preview {
+        var body: some View {
                 VStack(alignment: .leading, spacing: 24) {
                     // Base Colors Section
                     ColorSection(
@@ -132,7 +135,6 @@
                 .padding()
                 //            .background(SwiftUI.Color(.systemBackground))
             }
-        }
     }
 
     extension DarkModeColor {
@@ -206,7 +208,9 @@
         private let columns = [
             GridItem(.adaptive(minimum: 120, maximum: 150), spacing: 12)
         ]
+    }
 
+    extension ColorSection {
         var body: some View {
             VStack(alignment: .leading, spacing: 12) {
                 Text(title)
@@ -232,7 +236,9 @@
         let htmlColor: DarkModeColor
         let colorScheme: SwiftUI.ColorScheme
         @State private var isHovering = false
+    }
 
+    extension ColorSwatch {
         var swiftUIColor: SwiftUI.Color {
             htmlColor.toSwiftUIColor(for: colorScheme)
         }
