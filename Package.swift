@@ -20,6 +20,9 @@ extension Target.Dependency {
     static var cssHTMLRendering: Self {
         .product(name: "CSS HTML Rendering", package: "swift-css-html-render")
     }
+    static var cssHTMLLayoutRendering: Self {
+        .product(name: "CSS HTML Layout Rendering", package: "swift-css-html-layout-render")
+    }
     static var htmlRendering: Self {
         .product(name: "HTML Rendering", package: "swift-html-render")
     }
@@ -41,6 +44,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swift-foundations/swift-css-html-render.git", branch: "main"),
+        .package(url: "https://github.com/swift-foundations/swift-css-html-layout-render.git", branch: "main"),
         .package(url: "https://github.com/swift-foundations/swift-html-render.git", branch: "main"),
         .package(url: "https://github.com/swift-standards/swift-css-standard.git", branch: "main"),
     ],
@@ -49,6 +53,7 @@ let package = Package(
             name: .css,
             dependencies: [
                 .cssHTMLRendering,
+                .cssHTMLLayoutRendering,
                 .htmlRendering,
                 .cssStandard,
             ]
