@@ -17,124 +17,124 @@
 
     extension DarkModeColor.Theme.Preview {
         var body: some View {
-                VStack(alignment: .leading, spacing: 24) {
-                    // Base Colors Section
-                    ColorSection(
-                        title: "Base Colors",
-                        colors: [
-                            ("Gray", theme.gray),
-                            ("Blue", theme.blue),
-                            ("Green", theme.green),
-                            ("Purple", theme.purple),
-                            ("Red", theme.red),
-                            ("Yellow", theme.yellow),
-                            ("Orange", theme.orange),
-                            ("Teal", theme.teal),
-                            ("Cyan", theme.cyan),
-                            ("Pink", theme.pink),
-                            ("Brown", theme.brown),
-                        ],
-                        colorScheme: colorScheme
-                    )
+            VStack(alignment: .leading, spacing: 24) {
+                // Base Colors Section
+                ColorSection(
+                    title: "Base Colors",
+                    colors: [
+                        ("Gray", theme.gray),
+                        ("Blue", theme.blue),
+                        ("Green", theme.green),
+                        ("Purple", theme.purple),
+                        ("Red", theme.red),
+                        ("Yellow", theme.yellow),
+                        ("Orange", theme.orange),
+                        ("Teal", theme.teal),
+                        ("Cyan", theme.cyan),
+                        ("Pink", theme.pink),
+                        ("Brown", theme.brown),
+                    ],
+                    colorScheme: colorScheme
+                )
 
-                    // Neutral Colors Section
-                    ColorSection(
-                        title: "Neutral Colors",
-                        colors: [
-                            ("Black", theme.black),
-                            ("Off Black", theme.offBlack),
-                            ("White", theme.white),
-                            ("Off White", theme.offWhite),
-                            ("Neutral", theme.neutral),
-                            ("Info", theme.info),
-                        ],
-                        colorScheme: colorScheme
-                    )
+                // Neutral Colors Section
+                ColorSection(
+                    title: "Neutral Colors",
+                    colors: [
+                        ("Black", theme.black),
+                        ("Off Black", theme.offBlack),
+                        ("White", theme.white),
+                        ("Off White", theme.offWhite),
+                        ("Neutral", theme.neutral),
+                        ("Info", theme.info),
+                    ],
+                    colorScheme: colorScheme
+                )
 
-                    // Text Colors Section
-                    ColorSection(
-                        title: "Text Colors",
-                        colors: [
-                            ("Primary", theme.text.primary),
-                            ("Secondary", theme.text.secondary),
-                            ("Tertiary", theme.text.tertiary),
-                            ("Link", theme.text.link),
-                            ("Link Hover", theme.text.linkHover),
-                            ("Button", theme.text.button),
-                            ("Error", theme.text.error),
-                            ("Success", theme.text.success),
-                            ("Warning", theme.text.warning),
-                            ("Info", theme.text.info),
-                            ("Neutral", theme.text.neutral),
-                            ("Inverted", theme.text.inverted),
-                            ("Disabled", theme.text.disabled),
-                        ],
-                        colorScheme: colorScheme
-                    )
+                // Text Colors Section
+                ColorSection(
+                    title: "Text Colors",
+                    colors: [
+                        ("Primary", theme.text.primary),
+                        ("Secondary", theme.text.secondary),
+                        ("Tertiary", theme.text.tertiary),
+                        ("Link", theme.text.link),
+                        ("Link Hover", theme.text.linkHover),
+                        ("Button", theme.text.button),
+                        ("Error", theme.text.error),
+                        ("Success", theme.text.success),
+                        ("Warning", theme.text.warning),
+                        ("Info", theme.text.info),
+                        ("Neutral", theme.text.neutral),
+                        ("Inverted", theme.text.inverted),
+                        ("Disabled", theme.text.disabled),
+                    ],
+                    colorScheme: colorScheme
+                )
 
-                    // Background Colors Section
-                    ColorSection(
-                        title: "Background Colors",
-                        colors: [
-                            ("Primary", theme.background.primary),
-                            ("Secondary", theme.background.secondary),
-                            ("Tertiary", theme.background.tertiary),
-                            ("Elevated", theme.background.elevated),
-                            ("Grouped", theme.background.grouped),
-                            ("Selected", theme.background.selected),
-                            ("Highlighted", theme.background.highlighted),
-                            ("Button", theme.background.button),
-                            ("Button Hover", theme.background.buttonHover),
-                            ("Error", theme.background.error),
-                            ("Error Muted", theme.background.errorMuted),
-                            ("Success", theme.background.success),
-                            ("Success Muted", theme.background.successMuted),
-                            ("Warning", theme.background.warning),
-                            ("Warning Muted", theme.background.warningMuted),
-                            ("Info", theme.background.info),
-                            ("Info Muted", theme.background.infoMuted),
-                            ("Neutral", theme.background.neutral),
-                        ],
-                        colorScheme: colorScheme
-                    )
+                // Background Colors Section
+                ColorSection(
+                    title: "Background Colors",
+                    colors: [
+                        ("Primary", theme.background.primary),
+                        ("Secondary", theme.background.secondary),
+                        ("Tertiary", theme.background.tertiary),
+                        ("Elevated", theme.background.elevated),
+                        ("Grouped", theme.background.grouped),
+                        ("Selected", theme.background.selected),
+                        ("Highlighted", theme.background.highlighted),
+                        ("Button", theme.background.button),
+                        ("Button Hover", theme.background.buttonHover),
+                        ("Error", theme.background.error),
+                        ("Error Muted", theme.background.errorMuted),
+                        ("Success", theme.background.success),
+                        ("Success Muted", theme.background.successMuted),
+                        ("Warning", theme.background.warning),
+                        ("Warning Muted", theme.background.warningMuted),
+                        ("Info", theme.background.info),
+                        ("Info Muted", theme.background.infoMuted),
+                        ("Neutral", theme.background.neutral),
+                    ],
+                    colorScheme: colorScheme
+                )
 
-                    // Border Colors Section
-                    ColorSection(
-                        title: "Border Colors",
-                        colors: [
-                            ("Primary", theme.border.primary),
-                            ("Secondary", theme.border.secondary),
-                            ("Tertiary", theme.border.tertiary),
-                            ("Selected", theme.border.selected),
-                            ("Highlighted", theme.border.highlighted),
-                            ("Hover", theme.border.hover),
-                            ("Button", theme.border.button),
-                            ("Error", theme.border.error),
-                            ("Success", theme.border.success),
-                            ("Warning", theme.border.warning),
-                            ("Info", theme.border.info),
-                            ("Info Muted", theme.border.infoMuted),
-                            ("Neutral", theme.border.neutral),
-                        ],
-                        colorScheme: colorScheme
-                    )
+                // Border Colors Section
+                ColorSection(
+                    title: "Border Colors",
+                    colors: [
+                        ("Primary", theme.border.primary),
+                        ("Secondary", theme.border.secondary),
+                        ("Tertiary", theme.border.tertiary),
+                        ("Selected", theme.border.selected),
+                        ("Highlighted", theme.border.highlighted),
+                        ("Hover", theme.border.hover),
+                        ("Button", theme.border.button),
+                        ("Error", theme.border.error),
+                        ("Success", theme.border.success),
+                        ("Warning", theme.border.warning),
+                        ("Info", theme.border.info),
+                        ("Info Muted", theme.border.infoMuted),
+                        ("Neutral", theme.border.neutral),
+                    ],
+                    colorScheme: colorScheme
+                )
 
-                    // Branding Colors Section
-                    ColorSection(
-                        title: "Branding Colors",
-                        colors: [
-                            ("Primary", theme.branding.primary),
-                            ("Secondary", theme.branding.secondary),
-                            ("Accent", theme.branding.accent),
-                            ("Primary Subtle", theme.branding.primarySubtle),
-                            ("Secondary Subtle", theme.branding.secondarySubtle),
-                        ],
-                        colorScheme: colorScheme
-                    )
-                }
-                .padding()
-                //            .background(SwiftUI.Color(.systemBackground))
+                // Branding Colors Section
+                ColorSection(
+                    title: "Branding Colors",
+                    colors: [
+                        ("Primary", theme.branding.primary),
+                        ("Secondary", theme.branding.secondary),
+                        ("Accent", theme.branding.accent),
+                        ("Primary Subtle", theme.branding.primarySubtle),
+                        ("Secondary Subtle", theme.branding.secondarySubtle),
+                    ],
+                    colorScheme: colorScheme
+                )
             }
+            .padding()
+            //            .background(SwiftUI.Color(.systemBackground))
+        }
     }
 
     extension DarkModeColor {
