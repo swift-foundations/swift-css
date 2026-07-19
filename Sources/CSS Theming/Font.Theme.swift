@@ -6,6 +6,7 @@
 //
 
 import CSS_Standard
+import Synchronization
 
 extension Font {
     public struct Defaults: Sendable {
@@ -56,20 +57,23 @@ extension Font {
 }
 
 extension Font.Defaults {
-    /// Global prepared value (set via `prepareDependencies`)
-    nonisolated(unsafe) private static var _prepared: Font.Defaults = .default
+    /// Global prepared value (set via `prepareDependencies`).
+    ///
+    /// Guarded by a `Mutex` so concurrent `_prepare` writes and `current` reads
+    /// never observe a torn (partially-written) value.
+    private static let _preparedStorage: Mutex<Font.Defaults> = Mutex(.default)
 
     /// Scoped override (set via `withDependencies`)
     @TaskLocal private static var _scoped: Font.Defaults? = nil
 
     /// Current font defaults. Returns scoped override if set, otherwise prepared value.
     public static var current: Font.Defaults {
-        _scoped ?? _prepared
+        _scoped ?? _preparedStorage.withLock { $0 }
     }
 
     /// Set the global prepared value.
     public static func _prepare(_ value: Font.Defaults) {
-        _prepared = value
+        _preparedStorage.withLock { $0 = value }
     }
 }
 

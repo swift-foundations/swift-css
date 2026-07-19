@@ -6,6 +6,7 @@
 //
 
 import CSS_Standard
+import Synchronization
 
 extension DarkModeColor {
     public struct Theme: Sendable {
@@ -34,20 +35,23 @@ extension DarkModeColor {
 }
 
 extension DarkModeColor.Theme {
-    /// Global prepared value (set via `prepareDependencies`)
-    nonisolated(unsafe) private static var _prepared: DarkModeColor.Theme = .default
+    /// Global prepared value (set via `prepareDependencies`).
+    ///
+    /// Guarded by a `Mutex` so concurrent `_prepare` writes and `current` reads
+    /// never observe a torn (partially-written) theme value.
+    private static let _preparedStorage: Mutex<DarkModeColor.Theme> = Mutex(.default)
 
     /// Scoped override (set via `withDependencies`)
     @TaskLocal private static var _scoped: DarkModeColor.Theme? = nil
 
     /// Current theme value. Returns scoped override if set, otherwise prepared value.
     public static var current: DarkModeColor.Theme {
-        _scoped ?? _prepared
+        _scoped ?? _preparedStorage.withLock { $0 }
     }
 
     /// Set the global prepared value.
     public static func _prepare(_ value: DarkModeColor.Theme) {
-        _prepared = value
+        _preparedStorage.withLock { $0 = value }
     }
 }
 
