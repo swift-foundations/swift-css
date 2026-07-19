@@ -5,6 +5,7 @@
 //  Generates CSS stylesheet from DarkModeColor.Theme
 //
 
+import CSS
 import Foundation
 
 extension DarkModeColor.Theme {
@@ -104,21 +105,21 @@ extension DarkModeColor.Theme.StyleSheet {
             --branding-secondary-subtle: \(theme.branding.secondarySubtle.light.description);
 
             /* Translucent variants for charts and overlays */
-            --color-gray-translucent: \(theme.gray.light.description)33;
-            --color-blue-translucent: \(theme.blue.light.description)33;
-            --color-green-translucent: \(theme.green.light.description)33;
-            --color-purple-translucent: \(theme.purple.light.description)33;
-            --color-red-translucent: \(theme.red.light.description)33;
-            --color-yellow-translucent: \(theme.yellow.light.description)33;
-            --color-orange-translucent: \(theme.orange.light.description)33;
-            --color-teal-translucent: \(theme.teal.light.description)33;
-            --color-cyan-translucent: \(theme.cyan.light.description)33;
-            --color-pink-translucent: \(theme.pink.light.description)33;
-            --color-brown-translucent: \(theme.brown.light.description)33;
-            --color-black-translucent: \(theme.black.light.description)33;
-            --color-off-black-translucent: \(theme.offBlack.light.description)33;
-            --color-white-translucent: \(theme.white.light.description)33;
-            --color-off-white-translucent: \(theme.offWhite.light.description)33;
+            --color-gray-translucent: \(theme.gray.light.opacity(0.2).description);
+            --color-blue-translucent: \(theme.blue.light.opacity(0.2).description);
+            --color-green-translucent: \(theme.green.light.opacity(0.2).description);
+            --color-purple-translucent: \(theme.purple.light.opacity(0.2).description);
+            --color-red-translucent: \(theme.red.light.opacity(0.2).description);
+            --color-yellow-translucent: \(theme.yellow.light.opacity(0.2).description);
+            --color-orange-translucent: \(theme.orange.light.opacity(0.2).description);
+            --color-teal-translucent: \(theme.teal.light.opacity(0.2).description);
+            --color-cyan-translucent: \(theme.cyan.light.opacity(0.2).description);
+            --color-pink-translucent: \(theme.pink.light.opacity(0.2).description);
+            --color-brown-translucent: \(theme.brown.light.opacity(0.2).description);
+            --color-black-translucent: \(theme.black.light.opacity(0.2).description);
+            --color-off-black-translucent: \(theme.offBlack.light.opacity(0.2).description);
+            --color-white-translucent: \(theme.white.light.opacity(0.2).description);
+            --color-off-white-translucent: \(theme.offWhite.light.opacity(0.2).description);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -185,21 +186,21 @@ extension DarkModeColor.Theme.StyleSheet {
                 --branding-secondary-subtle: \(theme.branding.secondarySubtle.dark.description);
 
                 /* Translucent variants for charts and overlays */
-                --color-gray-translucent: \(theme.gray.dark.description)33;
-                --color-blue-translucent: \(theme.blue.dark.description)33;
-                --color-green-translucent: \(theme.green.dark.description)33;
-                --color-purple-translucent: \(theme.purple.dark.description)33;
-                --color-red-translucent: \(theme.red.dark.description)33;
-                --color-yellow-translucent: \(theme.yellow.dark.description)33;
-                --color-orange-translucent: \(theme.orange.dark.description)33;
-                --color-teal-translucent: \(theme.teal.dark.description)33;
-                --color-cyan-translucent: \(theme.cyan.dark.description)33;
-                --color-pink-translucent: \(theme.pink.dark.description)33;
-                --color-brown-translucent: \(theme.brown.dark.description)33;
-                --color-black-translucent: \(theme.black.dark.description)33;
-                --color-off-black-translucent: \(theme.offBlack.dark.description)33;
-                --color-white-translucent: \(theme.white.dark.description)33;
-                --color-off-white-translucent: \(theme.offWhite.dark.description)33;
+                --color-gray-translucent: \(theme.gray.dark.opacity(0.2).description);
+                --color-blue-translucent: \(theme.blue.dark.opacity(0.2).description);
+                --color-green-translucent: \(theme.green.dark.opacity(0.2).description);
+                --color-purple-translucent: \(theme.purple.dark.opacity(0.2).description);
+                --color-red-translucent: \(theme.red.dark.opacity(0.2).description);
+                --color-yellow-translucent: \(theme.yellow.dark.opacity(0.2).description);
+                --color-orange-translucent: \(theme.orange.dark.opacity(0.2).description);
+                --color-teal-translucent: \(theme.teal.dark.opacity(0.2).description);
+                --color-cyan-translucent: \(theme.cyan.dark.opacity(0.2).description);
+                --color-pink-translucent: \(theme.pink.dark.opacity(0.2).description);
+                --color-brown-translucent: \(theme.brown.dark.opacity(0.2).description);
+                --color-black-translucent: \(theme.black.dark.opacity(0.2).description);
+                --color-off-black-translucent: \(theme.offBlack.dark.opacity(0.2).description);
+                --color-white-translucent: \(theme.white.dark.opacity(0.2).description);
+                --color-off-white-translucent: \(theme.offWhite.dark.opacity(0.2).description);
             }
         }
 
